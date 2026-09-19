@@ -1,0 +1,76 @@
+@startuml
+title CU06 — Consultar y actualizar perfil
+
+skinparam backgroundColor white
+skinparam shadowing false
+skinparam monochrome false
+skinparam sequence {
+  ParticipantBackgroundColor LightPink
+  ParticipantBorderColor Black
+  LifeLineBorderColor Black
+  LifeLineBackgroundColor White
+  ArrowColor Black
+  ArrowFontColor Black
+}
+hide footbox
+autonumber off
+
+' Todos se declaran como participant para conservar cuadros rectangulares.
+participant "Cliente\n<<Actor>>" as Cliente #LightPink
+participant "[:ProfilePageComponent]\n<<Interface>>" as Pantalla #LightPink
+participant "[:UserController]\n<<Controller>>" as Controlador #LightPink
+participant "[:Usuario]\n<<Entity>>" as Usuario #LightPink
+participant "[:FashionStore]\n<<Database>>" as BD #LightPink
+
+Cliente -> Pantalla : 1: seleccionarMiPerfil()
+Pantalla -> Controlador : 1.1: GET /users/me\nAuthorization: Bearer JWT
+activate Controlador
+Controlador -> BD : 1.2: SELECT id, name, email, gender, rol, branch_id, is_active\nFROM users WHERE id = token.sub
+activate BD
+BD --> Controlador : 1.3: current_user: User
+deactivate BD
+Controlador -> Usuario : 1.4: UserRead.model_validate(current_user)
+activate Usuario
+Usuario --> Controlador : 1.5: PerfilUsuario serializado
+deactivate Usuario
+Controlador --> Pantalla : 1.6: 200 OK ApiResponse<PerfilUsuario>
+deactivate Controlador
+Pantalla -> Cliente : 1.7: renderizarPerfil(perfil)
+
+Cliente -> Pantalla : 2: iniciarEdicion()
+Pantalla -> Cliente : 2.1: habilitarFormulario(name, email, gender)
+Cliente -> Pantalla : 3: guardarCambios(name, email, gender)
+
+alt 3.1 [form.invalid]
+  Pantalla -> Cliente : 3.1.1: mostrarErrores(Validators.required, Validators.email)
+else 3.1 [form.valid]
+  Pantalla -> Controlador : 3.2: PUT /users/me\nUserProfileUpdate{name, email.trim().toLowerCase(), gender}
+  activate Controlador
+  Controlador -> BD : 3.2.1: SELECT id FROM users\nWHERE email = normalize_email(email) AND id <> current_user.id
+  activate BD
+  BD --> Controlador : 3.2.2: coincidenciaEmail | sinCoincidencia
+  deactivate BD
+
+  alt 3.2.3 [email ya registrado]
+    Controlador --> Pantalla : 3.2.4: 400 Bad Request\n"El correo ya está en uso"
+    deactivate Controlador
+    Pantalla -> Cliente : 3.2.5: mostrarToastError()
+  else 3.2.3 [correo disponible]
+    Controlador -> Usuario : 3.2.4: actualizarPerfil(name, email, gender)
+    activate Usuario
+    Usuario --> Controlador : 3.2.5: datosPerfilAplicados
+    deactivate Usuario
+    Controlador -> BD : 3.2.6: UPDATE users SET name=?, email=?, gender=?\nWHERE id=current_user.id; COMMIT; REFRESH
+    activate BD
+    BD --> Controlador : 3.2.7: User actualizado
+    deactivate BD
+    Controlador -> Usuario : 3.2.8: UserRead.model_validate(User actualizado)
+    activate Usuario
+    Usuario --> Controlador : 3.2.9: PerfilUsuario actualizado
+    deactivate Usuario
+    Controlador --> Pantalla : 3.2.10: 200 OK ApiResponse<PerfilUsuario>
+    deactivate Controlador
+    Pantalla -> Cliente : 3.2.11: mostrarToastExito() y renderizarPerfilActualizado()
+  end
+end
+@enduml

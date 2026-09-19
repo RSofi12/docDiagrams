@@ -1,0 +1,106 @@
+@startuml CU20_Diagrama_de_Comunicacion
+' ==========================================
+' Estilos y Configuración General
+' ==========================================
+skinparam style strictuml
+skinparam handwritten false
+skinparam shadowing false
+skinparam defaultFontName "Helvetica"
+skinparam defaultFontSize 12
+
+' ==========================================
+' Participantes (distribución horizontal:
+' Actor -> Boundary -> Control -> Entities)
+' Nombres reales de componentes y funciones del código.
+' ==========================================
+actor ":Administrador" as admin
+boundary ":AdminHomePageComponent" as uiHome
+boundary ":AdminReportsPageComponent" as uiReports
+control ":DashboardService" as ctrlDash
+control ":ReportService" as ctrlReports
+entity ":Branch" as entBranch
+entity ":Sale" as entSale
+entity ":SaleItem" as entSaleItem
+entity ":Inventory" as entInventory
+entity ":InventoryMovement" as entMovement
+entity ":Reservation" as entReservation
+entity ":Product" as entProduct
+entity ":ProductVariant" as entVariant
+
+' ==========================================
+' Enlaces ocultos para forzar el orden horizontal
+' de izquierda a derecha. Los guiones extra
+' aumentan la distancia entre componentes.
+' ==========================================
+admin ---[hidden]right- uiHome
+uiHome ---[hidden]right- ctrlDash
+uiHome ---[hidden]down--- uiReports
+uiReports ---[hidden]right- ctrlReports
+ctrlDash ---[hidden]down--- ctrlReports
+ctrlDash ---[hidden]right- entSale
+entSale ---[hidden]right- entSaleItem
+entSaleItem ---[hidden]right- entInventory
+entInventory ---[hidden]right- entMovement
+entMovement ---[hidden]right- entReservation
+entReservation ---[hidden]right- entProduct
+entProduct ---[hidden]right- entVariant
+entVariant ---[hidden]right- entBranch
+
+' ==========================================
+' Mensajes numerados (funciones reales, sin parámetros)
+' Líneas sólidas  : mensajes de solicitud (id -> id)
+' Líneas punteadas: mensajes de retorno (ctrl -> ui -> actor)
+' Los retornos de las entidades son implícitos (UML 2.5+).
+' ==========================================
+' ---- Flujo 1: Dashboard (admin home) ----
+admin -- uiHome : "1: consultarDashboard()"
+uiHome -- ctrlDash : "1.1: get_dashboard()"
+ctrlDash -- entSale : "1.2: sum_sales_totals()"
+ctrlDash -- entSaleItem : "1.3: sum_units_sold()"
+ctrlDash -- entInventory : "1.4: sum_inventory_totals()"
+ctrlDash -- entMovement : "1.5: sum_movements_series()"
+ctrlDash -- entReservation : "1.6: count_reservations_by_status()"
+ctrlDash -- entBranch : "1.7: build_branch_kpis()"
+ctrlDash -- entProduct : "1.8: build_top_products()"
+ctrlDash -- entVariant : "1.9: build_variant_stock()"
+ctrlDash --[dotted] uiHome : "1.10: mostrarDashboard()"
+uiHome --[dotted] admin : "1.11: renderizarDashboard()"
+
+' ---- Flujo 2: Reporte de ventas ----
+admin -- uiReports : "2: consultarReporteVentas()"
+uiReports -- ctrlReports : "2.1: get_sales_report()"
+ctrlReports -- entSale : "2.2: sum_gross_sales()"
+ctrlReports -- entSaleItem : "2.3: sum_units_sold()"
+ctrlReports -- entBranch : "2.4: get_branch_name()"
+ctrlReports -- entProduct : "2.5: get_product_data()"
+ctrlReports -- entVariant : "2.6: get_variant_data()"
+ctrlReports --[dotted] uiReports : "2.7: mostrarReporteVentas()"
+uiReports --[dotted] admin : "2.8: renderizarReporteVentas()"
+
+' ---- Flujo 3: Reporte de inventario ----
+admin -- uiReports : "3: consultarReporteInventario()"
+uiReports -- ctrlReports : "3.1: get_inventory_report()"
+ctrlReports -- entInventory : "3.2: sum_stock_by_branch()"
+ctrlReports -- entVariant : "3.3: get_variant_data()"
+ctrlReports -- entProduct : "3.4: get_product_data()"
+ctrlReports -- entBranch : "3.5: get_branch_name()"
+ctrlReports --[dotted] uiReports : "3.6: mostrarReporteInventario()"
+uiReports --[dotted] admin : "3.7: renderizarReporteInventario()"
+
+' ---- Flujo 4: Reporte de movimientos ----
+admin -- uiReports : "4: consultarReporteMovimientos()"
+uiReports -- ctrlReports : "4.1: get_movements_report()"
+ctrlReports -- entMovement : "4.2: sum_movements_by_branch()"
+ctrlReports -- entVariant : "4.3: get_variant_data()"
+ctrlReports -- entProduct : "4.4: get_product_data()"
+ctrlReports -- entBranch : "4.5: get_branch_name()"
+ctrlReports --[dotted] uiReports : "4.6: mostrarReporteMovimientos()"
+uiReports --[dotted] admin : "4.7: renderizarReporteMovimientos()"
+
+' ---- Flujo 5: Exportar CSV ----
+admin -- uiReports : "5: exportarReporteCSV()"
+uiReports -- ctrlReports : "5.1: export_rows_to_csv()"
+ctrlReports --[dotted] uiReports : "5.2: mostrarArchivoCSV()"
+uiReports --[dotted] admin : "5.3: descargarArchivoCSV()"
+
+@enduml

@@ -1,0 +1,133 @@
+@startuml
+skinparam backgroundColor #FFFFFF
+skinparam style strictuml
+skinparam sequenceMessageScale 0.95
+skinparam ParticipantPadding 25
+skinparam BoxPadding 15
+
+skinparam participant {
+    BackgroundColor #D4EDDA
+    BorderColor #28A745
+    FontColor #155724
+}
+
+Actor "Administrador" as Admin
+participant "<<Interface>>\n[:AdminInventoryPageComponent]" as Boundary
+participant "<<Controller>>\n[:InventoryController]" as Controller
+participant "<<Entity>>\n[:Inventory]" as E_Inv
+participant "<<Entity>>\n[:ProductVariant]" as E_PV
+participant "<<Entity>>\n[:Product]" as E_Prod
+participant "<<Entity>>\n[:Branch]" as E_Br
+participant "<<Entity>>\n[:Size]" as E_Size
+participant "<<Entity>>\n[:Color]" as E_Col
+
+autonumber false
+
+activate Admin
+
+' ======================================================================
+' CU13 - Consultar inventario consolidado
+' Actor: Administrador | Plataforma: Web
+' RF: RF21 (Controlar existencias por sucursal)
+' ======================================================================
+
+' Flujo 1: Cargar inventario consolidado al abrir la pagina
+Admin -> Boundary : 1: consultarInventarioConsolidado()\nloadData()
+activate Boundary
+
+Boundary -> Controller : 1.1: GET /inventory/consolidated\nAuthorization: Bearer JWT
+activate Controller
+
+alt Autenticación y Rol Autorizado [Rol == administrador]
+
+    Controller -> E_Inv : 1.2: db.query(Inventory)\n.filter(Inventory.variant_id == variant_id,\n  Inventory.branch_id == branch_id)\n.all()
+    activate E_Inv
+    E_Inv --> Controller : 1.3: list[Inventory]\n(variant_id, branch_id,\n quantity, reserved_quantity)
+    deactivate E_Inv
+
+    Controller -> E_PV : 1.4: db.query(ProductVariant)\n.join(Product)\n.filter(ProductVariant.id.in_(variant_ids))\n.all()
+    activate E_PV
+    E_PV --> Controller : 1.5: list[ProductVariant]\n(id, sku, price, image_url,\nstatus, size_id, color_id)
+    deactivate E_PV
+
+    Controller -> E_Prod : 1.6: db.query(Product)\n.filter(Product.id.in_(product_ids))\n.all()
+    activate E_Prod
+    E_Prod --> Controller : 1.7: list[Product]\n(id, name)
+    deactivate E_Prod
+
+    Controller -> E_Br : 1.8: db.query(Branch)\n.filter(Branch.id.in_(branch_ids))\n.all()
+    activate E_Br
+    E_Br --> Controller : 1.9: list[Branch]\n(id, name, city)
+    deactivate E_Br
+
+    Controller -> E_Size : 1.10: db.query(Size)\n.filter(Size.id.in_(size_ids))\n.all()
+    activate E_Size
+    E_Size --> Controller : 1.11: list[Size]\n(id, name)
+    deactivate E_Size
+
+    Controller -> E_Col : 1.12: db.query(Color)\n.filter(Color.id.in_(color_ids))\n.all()
+    activate E_Col
+    E_Col --> Controller : 1.13: list[Color]\n(id, name, hex_code)
+    deactivate E_Col
+
+    Controller -> Controller : 1.14: get_consolidated_stock(db)\n(inventory_service.py:111)\ngrouped = {}\nfor row in rows:\n  entry = grouped.setdefault(variant_id)\n  entry["quantity"] += qty\n  entry["reserved_quantity"] += reserved\n  entry["available_quantity"] += max(qty-reserved, 0)\n  entry["branches"].append({...})
+
+    Controller --> Boundary : 1.15: 200 OK ApiResponse\n<InventoryConsolidatedStock[]>\n[{variant_id, product_name, sku,\nquantity, reserved_quantity,\navailable_quantity, branches: [...]}]
+else Token o Rol Inválido
+    Controller --> Boundary : 1.16: 401 Unauthorized\n/ 403 Forbidden
+end
+
+deactivate Controller
+
+Boundary -> Boundary : 1.17: totalVariants = consolidatedStock.length\ntotalQuantity = sum(item.quantity)\navailableQuantity = sum(item.available_quantity)\nreservedQuantity = sum(item.reserved_quantity)\nbranchCount = branches.length
+
+Boundary --> Admin : 1.18: renderizarInventario(\nconsolidatedStock,\ntotalVariants, totalQuantity,\navailableQuantity, reservedQuantity)
+deactivate Boundary
+
+' Flujo 2: Refrescar inventario (boton refresh)
+Admin -> Boundary : 2: refresh()\nloadInventoryData()
+activate Boundary
+
+Boundary -> Controller : 2.1: GET /inventory/consolidated\nAuthorization: Bearer JWT
+activate Controller
+
+Controller -> E_Inv : 2.2: db.query(Inventory).all()
+activate E_Inv
+E_Inv --> Controller : 2.3: list[Inventory] (actualizado)
+deactivate E_Inv
+
+Controller -> E_PV : 2.4: db.query(ProductVariant).all()
+activate E_PV
+E_PV --> Controller : 2.5: list[ProductVariant] (actualizado)
+deactivate E_PV
+
+Controller -> E_Prod : 2.6: db.query(Product).all()
+activate E_Prod
+E_Prod --> Controller : 2.7: list[Product] (actualizado)
+deactivate E_Prod
+
+Controller -> E_Br : 2.8: db.query(Branch).all()
+activate E_Br
+E_Br --> Controller : 2.9: list[Branch] (actualizado)
+deactivate E_Br
+
+Controller -> E_Size : 2.10: db.query(Size).all()
+activate E_Size
+E_Size --> Controller : 2.11: list[Size] (actualizado)
+deactivate E_Size
+
+Controller -> E_Col : 2.12: db.query(Color).all()
+activate E_Col
+E_Col --> Controller : 2.13: list[Color] (actualizado)
+deactivate E_Col
+
+Controller -> Controller : 2.14: groupBy(variant_id) + calcularTotales()
+
+Controller --> Boundary : 2.15: 200 OK ApiResponse (actualizado)
+deactivate Controller
+
+Boundary --> Admin : 2.16: renderizarInventario(consolidatedStock actualizado)
+deactivate Boundary
+
+deactivate Admin
+@enduml

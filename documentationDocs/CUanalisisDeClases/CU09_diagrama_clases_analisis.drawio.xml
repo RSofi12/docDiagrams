@@ -1,0 +1,63 @@
+<!-- Cardinalidades entre clases (CU09 - Gestionar atributos del catalogo):
+- Temporada (composicion, diamante en Temporada) 1 <-> 0..* Coleccion
+Las lineas simples (Administrador -> UI -> Catalog Controller -> entidades) son relaciones de colaboracion/dependencia sin cardinalidad. -->
+<mxGraphModel dx="1229" dy="733" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1300" pageHeight="1500" math="0" shadow="0">
+  <root>
+    <mxCell id="0" />
+    <mxCell id="1" parent="0" />
+    <mxCell id="CU09xKdP7-1" edge="1" parent="1" source="CU09xKdP7-A" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontSize=12;startSize=8;endSize=8;endArrow=none;endFill=0;labelBackgroundColor=none;fontColor=default;" target="CU09xKdP7-I">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="CU09xKdP7-A" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;fontStyle=0;fontSize=12;labelBackgroundColor=none;fillColor=#ffff88;strokeColor=#36393d;" value="Administrador" vertex="1">
+      <mxGeometry height="50" width="30" x="350" y="790" as="geometry" />
+    </mxCell>
+    <mxCell id="CU09xKdP7-2" edge="1" parent="1" source="CU09xKdP7-I" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontSize=12;startSize=8;endSize=8;endArrow=none;endFill=0;labelBackgroundColor=none;fontColor=default;" target="CU09xKdP7-C">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="CU09xKdP7-I" parent="1" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;labelBackgroundColor=none;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;i&gt;&amp;lt;&amp;lt;Interface&amp;gt;&amp;gt;&lt;/i&gt;&lt;br&gt;&lt;b&gt;UI Atributos Catálogo&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ nombre: String&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ hex_code: String&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ season_id: UUID&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ listar(): void&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ crear(): void&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ editar(): void&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ eliminar(): void&lt;/p&gt;" vertex="1">
+      <mxGeometry height="215" width="160" x="470" y="725" as="geometry" />
+    </mxCell>
+    <mxCell id="CU09xKdP7-C" parent="1" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;labelBackgroundColor=none;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;i&gt;&amp;lt;&amp;lt;Controller&amp;gt;&amp;gt;&lt;/i&gt;&lt;br&gt;&lt;b&gt;Catalog Controller&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ listCategories()&lt;br&gt;+ createCategory()&lt;br&gt;+ updateCategory()&lt;br&gt;+ deleteCategory()&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ listSizes()&lt;br&gt;+ createSize()&lt;br&gt;+ updateSize()&lt;br&gt;+ deleteSize()&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ listColors()&lt;br&gt;+ createColor()&lt;br&gt;+ updateColor()&lt;br&gt;+ deleteColor()&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ listSeasons()&lt;br&gt;+ createSeason()&lt;br&gt;+ updateSeason()&lt;br&gt;+ deleteSeason()&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ listCollections()&lt;br&gt;+ createCollection()&lt;br&gt;+ updateCollection()&lt;br&gt;+ deleteCollection()&lt;/p&gt;" vertex="1">
+      <mxGeometry height="410" width="185" x="655" y="600" as="geometry" />
+    </mxCell>
+    <mxCell id="CU09xKdP7-3" edge="1" parent="1" source="CU09xKdP7-C" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;labelBackgroundColor=none;fontColor=default;" target="CU09xKdP7-CAT">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="CU09xKdP7-4" edge="1" parent="1" source="CU09xKdP7-C" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;labelBackgroundColor=none;fontColor=default;" target="CU09xKdP7-SZ">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="CU09xKdP7-5" edge="1" parent="1" source="CU09xKdP7-C" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;labelBackgroundColor=none;fontColor=default;" target="CU09xKdP7-CLR">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="CU09xKdP7-6" edge="1" parent="1" source="CU09xKdP7-C" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;labelBackgroundColor=none;fontColor=default;" target="CU09xKdP7-SE">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="CU09xKdP7-7" edge="1" parent="1" source="CU09xKdP7-C" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;labelBackgroundColor=none;fontColor=default;" target="CU09xKdP7-CO">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="CU09xKdP7-CAT" parent="1" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;labelBackgroundColor=none;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;i&gt;&amp;lt;&amp;lt;Entity&amp;gt;&amp;gt;&lt;/i&gt;&lt;br&gt;&lt;b&gt;Categoría&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ id: UUID [PK]&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ name: String&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ findAll(): List&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ findById()&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ save(): void&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ remove(): void&lt;/p&gt;" vertex="1">
+      <mxGeometry height="185" width="170" x="990" y="280" as="geometry" />
+    </mxCell>
+    <mxCell id="CU09xKdP7-SZ" parent="1" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;labelBackgroundColor=none;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;i&gt;&amp;lt;&amp;lt;Entity&amp;gt;&amp;gt;&lt;/i&gt;&lt;br&gt;&lt;b&gt;Talla&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ id: UUID [PK]&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ name: String&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ findAll(): List&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ findById()&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ save(): void&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ remove(): void&lt;/p&gt;" vertex="1">
+      <mxGeometry height="165" width="170" x="990" y="490" as="geometry" />
+    </mxCell>
+    <mxCell id="CU09xKdP7-CLR" parent="1" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;labelBackgroundColor=none;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;i&gt;&amp;lt;&amp;lt;Entity&amp;gt;&amp;gt;&lt;/i&gt;&lt;br&gt;&lt;b&gt;Color&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ id: UUID [PK]&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ name: String&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ hex_code: String&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ findAll(): List&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ findById()&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ save(): void&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ remove(): void&lt;/p&gt;" vertex="1">
+      <mxGeometry height="180" width="170" x="990" y="680" as="geometry" />
+    </mxCell>
+    <mxCell id="CU09xKdP7-SE" parent="1" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;labelBackgroundColor=none;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;i&gt;&amp;lt;&amp;lt;Entity&amp;gt;&amp;gt;&lt;/i&gt;&lt;br&gt;&lt;b&gt;Temporada&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ id: UUID [PK]&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ name: String&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ findAll(): List&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ findById()&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ save(): void&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ remove(): void&lt;/p&gt;" vertex="1">
+      <mxGeometry height="165" width="170" x="990" y="895" as="geometry" />
+    </mxCell>
+    <mxCell id="CU09xKdP7-CO" parent="1" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;labelBackgroundColor=none;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;i&gt;&amp;lt;&amp;lt;Entity&amp;gt;&amp;gt;&lt;/i&gt;&lt;br&gt;&lt;b&gt;Colección&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ id: UUID [PK]&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ name: String&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ season_id: UUID [FK]&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ findAll(): List&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ findById()&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ save(): void&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ remove(): void&lt;/p&gt;" vertex="1">
+      <mxGeometry height="205" width="170" x="990" y="1120" as="geometry" />
+    </mxCell>
+    <mxCell id="CU09xKdP7-8" edge="1" parent="1" source="CU09xKdP7-CO" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;entryPerimeter=0;endArrow=diamondThin;endFill=0;endSize=12;labelBackgroundColor=none;fontColor=default;" target="CU09xKdP7-SE">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="CU09xKdP7-m1" parent="1" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;" value="0..*" vertex="1">
+      <mxGeometry height="24" width="50" x="1030" y="1098" as="geometry" />
+    </mxCell>
+    <mxCell id="CU09xKdP7-m2" parent="1" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;" value="1" vertex="1">
+      <mxGeometry height="24" width="40" x="1035" y="1052" as="geometry" />
+    </mxCell>
+  </root>
+</mxGraphModel>

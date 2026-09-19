@@ -1,0 +1,61 @@
+<!-- Cardinalidades entre clases (CU03 - Gestionar usuarios internos):
+- Sucursal 0..1 <-> 0..* Usuario
+- Rol 1 <-> 0..* Usuario
+Las lineas simples (Administrador -> UI -> User Controller -> entidades) son relaciones de colaboracion/dependencia sin cardinalidad. -->
+<mxGraphModel dx="1229" dy="733" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="1300" math="0" shadow="0">
+  <root>
+    <mxCell id="0" />
+    <mxCell id="1" parent="0" />
+    <mxCell id="CU03x-e0" edge="1" parent="1" source="CU03x-A" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontSize=12;startSize=8;endSize=8;endArrow=none;endFill=0;labelBackgroundColor=none;fontColor=default;" target="CU03x-I">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="CU03x-A" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;fontStyle=0;fontSize=12;labelBackgroundColor=none;fillColor=#ffff88;strokeColor=#36393d;" value="Administrador" vertex="1">
+      <mxGeometry height="50" width="30" x="320" y="610" as="geometry" />
+    </mxCell>
+    <mxCell id="CU03x-e00" edge="1" parent="1" source="CU03x-I" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontSize=12;startSize=8;endSize=8;endArrow=none;endFill=0;labelBackgroundColor=none;fontColor=default;" target="CU03x-C">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="CU03x-I" parent="1" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;labelBackgroundColor=none;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;i&gt;&amp;lt;&amp;lt;Interface&amp;gt;&amp;gt;&lt;/i&gt;&lt;br&gt;&lt;b&gt;UI Usuarios&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ name: String&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ email: String&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ gender: Enum&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ rol: Enum&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ branch_id: UUID&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ is_active: Boolean&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ listar(): void&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ crear(): void&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ editar(): void&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ asignarRol(): void&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ asignarSucursal(): void&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ activar/bloquear(): void&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ eliminar(): void&lt;/p&gt;" vertex="1">
+      <mxGeometry height="255" width="180" x="430" y="500" as="geometry" />
+    </mxCell>
+    <mxCell id="CU03x-C" parent="1" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;labelBackgroundColor=none;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;i&gt;&amp;lt;&amp;lt;Controller&amp;gt;&amp;gt;&lt;/i&gt;&lt;br&gt;&lt;b&gt;User Controller&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ createUser()&lt;br&gt;+ getAll()&lt;br&gt;+ getById()&lt;br&gt;+ updateUser()&lt;br&gt;+ updateUserRol()&lt;br&gt;+ updateUserBranch()&lt;br&gt;+ setActive()&lt;br&gt;+ deleteUser()&lt;/p&gt;" vertex="1">
+      <mxGeometry height="220" width="200" x="640" y="520" as="geometry" />
+    </mxCell>
+    <mxCell id="CU03x-ce1" edge="1" parent="1" source="CU03x-C" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.4;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;labelBackgroundColor=none;fontColor=default;" target="CU03x-BR">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="CU03x-ce2" edge="1" parent="1" source="CU03x-C" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;labelBackgroundColor=none;fontColor=default;" target="CU03x-US">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="CU03x-ce3" edge="1" parent="1" source="CU03x-C" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.6;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;labelBackgroundColor=none;fontColor=default;" target="CU03x-ROL">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="CU03x-BR" parent="1" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;labelBackgroundColor=none;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;i&gt;&amp;lt;&amp;lt;Entity&amp;gt;&amp;gt;&lt;/i&gt;&lt;br&gt;&lt;b&gt;Sucursal&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ id: UUID [PK]&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ name: String&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ city: String&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ is_default: Boolean&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ is_active: Boolean&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ findAll(): List&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ findById()&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ save(): void&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ remove(): void&lt;/p&gt;" vertex="1">
+      <mxGeometry height="200" width="190" x="1010" y="280" as="geometry" />
+    </mxCell>
+    <mxCell id="CU03x-US" parent="1" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;labelBackgroundColor=none;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;i&gt;&amp;lt;&amp;lt;Entity&amp;gt;&amp;gt;&lt;/i&gt;&lt;br&gt;&lt;b&gt;Usuario&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ id: UUID [PK]&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ name: String&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ email: String&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ gender: Enum&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ rol: Enum [FK]&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ branch_id: UUID [FK]&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ is_active: Boolean&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ findAll(): List&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ findById()&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ save(): void&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ remove(): void&lt;/p&gt;" vertex="1">
+      <mxGeometry height="245" width="210" x="990" y="600" as="geometry" />
+    </mxCell>
+    <mxCell id="CU03x-ROL" parent="1" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;labelBackgroundColor=none;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;i&gt;&amp;lt;&amp;lt;Enum&amp;gt;&amp;gt;&lt;/i&gt;&lt;br&gt;&lt;b&gt;Rol&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ administrador&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ cliente&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ proveedor&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ encargado&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ cajero&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ delivery&lt;/p&gt;" vertex="1">
+      <mxGeometry height="150" width="180" x="1010" y="1000" as="geometry" />
+    </mxCell>
+    <mxCell id="CU03x-e_su" edge="1" parent="1" source="CU03x-BR" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.4;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;endArrow=none;endFill=0;labelBackgroundColor=none;fontColor=default;" target="CU03x-US">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="CU03x-e_ro" edge="1" parent="1" source="CU03x-ROL" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;entryPerimeter=0;endArrow=none;endFill=0;labelBackgroundColor=none;fontColor=default;" target="CU03x-US">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="CU03x-m1a" parent="1" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;" value="0..1" vertex="1">
+      <mxGeometry height="20" width="40" x="1112" y="505" as="geometry" />
+    </mxCell>
+    <mxCell id="CU03x-m1b" parent="1" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;" value="0..*" vertex="1">
+      <mxGeometry height="20" width="45" x="1075" y="590" as="geometry" />
+    </mxCell>
+    <mxCell id="CU03x-m2a" parent="1" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;" value="1" vertex="1">
+      <mxGeometry height="20" width="30" x="1115" y="955" as="geometry" />
+    </mxCell>
+    <mxCell id="CU03x-m2b" parent="1" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;" value="0..*" vertex="1">
+      <mxGeometry height="20" width="45" x="1075" y="880" as="geometry" />
+    </mxCell>
+  </root>
+</mxGraphModel>

@@ -1,0 +1,239 @@
+<mxGraphModel dx="1823" dy="1037" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+  <root>
+    <mxCell id="0" />
+    <mxCell id="1" parent="0" />
+
+    <!-- ========== GRUPO PRINCIPAL (PAQUETE) ========== -->
+    <mxCell id="pkg-group" value="" style="group" vertex="1" connectable="0" parent="1">
+      <mxGeometry x="30" y="30" width="1100" height="740" as="geometry" />
+    </mxCell>
+
+    <!-- Carpeta del paquete -->
+    <mxCell id="pkg-folder" value="" style="shape=folder;fontStyle=1;spacingTop=10;tabWidth=480;tabHeight=33;tabPosition=left;html=1;whiteSpace=wrap;" vertex="1" parent="pkg-group">
+      <mxGeometry x="10" y="0" width="1090" height="740" as="geometry" />
+    </mxCell>
+
+    <!-- Título del paquete -->
+    <mxCell id="pkg-title" value="&lt;b&gt;pkg Gestión de Inventario y Disponibilidad&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="pkg-group">
+      <mxGeometry x="-1" y="0" width="340" height="30" as="geometry" />
+    </mxCell>
+
+    <!-- ================================================================ -->
+    <!--                    CAPA FORM (ARRIBA) - Rosa                     -->
+    <!-- ================================================================ -->
+
+    <!-- FORM 1: admin-inventory-page.component.ts -->
+    <mxCell id="form-admin-inventory" value="&lt;p style=&quot;margin:0px;margin-top:6px;text-align:center;&quot;&gt;&lt;b&gt;&amp;lt;&amp;lt;FORM&amp;gt;&amp;gt;&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:8px;font-size:12px;&quot;&gt;admin-inventory-page.component.ts&lt;/p&gt;" style="align=left;overflow=fill;html=1;dropTarget=0;whiteSpace=wrap;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="pkg-group">
+      <mxGeometry x="120" y="60" width="250" height="90" as="geometry" />
+    </mxCell>
+    <mxCell id="form-admin-inventory-icon" value="" style="shape=component;jettyWidth=8;jettyHeight=4;" vertex="1" parent="form-admin-inventory">
+      <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+        <mxPoint x="-24" y="4" as="offset" />
+      </mxGeometry>
+    </mxCell>
+
+    <!-- FORM 2: replenishment-page.component.ts -->
+    <mxCell id="form-replenishment" value="&lt;p style=&quot;margin:0px;margin-top:6px;text-align:center;&quot;&gt;&lt;b&gt;&amp;lt;&amp;lt;FORM&amp;gt;&amp;gt;&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:8px;font-size:12px;&quot;&gt;replenishment-page.component.ts&lt;/p&gt;" style="align=left;overflow=fill;html=1;dropTarget=0;whiteSpace=wrap;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="pkg-group">
+      <mxGeometry x="430" y="60" width="250" height="90" as="geometry" />
+    </mxCell>
+    <mxCell id="form-replenishment-icon" value="" style="shape=component;jettyWidth=8;jettyHeight=4;" vertex="1" parent="form-replenishment">
+      <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+        <mxPoint x="-24" y="4" as="offset" />
+      </mxGeometry>
+    </mxCell>
+
+    <!-- FORM 3: admin-branch-page.component.ts -->
+    <mxCell id="form-admin-branch" value="&lt;p style=&quot;margin:0px;margin-top:6px;text-align:center;&quot;&gt;&lt;b&gt;&amp;lt;&amp;lt;FORM&amp;gt;&amp;gt;&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:8px;font-size:12px;&quot;&gt;admin-branch-page.component.ts&lt;/p&gt;" style="align=left;overflow=fill;html=1;dropTarget=0;whiteSpace=wrap;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="pkg-group">
+      <mxGeometry x="740" y="60" width="250" height="90" as="geometry" />
+    </mxCell>
+    <mxCell id="form-admin-branch-icon" value="" style="shape=component;jettyWidth=8;jettyHeight=4;" vertex="1" parent="form-admin-branch">
+      <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+        <mxPoint x="-24" y="4" as="offset" />
+      </mxGeometry>
+    </mxCell>
+
+    <!-- ================================================================ -->
+    <!--         INTERFACES FORM → CLASS (provides/requires)              -->
+    <!-- ================================================================ -->
+
+    <!-- admin-inventory-page → halfCircle (requires) -->
+    <mxCell id="edge-adminv-req" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;endArrow=halfCircle;endFill=0;" edge="1" source="form-admin-inventory" parent="pkg-group">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="245" y="270" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+
+    <!-- inventory-api.service provides → admin-inventory-page -->
+    <mxCell id="edge-invserv-prov" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;endArrow=circle;endFill=0;" edge="1" source="class-inventory" parent="pkg-group">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="245" y="270" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+
+    <!-- replenishment-page → halfCircle (requires) -->
+    <mxCell id="edge-repl-req" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;endArrow=halfCircle;endFill=0;" edge="1" source="form-replenishment" parent="pkg-group">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="555" y="270" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+
+    <!-- replenishment-api.service provides → replenishment-page -->
+    <mxCell id="edge-replserv-prov" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;endArrow=circle;endFill=0;" edge="1" source="class-replenishment" parent="pkg-group">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="555" y="270" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+
+    <!-- admin-branch-page → halfCircle (requires) -->
+    <mxCell id="edge-admbranch-req" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;endArrow=halfCircle;endFill=0;" edge="1" source="form-admin-branch" parent="pkg-group">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="865" y="270" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+
+    <!-- admin-branch.service provides → admin-branch-page -->
+    <mxCell id="edge-branchserv-prov" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;endArrow=circle;endFill=0;" edge="1" source="class-branch" parent="pkg-group">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="865" y="270" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+
+    <!-- ================================================================ -->
+    <!--                   CAPA CLASS (MEDIO) - Naranja                   -->
+    <!-- ================================================================ -->
+
+    <!-- CLASS 1: inventory-api.service.ts -->
+    <mxCell id="class-inventory" value="&lt;p style=&quot;margin:0px;margin-top:6px;text-align:center;&quot;&gt;&lt;b&gt;&amp;lt;&amp;lt;CLASS&amp;gt;&amp;gt;&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:8px;font-size:13px;&quot;&gt;inventory-api.service.ts&lt;/p&gt;" style="align=left;overflow=fill;html=1;dropTarget=0;whiteSpace=wrap;fillColor=#fad7ac;strokeColor=#b46504;" vertex="1" parent="pkg-group">
+      <mxGeometry x="120" y="310" width="250" height="90" as="geometry" />
+    </mxCell>
+    <mxCell id="class-inventory-icon" value="" style="shape=component;jettyWidth=8;jettyHeight=4;" vertex="1" parent="class-inventory">
+      <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+        <mxPoint x="-24" y="4" as="offset" />
+      </mxGeometry>
+    </mxCell>
+
+    <!-- CLASS 2: replenishment-api.service.ts -->
+    <mxCell id="class-replenishment" value="&lt;p style=&quot;margin:0px;margin-top:6px;text-align:center;&quot;&gt;&lt;b&gt;&amp;lt;&amp;lt;CLASS&amp;gt;&amp;gt;&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:8px;font-size:13px;&quot;&gt;replenishment-api.service.ts&lt;/p&gt;" style="align=left;overflow=fill;html=1;dropTarget=0;whiteSpace=wrap;fillColor=#fad7ac;strokeColor=#b46504;" vertex="1" parent="pkg-group">
+      <mxGeometry x="430" y="310" width="250" height="90" as="geometry" />
+    </mxCell>
+    <mxCell id="class-replenishment-icon" value="" style="shape=component;jettyWidth=8;jettyHeight=4;" vertex="1" parent="class-replenishment">
+      <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+        <mxPoint x="-24" y="4" as="offset" />
+      </mxGeometry>
+    </mxCell>
+
+    <!-- CLASS 3: admin-branch.service.ts -->
+    <mxCell id="class-branch" value="&lt;p style=&quot;margin:0px;margin-top:6px;text-align:center;&quot;&gt;&lt;b&gt;&amp;lt;&amp;lt;CLASS&amp;gt;&amp;gt;&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:8px;font-size:13px;&quot;&gt;admin-branch.service.ts&lt;/p&gt;" style="align=left;overflow=fill;html=1;dropTarget=0;whiteSpace=wrap;fillColor=#fad7ac;strokeColor=#b46504;" vertex="1" parent="pkg-group">
+      <mxGeometry x="740" y="310" width="250" height="90" as="geometry" />
+    </mxCell>
+    <mxCell id="class-branch-icon" value="" style="shape=component;jettyWidth=8;jettyHeight=4;" vertex="1" parent="class-branch">
+      <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+        <mxPoint x="-24" y="4" as="offset" />
+      </mxGeometry>
+    </mxCell>
+
+    <!-- ================================================================ -->
+    <!--              CAPA TABLE (ABAJO) - Azul                           -->
+    <!-- ================================================================ -->
+
+    <!-- TABLE: inventory -->
+    <mxCell id="table-inventory" value="&lt;p style=&quot;margin:6px 0 0;text-align:center;font-size:13px;&quot;&gt;&amp;lt;&amp;lt;Table&amp;gt;&amp;gt;&lt;/p&gt;&lt;hr style=&quot;border-style:solid;font-size:13px;&quot;&gt;&lt;p style=&quot;margin:0 0 0 8px;font-size:13px;&quot;&gt;inventory&lt;/p&gt;" style="align=left;overflow=fill;html=1;dropTarget=0;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=13;" vertex="1" parent="pkg-group">
+      <mxGeometry x="150" y="580" width="140" height="60" as="geometry" />
+    </mxCell>
+    <mxCell id="table-inventory-icon" value="" style="shape=component;jettyWidth=8;jettyHeight=4;" vertex="1" parent="table-inventory">
+      <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+        <mxPoint x="-24" y="4" as="offset" />
+      </mxGeometry>
+    </mxCell>
+
+    <!-- TABLE: inventory_movements -->
+    <mxCell id="table-movements" value="&lt;p style=&quot;margin:6px 0 0;text-align:center;font-size:13px;&quot;&gt;&amp;lt;&amp;lt;Table&amp;gt;&amp;gt;&lt;/p&gt;&lt;hr style=&quot;border-style:solid;font-size:13px;&quot;&gt;&lt;p style=&quot;margin:0 0 0 8px;font-size:12px;&quot;&gt;inventory_movements&lt;/p&gt;" style="align=left;overflow=fill;html=1;dropTarget=0;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=13;" vertex="1" parent="pkg-group">
+      <mxGeometry x="320" y="580" width="170" height="60" as="geometry" />
+    </mxCell>
+    <mxCell id="table-movements-icon" value="" style="shape=component;jettyWidth=8;jettyHeight=4;" vertex="1" parent="table-movements">
+      <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+        <mxPoint x="-24" y="4" as="offset" />
+      </mxGeometry>
+    </mxCell>
+
+    <!-- TABLE: product_variants (referenciada por inventory) -->
+    <mxCell id="table-variants" value="&lt;p style=&quot;margin:6px 0 0;text-align:center;font-size:13px;&quot;&gt;&amp;lt;&amp;lt;Table&amp;gt;&amp;gt;&lt;/p&gt;&lt;hr style=&quot;border-style:solid;font-size:13px;&quot;&gt;&lt;p style=&quot;margin:0 0 0 8px;font-size:13px;&quot;&gt;product_variants&lt;/p&gt;" style="align=left;overflow=fill;html=1;dropTarget=0;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=13;" vertex="1" parent="pkg-group">
+      <mxGeometry x="530" y="580" width="160" height="60" as="geometry" />
+    </mxCell>
+    <mxCell id="table-variants-icon" value="" style="shape=component;jettyWidth=8;jettyHeight=4;" vertex="1" parent="table-variants">
+      <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+        <mxPoint x="-24" y="4" as="offset" />
+      </mxGeometry>
+    </mxCell>
+
+    <!-- TABLE: branches -->
+    <mxCell id="table-branches" value="&lt;p style=&quot;margin:6px 0 0;text-align:center;font-size:13px;&quot;&gt;&amp;lt;&amp;lt;Table&amp;gt;&amp;gt;&lt;/p&gt;&lt;hr style=&quot;border-style:solid;font-size:13px;&quot;&gt;&lt;p style=&quot;margin:0 0 0 8px;font-size:13px;&quot;&gt;branches&lt;/p&gt;" style="align=left;overflow=fill;html=1;dropTarget=0;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=13;" vertex="1" parent="pkg-group">
+      <mxGeometry x="730" y="580" width="140" height="60" as="geometry" />
+    </mxCell>
+    <mxCell id="table-branches-icon" value="" style="shape=component;jettyWidth=8;jettyHeight=4;" vertex="1" parent="table-branches">
+      <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+        <mxPoint x="-24" y="4" as="offset" />
+      </mxGeometry>
+    </mxCell>
+
+    <!-- TABLE: replenishment_requests -->
+    <mxCell id="table-replrequests" value="&lt;p style=&quot;margin:6px 0 0;text-align:center;font-size:13px;&quot;&gt;&amp;lt;&amp;lt;Table&amp;gt;&amp;gt;&lt;/p&gt;&lt;hr style=&quot;border-style:solid;font-size:13px;&quot;&gt;&lt;p style=&quot;margin:0 0 0 8px;font-size:12px;&quot;&gt;replenishment_requests&lt;/p&gt;" style="align=left;overflow=fill;html=1;dropTarget=0;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=13;" vertex="1" parent="pkg-group">
+      <mxGeometry x="450" y="670" width="190" height="60" as="geometry" />
+    </mxCell>
+    <mxCell id="table-replrequests-icon" value="" style="shape=component;jettyWidth=8;jettyHeight=4;" vertex="1" parent="table-replrequests">
+      <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+        <mxPoint x="-24" y="4" as="offset" />
+      </mxGeometry>
+    </mxCell>
+
+    <!-- TABLE: replenishment_request_items -->
+    <mxCell id="table-replitems" value="&lt;p style=&quot;margin:6px 0 0;text-align:center;font-size:13px;&quot;&gt;&amp;lt;&amp;lt;Table&amp;gt;&amp;gt;&lt;/p&gt;&lt;hr style=&quot;border-style:solid;font-size:13px;&quot;&gt;&lt;p style=&quot;margin:0 0 0 8px;font-size:12px;&quot;&gt;replenishment_request_items&lt;/p&gt;" style="align=left;overflow=fill;html=1;dropTarget=0;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=13;" vertex="1" parent="pkg-group">
+      <mxGeometry x="670" y="670" width="210" height="60" as="geometry" />
+    </mxCell>
+    <mxCell id="table-replitems-icon" value="" style="shape=component;jettyWidth=8;jettyHeight=4;" vertex="1" parent="table-replitems">
+      <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+        <mxPoint x="-24" y="4" as="offset" />
+      </mxGeometry>
+    </mxCell>
+
+    <!-- ================================================================ -->
+    <!--          RELACIONES CLASS → TABLE (dashed / «use»)               -->
+    <!-- ================================================================ -->
+
+    <!-- inventory-api.service → inventory -->
+    <mxCell id="edge-inv-inventory" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;dashed=1;endArrow=open;endFill=0;" edge="1" source="class-inventory" target="table-inventory" parent="pkg-group">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+
+    <!-- inventory-api.service → inventory_movements -->
+    <mxCell id="edge-inv-movements" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.4;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;dashed=1;endArrow=open;endFill=0;" edge="1" source="class-inventory" target="table-movements" parent="pkg-group">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+
+    <!-- inventory-api.service → product_variants -->
+    <mxCell id="edge-inv-variants" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.6;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;dashed=1;endArrow=open;endFill=0;" edge="1" source="class-inventory" target="table-variants" parent="pkg-group">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+
+    <!-- inventory-api.service → branches (consulta por sucursal) -->
+    <mxCell id="edge-inv-branches" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.8;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;dashed=1;endArrow=open;endFill=0;" edge="1" source="class-inventory" target="table-branches" parent="pkg-group">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+
+    <!-- replenishment-api.service → replenishment_requests -->
+    <mxCell id="edge-repl-requests" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.35;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;dashed=1;endArrow=open;endFill=0;" edge="1" source="class-replenishment" target="table-replrequests" parent="pkg-group">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+
+    <!-- replenishment-api.service → replenishment_request_items -->
+    <mxCell id="edge-repl-items" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.7;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;dashed=1;endArrow=open;endFill=0;" edge="1" source="class-replenishment" target="table-replitems" parent="pkg-group">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+
+    <!-- admin-branch.service → branches -->
+    <mxCell id="edge-branch-branches" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;dashed=1;endArrow=open;endFill=0;" edge="1" source="class-branch" target="table-branches" parent="pkg-group">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+
+  </root>
+</mxGraphModel>

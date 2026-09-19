@@ -1,0 +1,60 @@
+@startuml CU20_Diagrama_de_Tiempo
+title Diagrama de Tiempo UML 2.5 - CU20: Generar reportes y dashboards
+
+header Sistema FashionStore - Ciclo 3 (Experiencia Inteligente y Analítica)
+footer Diagrama de Tiempo según especificación UML 2.5+
+
+skinparam LineColor Blue
+skinparam FontSize 16
+skinparam timingDiagram {
+    LineColor Blue
+    FontSize 16
+}
+
+robust "CU20 Acciones Administrador / UI" as C20
+robust "CU20 Servidor y Motor Reportes DB" as ST20
+
+@0
+C20 is Descanso
+ST20 is SinConsulta
+
+@5
+C20 is SolicitarDashboardYKPIs
+ST20 is VerificandoPermisosYSucursal
+
+@15
+C20 is VisualizarTarjetasYGraficasUnovis
+ST20 is CalculandoKPIsYVentasPeriodo
+
+@25
+C20 is SeleccionarTipoReporteYFiltros
+ST20 is FiltrosCapturados
+
+@35
+C20 is EjecutarGeneracionReporte
+ST20 is ConsultandoHistoricoSalesInventoryMovements
+
+@45
+C20 is EsperandoGeneracionArchivo
+ST20 is GenerandoEstructuraTabularYPDF
+
+@55
+C20 is VisualizarGraficasYExportarPDFCSV
+ST20 is DashboardYReporteEnviado
+
+@65
+C20 is Descanso
+ST20 is Descanso
+
+' Sincronización entre líneas paralelas
+@5 : C20 -> ST20 : getDashboard()
+@35 : C20 -> ST20 : getSalesReport / getInventoryReport()
+@55 : ST20 -> C20 : entregarDatosYArchivoExportado()
+
+' Restricciones de tiempo (SLA)
+@5 <-> @15 : {SLA Carga Dashboard <= 300ms}
+@35 <-> @55 : {SLA Generacion Reporte PDF/CSV <= 500ms}
+
+highlight @35 to @55 #LightSkyBlue : Procesamiento y Agregación de Métricas Tabulares
+
+@enduml

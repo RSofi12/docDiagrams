@@ -1,0 +1,316 @@
+<mxGraphModel dx="1823" dy="1037" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+  <root>
+    <mxCell id="0" />
+    <mxCell id="1" parent="0" />
+
+    <!-- ========== GRUPO PRINCIPAL (PAQUETE) ========== -->
+    <mxCell id="pkg-group" value="" style="group" vertex="1" connectable="0" parent="1">
+      <mxGeometry x="30" y="30" width="1100" height="740" as="geometry" />
+    </mxCell>
+
+    <!-- Carpeta del paquete -->
+    <mxCell id="pkg-folder" value="" style="shape=folder;fontStyle=1;spacingTop=10;tabWidth=420;tabHeight=33;tabPosition=left;html=1;whiteSpace=wrap;" vertex="1" parent="pkg-group">
+      <mxGeometry x="10" y="0" width="1090" height="740" as="geometry" />
+    </mxCell>
+
+    <!-- Título del paquete -->
+    <mxCell id="pkg-title" value="&lt;b&gt;pkg Gestión de Usuarios y Acceso&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="pkg-group">
+      <mxGeometry x="-1" y="0" width="280" height="30" as="geometry" />
+    </mxCell>
+
+    <!-- ================================================================ -->
+    <!--                    CAPA FORM (ARRIBA) - Rosa                     -->
+    <!-- ================================================================ -->
+
+    <!-- FORM 1: login-page.component.ts -->
+    <mxCell id="form-login" value="&lt;p style=&quot;margin:0px;margin-top:6px;text-align:center;&quot;&gt;&lt;b&gt;&amp;lt;&amp;lt;FORM&amp;gt;&amp;gt;&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:8px;font-size:13px;&quot;&gt;login-page.component.ts&lt;/p&gt;" style="align=left;overflow=fill;html=1;dropTarget=0;whiteSpace=wrap;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="pkg-group">
+      <mxGeometry x="20" y="60" width="165" height="90" as="geometry" />
+    </mxCell>
+    <mxCell id="form-login-icon" value="" style="shape=component;jettyWidth=8;jettyHeight=4;" vertex="1" parent="form-login">
+      <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+        <mxPoint x="-24" y="4" as="offset" />
+      </mxGeometry>
+    </mxCell>
+
+    <!-- FORM 2: register-page.component.ts -->
+    <mxCell id="form-register" value="&lt;p style=&quot;margin:0px;margin-top:6px;text-align:center;&quot;&gt;&lt;b&gt;&amp;lt;&amp;lt;FORM&amp;gt;&amp;gt;&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:8px;font-size:13px;&quot;&gt;register-page.component.ts&lt;/p&gt;" style="align=left;overflow=fill;html=1;dropTarget=0;whiteSpace=wrap;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="pkg-group">
+      <mxGeometry x="197" y="60" width="165" height="90" as="geometry" />
+    </mxCell>
+    <mxCell id="form-register-icon" value="" style="shape=component;jettyWidth=8;jettyHeight=4;" vertex="1" parent="form-register">
+      <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+        <mxPoint x="-24" y="4" as="offset" />
+      </mxGeometry>
+    </mxCell>
+
+    <!-- FORM 3: profile-page.component.ts -->
+    <mxCell id="form-profile" value="&lt;p style=&quot;margin:0px;margin-top:6px;text-align:center;&quot;&gt;&lt;b&gt;&amp;lt;&amp;lt;FORM&amp;gt;&amp;gt;&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:8px;font-size:13px;&quot;&gt;profile-page.component.ts&lt;/p&gt;" style="align=left;overflow=fill;html=1;dropTarget=0;whiteSpace=wrap;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="pkg-group">
+      <mxGeometry x="374" y="60" width="165" height="90" as="geometry" />
+    </mxCell>
+    <mxCell id="form-profile-icon" value="" style="shape=component;jettyWidth=8;jettyHeight=4;" vertex="1" parent="form-profile">
+      <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+        <mxPoint x="-24" y="4" as="offset" />
+      </mxGeometry>
+    </mxCell>
+
+    <!-- FORM 4: admin-user-page.component.ts -->
+    <mxCell id="form-admin-user" value="&lt;p style=&quot;margin:0px;margin-top:6px;text-align:center;&quot;&gt;&lt;b&gt;&amp;lt;&amp;lt;FORM&amp;gt;&amp;gt;&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:8px;font-size:12px;&quot;&gt;admin-user-page.component.ts&lt;/p&gt;" style="align=left;overflow=fill;html=1;dropTarget=0;whiteSpace=wrap;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="pkg-group">
+      <mxGeometry x="551" y="60" width="165" height="90" as="geometry" />
+    </mxCell>
+    <mxCell id="form-admin-user-icon" value="" style="shape=component;jettyWidth=8;jettyHeight=4;" vertex="1" parent="form-admin-user">
+      <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+        <mxPoint x="-24" y="4" as="offset" />
+      </mxGeometry>
+    </mxCell>
+
+    <!-- FORM 5: admin-branch-page.component.ts (CU04) -->
+    <mxCell id="form-admin-branch" value="&lt;p style=&quot;margin:0px;margin-top:6px;text-align:center;&quot;&gt;&lt;b&gt;&amp;lt;&amp;lt;FORM&amp;gt;&amp;gt;&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:8px;font-size:12px;&quot;&gt;admin-branch-page.component.ts&lt;/p&gt;" style="align=left;overflow=fill;html=1;dropTarget=0;whiteSpace=wrap;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="pkg-group">
+      <mxGeometry x="728" y="60" width="165" height="90" as="geometry" />
+    </mxCell>
+    <mxCell id="form-admin-branch-icon" value="" style="shape=component;jettyWidth=8;jettyHeight=4;" vertex="1" parent="form-admin-branch">
+      <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+        <mxPoint x="-24" y="4" as="offset" />
+      </mxGeometry>
+    </mxCell>
+
+    <!-- FORM 6: admin-provider-page.component.ts (CU05) -->
+    <mxCell id="form-admin-provider" value="&lt;p style=&quot;margin:0px;margin-top:6px;text-align:center;&quot;&gt;&lt;b&gt;&amp;lt;&amp;lt;FORM&amp;gt;&amp;gt;&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:8px;font-size:12px;&quot;&gt;admin-provider-page.component.ts&lt;/p&gt;" style="align=left;overflow=fill;html=1;dropTarget=0;whiteSpace=wrap;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="pkg-group">
+      <mxGeometry x="905" y="60" width="165" height="90" as="geometry" />
+    </mxCell>
+    <mxCell id="form-admin-provider-icon" value="" style="shape=component;jettyWidth=8;jettyHeight=4;" vertex="1" parent="form-admin-provider">
+      <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+        <mxPoint x="-24" y="4" as="offset" />
+      </mxGeometry>
+    </mxCell>
+
+    <!-- ================================================================ -->
+    <!--         INTERFACES FORM → CLASS (provides/requires)              -->
+    <!-- ================================================================ -->
+
+    <!-- login-page → halfCircle (requires) -->
+    <mxCell id="edge-login-req" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;endArrow=halfCircle;endFill=0;" edge="1" source="form-login" parent="pkg-group">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="103" y="260" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+
+    <!-- session.service provides → login-page -->
+    <mxCell id="edge-session-prov-login" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;endArrow=circle;endFill=0;" edge="1" source="class-session" parent="pkg-group">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="103" y="260" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+
+    <!-- register-page → halfCircle (requires) -->
+    <mxCell id="edge-register-req" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;endArrow=halfCircle;endFill=0;" edge="1" source="form-register" parent="pkg-group">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="280" y="260" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+
+    <!-- auth-api.service provides → register-page -->
+    <mxCell id="edge-auth-prov-register" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;endArrow=circle;endFill=0;" edge="1" source="class-auth" parent="pkg-group">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="280" y="260" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+
+    <!-- profile-page → halfCircle (requires) -->
+    <mxCell id="edge-profile-req" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;endArrow=halfCircle;endFill=0;" edge="1" source="form-profile" parent="pkg-group">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="457" y="260" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+
+    <!-- user-api.service provides → profile-page -->
+    <mxCell id="edge-userapi-prov-profile" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;endArrow=circle;endFill=0;" edge="1" source="class-userapi" parent="pkg-group">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="457" y="260" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+
+    <!-- admin-user-page → halfCircle (requires) -->
+    <mxCell id="edge-adminuser-req" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;endArrow=halfCircle;endFill=0;" edge="1" source="form-admin-user" parent="pkg-group">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="634" y="260" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+
+    <!-- admin-user.service provides → admin-user-page -->
+    <mxCell id="edge-adminserv-prov-admin" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;endArrow=circle;endFill=0;" edge="1" source="class-adminuser" parent="pkg-group">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="634" y="260" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+
+    <!-- admin-branch-page → halfCircle (requires) -->
+    <mxCell id="edge-adminbranch-req" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;endArrow=halfCircle;endFill=0;" edge="1" source="form-admin-branch" parent="pkg-group">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="810" y="260" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+
+    <!-- admin-branch.service provides → admin-branch-page -->
+    <mxCell id="edge-adminbranch-prov" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;endArrow=circle;endFill=0;" edge="1" source="class-adminbranch" parent="pkg-group">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="810" y="260" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+
+    <!-- admin-provider-page → halfCircle (requires) -->
+    <mxCell id="edge-adminprovider-req" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;endArrow=halfCircle;endFill=0;" edge="1" source="form-admin-provider" parent="pkg-group">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="988" y="260" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+
+    <!-- admin-provider.service provides → admin-provider-page -->
+    <mxCell id="edge-adminprovider-prov" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;endArrow=circle;endFill=0;" edge="1" source="class-adminprovider" parent="pkg-group">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="988" y="260" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+
+    <!-- ================================================================ -->
+    <!--                   CAPA CLASS (MEDIO) - Naranja                   -->
+    <!-- ================================================================ -->
+
+    <!-- CLASS 1: session.service.ts -->
+    <mxCell id="class-session" value="&lt;p style=&quot;margin:0px;margin-top:6px;text-align:center;&quot;&gt;&lt;b&gt;&amp;lt;&amp;lt;CLASS&amp;gt;&amp;gt;&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:8px;font-size:13px;&quot;&gt;session.service.ts&lt;/p&gt;" style="align=left;overflow=fill;html=1;dropTarget=0;whiteSpace=wrap;fillColor=#fad7ac;strokeColor=#b46504;" vertex="1" parent="pkg-group">
+      <mxGeometry x="20" y="300" width="165" height="90" as="geometry" />
+    </mxCell>
+    <mxCell id="class-session-icon" value="" style="shape=component;jettyWidth=8;jettyHeight=4;" vertex="1" parent="class-session">
+      <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+        <mxPoint x="-24" y="4" as="offset" />
+      </mxGeometry>
+    </mxCell>
+
+    <!-- CLASS 2: auth-api.service.ts -->
+    <mxCell id="class-auth" value="&lt;p style=&quot;margin:0px;margin-top:6px;text-align:center;&quot;&gt;&lt;b&gt;&amp;lt;&amp;lt;CLASS&amp;gt;&amp;gt;&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:8px;font-size:13px;&quot;&gt;auth-api.service.ts&lt;/p&gt;" style="align=left;overflow=fill;html=1;dropTarget=0;whiteSpace=wrap;fillColor=#fad7ac;strokeColor=#b46504;" vertex="1" parent="pkg-group">
+      <mxGeometry x="197" y="300" width="165" height="90" as="geometry" />
+    </mxCell>
+    <mxCell id="class-auth-icon" value="" style="shape=component;jettyWidth=8;jettyHeight=4;" vertex="1" parent="class-auth">
+      <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+        <mxPoint x="-24" y="4" as="offset" />
+      </mxGeometry>
+    </mxCell>
+
+    <!-- CLASS 3: user-api.service.ts -->
+    <mxCell id="class-userapi" value="&lt;p style=&quot;margin:0px;margin-top:6px;text-align:center;&quot;&gt;&lt;b&gt;&amp;lt;&amp;lt;CLASS&amp;gt;&amp;gt;&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:8px;font-size:13px;&quot;&gt;user-api.service.ts&lt;/p&gt;" style="align=left;overflow=fill;html=1;dropTarget=0;whiteSpace=wrap;fillColor=#fad7ac;strokeColor=#b46504;" vertex="1" parent="pkg-group">
+      <mxGeometry x="374" y="300" width="165" height="90" as="geometry" />
+    </mxCell>
+    <mxCell id="class-userapi-icon" value="" style="shape=component;jettyWidth=8;jettyHeight=4;" vertex="1" parent="class-userapi">
+      <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+        <mxPoint x="-24" y="4" as="offset" />
+      </mxGeometry>
+    </mxCell>
+
+    <!-- CLASS 4: admin-user.service.ts -->
+    <mxCell id="class-adminuser" value="&lt;p style=&quot;margin:0px;margin-top:6px;text-align:center;&quot;&gt;&lt;b&gt;&amp;lt;&amp;lt;CLASS&amp;gt;&amp;gt;&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:8px;font-size:13px;&quot;&gt;admin-user.service.ts&lt;/p&gt;" style="align=left;overflow=fill;html=1;dropTarget=0;whiteSpace=wrap;fillColor=#fad7ac;strokeColor=#b46504;" vertex="1" parent="pkg-group">
+      <mxGeometry x="551" y="300" width="165" height="90" as="geometry" />
+    </mxCell>
+    <mxCell id="class-adminuser-icon" value="" style="shape=component;jettyWidth=8;jettyHeight=4;" vertex="1" parent="class-adminuser">
+      <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+        <mxPoint x="-24" y="4" as="offset" />
+      </mxGeometry>
+    </mxCell>
+
+    <!-- CLASS 5: admin-branch.service.ts -->
+    <mxCell id="class-adminbranch" value="&lt;p style=&quot;margin:0px;margin-top:6px;text-align:center;&quot;&gt;&lt;b&gt;&amp;lt;&amp;lt;CLASS&amp;gt;&amp;gt;&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:8px;font-size:13px;&quot;&gt;admin-branch.service.ts&lt;/p&gt;" style="align=left;overflow=fill;html=1;dropTarget=0;whiteSpace=wrap;fillColor=#fad7ac;strokeColor=#b46504;" vertex="1" parent="pkg-group">
+      <mxGeometry x="728" y="300" width="165" height="90" as="geometry" />
+    </mxCell>
+    <mxCell id="class-adminbranch-icon" value="" style="shape=component;jettyWidth=8;jettyHeight=4;" vertex="1" parent="class-adminbranch">
+      <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+        <mxPoint x="-24" y="4" as="offset" />
+      </mxGeometry>
+    </mxCell>
+
+    <!-- CLASS 6: admin-provider.service.ts -->
+    <mxCell id="class-adminprovider" value="&lt;p style=&quot;margin:0px;margin-top:6px;text-align:center;&quot;&gt;&lt;b&gt;&amp;lt;&amp;lt;CLASS&amp;gt;&amp;gt;&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:8px;font-size:13px;&quot;&gt;admin-provider.service.ts&lt;/p&gt;" style="align=left;overflow=fill;html=1;dropTarget=0;whiteSpace=wrap;fillColor=#fad7ac;strokeColor=#b46504;" vertex="1" parent="pkg-group">
+      <mxGeometry x="905" y="300" width="165" height="90" as="geometry" />
+    </mxCell>
+    <mxCell id="class-adminprovider-icon" value="" style="shape=component;jettyWidth=8;jettyHeight=4;" vertex="1" parent="class-adminprovider">
+      <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+        <mxPoint x="-24" y="4" as="offset" />
+      </mxGeometry>
+    </mxCell>
+
+    <!-- ================================================================ -->
+    <!--              CAPA TABLE (ABAJO) - Azul                           -->
+    <!-- ================================================================ -->
+
+    <!-- TABLE: users -->
+    <mxCell id="table-users" value="&lt;p style=&quot;margin:6px 0 0;text-align:center;font-size:13px;&quot;&gt;&amp;lt;&amp;lt;Table&amp;gt;&amp;gt;&lt;/p&gt;&lt;hr style=&quot;border-style:solid;font-size:13px;&quot;&gt;&lt;p style=&quot;margin:0 0 0 8px;font-size:13px;&quot;&gt;users&lt;/p&gt;" style="align=left;overflow=fill;html=1;dropTarget=0;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=13;" vertex="1" parent="pkg-group">
+      <mxGeometry x="180" y="620" width="150" height="60" as="geometry" />
+    </mxCell>
+    <mxCell id="table-users-icon" value="" style="shape=component;jettyWidth=8;jettyHeight=4;" vertex="1" parent="table-users">
+      <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+        <mxPoint x="-24" y="4" as="offset" />
+      </mxGeometry>
+    </mxCell>
+
+    <!-- TABLE: branches -->
+    <mxCell id="table-branches" value="&lt;p style=&quot;margin:6px 0 0;text-align:center;font-size:13px;&quot;&gt;&amp;lt;&amp;lt;Table&amp;gt;&amp;gt;&lt;/p&gt;&lt;hr style=&quot;border-style:solid;font-size:13px;&quot;&gt;&lt;p style=&quot;margin:0 0 0 8px;font-size:13px;&quot;&gt;branches&lt;/p&gt;" style="align=left;overflow=fill;html=1;dropTarget=0;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=13;" vertex="1" parent="pkg-group">
+      <mxGeometry x="470" y="620" width="160" height="60" as="geometry" />
+    </mxCell>
+    <mxCell id="table-branches-icon" value="" style="shape=component;jettyWidth=8;jettyHeight=4;" vertex="1" parent="table-branches">
+      <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+        <mxPoint x="-24" y="4" as="offset" />
+      </mxGeometry>
+    </mxCell>
+
+    <!-- TABLE: providers -->
+    <mxCell id="table-providers" value="&lt;p style=&quot;margin:6px 0 0;text-align:center;font-size:13px;&quot;&gt;&amp;lt;&amp;lt;Table&amp;gt;&amp;gt;&lt;/p&gt;&lt;hr style=&quot;border-style:solid;font-size:13px;&quot;&gt;&lt;p style=&quot;margin:0 0 0 8px;font-size:13px;&quot;&gt;providers&lt;/p&gt;" style="align=left;overflow=fill;html=1;dropTarget=0;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=13;" vertex="1" parent="pkg-group">
+      <mxGeometry x="790" y="620" width="170" height="60" as="geometry" />
+    </mxCell>
+    <mxCell id="table-providers-icon" value="" style="shape=component;jettyWidth=8;jettyHeight=4;" vertex="1" parent="table-providers">
+      <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+        <mxPoint x="-24" y="4" as="offset" />
+      </mxGeometry>
+    </mxCell>
+
+    <!-- ================================================================ -->
+    <!--          RELACIONES CLASS → TABLE (dashed / «use»)               -->
+    <!-- ================================================================ -->
+
+    <!-- session.service → users (dashed) -->
+    <mxCell id="edge-session-users" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0;entryDx=0;entryDy=0;dashed=1;endArrow=open;endFill=0;" edge="1" source="class-session" target="table-users" parent="pkg-group">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+
+    <!-- auth-api.service → users (dashed) -->
+    <mxCell id="edge-auth-users" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;dashed=1;endArrow=open;endFill=0;" edge="1" source="class-auth" target="table-users" parent="pkg-group">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+
+    <!-- user-api.service → users (dashed) -->
+    <mxCell id="edge-userapi-users" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;dashed=1;endArrow=open;endFill=0;" edge="1" source="class-userapi" target="table-users" parent="pkg-group">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+
+    <!-- admin-user.service → users (dashed) -->
+    <mxCell id="edge-adminuser-users" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0;entryDx=0;entryDy=0;dashed=1;endArrow=open;endFill=0;" edge="1" source="class-adminuser" target="table-users" parent="pkg-group">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+
+    <!-- admin-user.service → branches (dashed) -->
+    <mxCell id="edge-adminuser-branches" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;dashed=1;endArrow=open;endFill=0;" edge="1" source="class-adminuser" target="table-branches" parent="pkg-group">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+
+    <!-- user-api.service → branches (dashed) -->
+    <mxCell id="edge-userapi-branches" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0;entryDx=0;entryDy=0;dashed=1;endArrow=open;endFill=0;" edge="1" source="class-userapi" target="table-branches" parent="pkg-group">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+
+    <!-- admin-branch.service → branches (dashed) -->
+    <mxCell id="edge-adminbranch-branches" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0;entryDx=0;entryDy=0;dashed=1;endArrow=open;endFill=0;" edge="1" source="class-adminbranch" target="table-branches" parent="pkg-group">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+
+    <!-- admin-provider.service → providers (dashed) -->
+    <mxCell id="edge-adminprovider-providers" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;dashed=1;endArrow=open;endFill=0;" edge="1" source="class-adminprovider" target="table-providers" parent="pkg-group">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+
+  </root>
+</mxGraphModel>

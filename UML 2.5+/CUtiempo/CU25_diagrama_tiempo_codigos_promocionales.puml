@@ -1,0 +1,59 @@
+@startuml CU25_Diagrama_de_Tiempo
+title Diagrama de Tiempo UML 2.5 - CU25: Gestionar códigos promocionales
+
+header Sistema FashionStore - Ciclo 3 (Gestión de Promociones y Cupones)
+footer Diagrama de Tiempo según especificación UML 2.5+
+
+skinparam LineColor Blue
+skinparam FontSize 16
+skinparam timingDiagram {
+    LineColor Blue
+    FontSize 16
+}
+
+robust "CU25 Administrador / Encargado" as C25
+robust "CU25 Servicio Promociones y Base de Datos" as ST25
+
+@0
+C25 is Descanso
+ST25 is SinOperacion
+
+@5
+C25 is SolicitarGestionPromociones
+ST25 is CargandoCuponesPorSucursal
+
+@15
+C25 is ConsultarListaCupones
+ST25 is ListaCuponesDesplegada
+
+@25
+C25 is IngresarDatosNuevoCupon
+ST25 is ValidandoCodigoUnicoYAlcanceRol
+
+@35
+C25 is ConfirmarCreacionCupon
+ST25 is PersistiendoPromotionCodeEnDB
+
+@45
+C25 is VisualizarCuponActivo
+ST25 is CuponCreadoYVigente
+
+@55
+C25 is PromocionListaParaCanjeEnCarrito
+ST25 is DisponibleParaCU15Carrito
+
+@65
+C25 is Descanso
+ST25 is Descanso
+
+' Sincronización entre líneas paralelas
+@5 : C25 -> ST25 : GET /promotions
+@35 : C25 -> ST25 : POST /promotions (PromotionCodeCreate)
+@45 : ST25 -> C25 : 201 Created (PromotionCodeRead)
+
+' Restricciones de tiempo (SLA)
+@25 <-> @45 : {SLA Validacion & Creacion Cupon <= 50ms}
+
+highlight @25 to @45 #LightGreen : Normalización a Mayúsculas, Control de Vigencia y Reglas por Rol
+
+@enduml

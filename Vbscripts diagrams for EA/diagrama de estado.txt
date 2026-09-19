@@ -1,0 +1,463 @@
+' ============================================================
+' ENTERPRISE ARCHITECT
+' DIAGRAMAS DE ACTIVIDAD - CASOS DE USO CICLO #1
+' PROYECTO FASHIONSTORE
+' ============================================================
+
+Option Explicit
+
+' ------------------------------------------------------------
+' ESTRUCTURA DE DATOS: CASOS DE USO
+' ------------------------------------------------------------
+
+Dim dictCU
+Set dictCU = CreateObject("Scripting.Dictionary")
+
+' ---------- CU-01 Registrarse ----------
+Dim cu01
+Set cu01 = CreateObject("Scripting.Dictionary")
+cu01.Add "nombre", "Registrarse en la plataforma"
+cu01.Add "estados", Array("Inicio", "Validando", "Registrado", "Error")
+cu01.Add "transiciones", Array( _
+    "Inicio -> Validando|Usuario envía formulario", _
+    "Validando -> Registrado|Datos correctos", _
+    "Validando -> Error|Datos inválidos", _
+    "Error -> Inicio|Reintentar" _
+)
+dictCU.Add "CU-01", cu01
+
+' ---------- CU-02 Iniciar sesión ----------
+Dim cu02
+Set cu02 = CreateObject("Scripting.Dictionary")
+cu02.Add "nombre", "Iniciar sesión"
+cu02.Add "estados", Array("Inicio", "Autenticando", "Sesión iniciada", "Error")
+cu02.Add "transiciones", Array( _
+    "Inicio -> Autenticando|Usuario envía credenciales", _
+    "Autenticando -> Sesión iniciada|Credenciales correctas", _
+    "Autenticando -> Error|Credenciales incorrectas", _
+    "Error -> Inicio|Reintentar" _
+)
+dictCU.Add "CU-02", cu02
+
+' ---------- CU-03 Gestionar perfil ----------
+Dim cu03
+Set cu03 = CreateObject("Scripting.Dictionary")
+cu03.Add "nombre", "Gestionar perfil de usuario"
+cu03.Add "estados", Array("Inicio", "Visualizando", "Editando", "Guardado", "Error")
+cu03.Add "transiciones", Array( _
+    "Inicio -> Visualizando|Usuario accede a perfil", _
+    "Visualizando -> Editando|Usuario solicita edición", _
+    "Editando -> Guardado|Datos válidos y guardados", _
+    "Editando -> Error|Datos inválidos", _
+    "Guardado -> Visualizando|Confirmación", _
+    "Error -> Editando|Corregir datos" _
+)
+dictCU.Add "CU-03", cu03
+
+' ---------- CU-20 Administrar sucursales ----------
+Dim cu20
+Set cu20 = CreateObject("Scripting.Dictionary")
+cu20.Add "nombre", "Administrar sucursales"
+cu20.Add "estados", Array("Inicio", "Listando", "Creando/Editando", "Eliminando", "Éxito", "Error")
+cu20.Add "transiciones", Array( _
+    "Inicio -> Listando|Administrador accede al módulo", _
+    "Listando -> Creando/Editando|Selecciona crear o editar", _
+    "Listando -> Eliminando|Selecciona eliminar", _
+    "Creando/Editando -> Éxito|Datos guardados", _
+    "Creando/Editando -> Error|Datos inválidos", _
+    "Eliminando -> Éxito|Confirmación de eliminación", _
+    "Eliminando -> Error|Dependencias activas", _
+    "Éxito -> Listando|Volver al listado", _
+    "Error -> Creando/Editando|Reintentar" _
+)
+dictCU.Add "CU-20", cu20
+
+' ---------- CU-19 Administrar usuarios y roles ----------
+Dim cu19
+Set cu19 = CreateObject("Scripting.Dictionary")
+cu19.Add "nombre", "Administrar usuarios y roles"
+cu19.Add "estados", Array( _
+    "Inicio", "Logueado", "Selección de opción", _
+    "Crear usuario", "Modificar usuario", "Eliminar usuario", _
+    "Revisar datos", "Transacción completada", "Error" _
+)
+cu19.Add "transiciones", Array( _
+    "Inicio -> Logueado|Administrador inicia sesión", _
+    "Logueado -> Selección de opción|Accede a gestión de usuarios", _
+    "Selección de opción -> Crear usuario|Elige 'Crear'", _
+    "Selección de opción -> Modificar usuario|Elige 'Modificar'", _
+    "Selección de opción -> Eliminar usuario|Elige 'Eliminar'", _
+    "Crear usuario -> Revisar datos|Llena formulario", _
+    "Modificar usuario -> Revisar datos|Llena datos", _
+    "Eliminar usuario -> Revisar datos|Ingresa ID", _
+    "Revisar datos -> Transacción completada|Datos correctos", _
+    "Revisar datos -> Error|Datos incorrectos", _
+    "Error -> Crear usuario|Volver a intentar (para creación)", _
+    "Error -> Modificar usuario|Volver a intentar (para modificación)", _
+    "Error -> Eliminar usuario|Volver a intentar (para eliminación)", _
+    "Transacción completada -> Logueado|Volver al menú principal" _
+)
+dictCU.Add "CU-19", cu19
+
+' ---------- CU-21 Administrar catálogo de productos ----------
+Dim cu21
+Set cu21 = CreateObject("Scripting.Dictionary")
+cu21.Add "nombre", "Administrar catálogo de productos (CRUD)"
+cu21.Add "estados", Array("Inicio", "Listando", "Creando", "Editando", "Eliminando", "Éxito", "Error")
+cu21.Add "transiciones", Array( _
+    "Inicio -> Listando|Administrador accede", _
+    "Listando -> Creando|Nuevo producto", _
+    "Listando -> Editando|Selecciona producto", _
+    "Listando -> Eliminando|Selecciona eliminar", _
+    "Creando -> Éxito|Producto guardado", _
+    "Creando -> Error|Datos inválidos", _
+    "Editando -> Éxito|Cambios guardados", _
+    "Editando -> Error|Datos inválidos", _
+    "Eliminando -> Éxito|Confirmación", _
+    "Eliminando -> Error|Dependencias activas", _
+    "Éxito -> Listando|Volver al listado", _
+    "Error -> Creando|Reintentar (creación)", _
+    "Error -> Editando|Reintentar (edición)" _
+)
+dictCU.Add "CU-21", cu21
+
+' ---------- CU-04 Consultar catálogo ----------
+Dim cu04
+Set cu04 = CreateObject("Scripting.Dictionary")
+cu04.Add "nombre", "Consultar catálogo de prendas"
+cu04.Add "estados", Array("Inicio", "Cargando", "Mostrando", "Error")
+cu04.Add "transiciones", Array( _
+    "Inicio -> Cargando|Usuario accede al catálogo", _
+    "Cargando -> Mostrando|Datos obtenidos", _
+    "Cargando -> Error|Fallo en la consulta", _
+    "Error -> Inicio|Reintentar" _
+)
+dictCU.Add "CU-04", cu04
+
+' ---------- CU-05 Filtrar productos ----------
+Dim cu05
+Set cu05 = CreateObject("Scripting.Dictionary")
+cu05.Add "nombre", "Filtrar productos por talla, color, categoría, temporada"
+cu05.Add "estados", Array("Inicio", "Seleccionando filtros", "Aplicando", "Resultados", "Error")
+cu05.Add "transiciones", Array( _
+    "Inicio -> Seleccionando filtros|Usuario ve catálogo", _
+    "Seleccionando filtros -> Aplicando|Presiona 'Aplicar filtros'", _
+    "Aplicando -> Resultados|Filtros aplicados con éxito", _
+    "Aplicando -> Error|Error en la consulta", _
+    "Error -> Seleccionando filtros|Modificar filtros", _
+    "Resultados -> Seleccionando filtros|Cambiar filtros" _
+)
+dictCU.Add "CU-05", cu05
+
+' ---------- CU-06 Consultar disponibilidad ----------
+Dim cu06
+Set cu06 = CreateObject("Scripting.Dictionary")
+cu06.Add "nombre", "Consultar disponibilidad por sucursal"
+cu06.Add "estados", Array("Inicio", "Seleccionando producto", "Consultando stock", "Mostrando disponibilidad", "Error")
+cu06.Add "transiciones", Array( _
+    "Inicio -> Seleccionando producto|Usuario elige una prenda", _
+    "Seleccionando producto -> Consultando stock|Solicita disponibilidad", _
+    "Consultando stock -> Mostrando disponibilidad|Stock obtenido", _
+    "Consultando stock -> Error|Fallo en la consulta", _
+    "Error -> Seleccionando producto|Reintentar" _
+)
+dictCU.Add "CU-06", cu06
+
+' ---------- CU-08 Realizar reserva ----------
+Dim cu08
+Set cu08 = CreateObject("Scripting.Dictionary")
+cu08.Add "nombre", "Realizar reserva de múltiples prendas"
+cu08.Add "estados", Array( _
+    "Inicio", "Seleccionando prendas", "Seleccionando sucursal/horario", _
+    "Confirmando", "Reserva creada", "Error" _
+)
+cu08.Add "transiciones", Array( _
+    "Inicio -> Seleccionando prendas|Usuario agrega al carrito", _
+    "Seleccionando prendas -> Seleccionando sucursal/horario|Usuario va a reservar", _
+    "Seleccionando sucursal/horario -> Confirmando|Presiona confirmar", _
+    "Confirmando -> Reserva creada|Stock disponible, reserva exitosa", _
+    "Confirmando -> Error|Stock insuficiente o horario no válido", _
+    "Error -> Seleccionando prendas|Modificar selección" _
+)
+dictCU.Add "CU-08", cu08
+
+' ---------- CU-09 Consultar y cancelar reservas ----------
+Dim cu09
+Set cu09 = CreateObject("Scripting.Dictionary")
+cu09.Add "nombre", "Consultar y cancelar reservas"
+cu09.Add "estados", Array("Inicio", "Consultando", "Mostrando reservas", "Cancelando", "Cancelada", "Error")
+cu09.Add "transiciones", Array( _
+    "Inicio -> Consultando|Usuario accede a 'Mis reservas'", _
+    "Consultando -> Mostrando reservas|Lista obtenida", _
+    "Mostrando reservas -> Cancelando|Selecciona cancelar", _
+    "Cancelando -> Cancelada|Confirmación y liberación de stock", _
+    "Cancelando -> Error|No se puede cancelar (reserva completada)", _
+    "Cancelada -> Mostrando reservas|Volver al listado", _
+    "Error -> Mostrando reservas|Volver" _
+)
+dictCU.Add "CU-09", cu09
+
+' ---------- CU-18 Preparar reservas (encargado) ----------
+Dim cu18
+Set cu18 = CreateObject("Scripting.Dictionary")
+cu18.Add "nombre", "Preparar reservas (Encargado de sucursal)"
+cu18.Add "estados", Array( _
+    "Inicio", "Listando pendientes", "Seleccionando reserva", _
+    "Preparando físicamente", "Marcar como preparada", "Preparada", "Error" _
+)
+cu18.Add "transiciones", Array( _
+    "Inicio -> Listando pendientes|Encargado accede al panel", _
+    "Listando pendientes -> Seleccionando reserva|Elige una reserva", _
+    "Seleccionando reserva -> Preparando físicamente|Retira prendas", _
+    "Preparando físicamente -> Marcar como preparada|Presiona botón", _
+    "Marcar como preparada -> Preparada|Estado actualizado", _
+    "Marcar como preparada -> Error|Falta de stock físico", _
+    "Preparada -> Listando pendientes|Volver al listado" _
+)
+dictCU.Add "CU-18", cu18
+
+
+' ------------------------------------------------------------
+' SUB PRINCIPAL
+' ------------------------------------------------------------
+
+Sub Main()
+
+    Dim package
+    Dim cuKey, cuDict, diagramName, estados, transiciones
+
+    ' Obtener el Package seleccionado
+    Set package = Repository.GetTreeSelectedPackage()
+
+    If package Is Nothing Then
+        Session.Output "ERROR: Selecciona un Package en el Project Browser."
+        Exit Sub
+    End If
+
+    ' Contador para el resumen final
+    Dim totalDiagramas
+    totalDiagramas = 0
+
+    ' Iterar sobre cada caso de uso
+    For Each cuKey In dictCU.Keys
+        Set cuDict = dictCU.Item(cuKey)
+        diagramName = cuKey & " - " & cuDict.Item("nombre")
+        estados = cuDict.Item("estados")
+        transiciones = cuDict.Item("transiciones")
+
+        ' Crear el diagrama
+        If CrearDiagramaActividad(package, diagramName, estados, transiciones) Then
+            totalDiagramas = totalDiagramas + 1
+        End If
+    Next
+
+    ' Resumen final
+    Session.Output " "
+    Session.Output "============================================"
+    Session.Output " TOTAL DIAGRAMAS CREADOS: " & totalDiagramas & " de " & dictCU.Count
+    Session.Output "============================================"
+
+End Sub
+
+
+' ------------------------------------------------------------
+' FUNCIÓN: CREAR DIAGRAMA DE ACTIVIDAD
+' ------------------------------------------------------------
+
+Function CrearDiagramaActividad(package, diagramName, estados, transiciones)
+
+    On Error Resume Next
+
+    Dim diagram
+    Dim elementos
+    Dim flujos
+    Dim i, j
+    Dim estadoActual, transicionActual
+    Dim origen, destino, condicion
+    Dim posX, posY, ancho, alto
+    Dim elementoObj
+    Dim conector
+
+    ' Crear el diagrama
+    Set diagram = package.Diagrams.AddNew(diagramName, "Activity")
+    If Err.Number <> 0 Then
+        Session.Output "ERROR al crear diagrama " & diagramName & ": " & Err.Description
+        CrearDiagramaActividad = False
+        Exit Function
+    End If
+    diagram.Update()
+
+    ' Diccionario para almacenar los elementos creados (por nombre)
+    Dim elementosMap
+    Set elementosMap = CreateObject("Scripting.Dictionary")
+
+    ' Crear nodo inicial (si existe "Inicio" en la lista de estados)
+    Dim inicioExiste
+    inicioExiste = False
+    For i = LBound(estados) To UBound(estados)
+        If estados(i) = "Inicio" Then
+            inicioExiste = True
+            Exit For
+        End If
+    Next
+
+    If inicioExiste Then
+        Set elementoObj = CrearNodoInicial(package)
+        elementosMap.Add "Inicio", elementoObj
+    End If
+
+    ' Crear nodo final (si existe "Fin" en la lista de estados)
+    Dim finExiste
+    finExiste = False
+    For i = LBound(estados) To UBound(estados)
+        If estados(i) = "Fin" Then
+            finExiste = True
+            Exit For
+        End If
+    Next
+
+    If finExiste Then
+        Set elementoObj = CrearNodoFinal(package)
+        elementosMap.Add "Fin", elementoObj
+    End If
+
+    ' Crear acciones para el resto de estados (excluyendo Inicio y Fin)
+    For i = LBound(estados) To UBound(estados)
+        estadoActual = estados(i)
+        If estadoActual <> "Inicio" And estadoActual <> "Fin" Then
+            Set elementoObj = CrearAccion(package, estadoActual)
+            elementosMap.Add estadoActual, elementoObj
+        End If
+    Next
+
+    ' Ahora agregar los elementos al diagrama con posiciones automáticas
+    ' Usaremos una cuadrícula vertical: cada estado en una fila, separados 60px
+    ' El primer elemento (Inicio) en la primera fila, el último (Fin) en la última
+    Dim numEstados
+    numEstados = UBound(estados) - LBound(estados) + 1
+
+    For i = LBound(estados) To UBound(estados)
+        estadoActual = estados(i)
+        If elementosMap.Exists(estadoActual) Then
+            Set elementoObj = elementosMap.Item(estadoActual)
+            ' Posición: centrado horizontal, espaciado vertical
+            posX = 200  ' Centrado (ancho total 400-500)
+            posY = 50 + (i - LBound(estados)) * 70
+            ancho = 150
+            alto = 40
+            AgregarElemento diagram, elementoObj, posX, posY, posX + ancho, posY + alto
+        End If
+    Next
+
+    ' Crear flujos (conexiones) entre elementos
+    For j = LBound(transiciones) To UBound(transiciones)
+        transicionActual = transiciones(j)
+
+        ' Extraer origen, destino y condicion del formato "origen -> destino|condicion"
+        Dim partes
+        Dim flechaPos, barraPos
+        flechaPos = InStr(transicionActual, " -> ")
+        If flechaPos > 0 Then
+            origen = Trim(Left(transicionActual, flechaPos - 1))
+            barraPos = InStr(transicionActual, "|")
+            If barraPos > 0 Then
+                destino = Trim(Mid(transicionActual, flechaPos + 4, barraPos - flechaPos - 4))
+                condicion = Mid(transicionActual, barraPos + 1)
+            Else
+                destino = Trim(Mid(transicionActual, flechaPos + 4))
+                condicion = ""
+            End If
+
+            ' Verificar que origen y destino existen en el mapa
+            If elementosMap.Exists(origen) And elementosMap.Exists(destino) Then
+                CrearFlujo elementosMap.Item(origen), elementosMap.Item(destino), condicion
+            Else
+                Session.Output "ADVERTENCIA: No se encontró origen o destino en " & diagramName & " para: " & transicionActual
+            End If
+        Else
+            Session.Output "ADVERTENCIA: Formato inválido en " & diagramName & ": " & transicionActual
+        End If
+    Next
+
+    ' Actualizar el diagrama
+    diagram.Update()
+    package.Update()
+
+    CrearDiagramaActividad = True
+
+    On Error GoTo 0
+
+End Function
+
+
+' ============================================================
+' FUNCIONES AUXILIARES (sin cambios)
+' ============================================================
+
+Function CrearAccion(package, nombre)
+
+    Dim elemento
+    Set elemento = package.Elements.AddNew(nombre, "Action")
+    elemento.Update()
+    Set CrearAccion = elemento
+
+End Function
+
+
+Function CrearNodoInicial(package)
+
+    Dim elemento
+    Set elemento = package.Elements.AddNew("Inicio", "StateNode")
+    elemento.Subtype = 100
+    elemento.Update()
+    Set CrearNodoInicial = elemento
+
+End Function
+
+
+Function CrearNodoFinal(package)
+
+    Dim elemento
+    Set elemento = package.Elements.AddNew("Fin", "StateNode")
+    elemento.Subtype = 101
+    elemento.Update()
+    Set CrearNodoFinal = elemento
+
+End Function
+
+
+Sub AgregarElemento(diagram, elemento, izquierda, arriba, derecha, abajo)
+
+    Dim objeto
+    Set objeto = diagram.DiagramObjects.AddNew( _
+        "l=" & izquierda & _
+        ";r=" & derecha & _
+        ";t=" & arriba & _
+        ";b=" & abajo & ";", _
+        "")
+    objeto.ElementID = elemento.ElementID
+    objeto.Update()
+
+End Sub
+
+
+Sub CrearFlujo(origen, destino, condicion)
+
+    Dim conector
+    Set conector = origen.Connectors.AddNew("", "ControlFlow")
+    conector.SupplierID = destino.ElementID
+    conector.Update()
+
+    If condicion <> "" Then
+        conector.TransitionGuard = condicion
+        conector.Update()
+    End If
+
+End Sub
+
+
+' ============================================================
+' EJECUTAR
+' ============================================================
+
+Main

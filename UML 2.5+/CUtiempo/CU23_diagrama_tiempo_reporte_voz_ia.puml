@@ -1,0 +1,60 @@
+@startuml CU23_Diagrama_de_Tiempo
+title Diagrama de Tiempo UML 2.5 - CU23: Generar reporte por voz/lenguaje natural
+
+header Sistema FashionStore - Ciclo 3 (IA Generativa Gemini + Web Speech API)
+footer Diagrama de Tiempo según especificación UML 2.5+ (<<extend>> CU20)
+
+skinparam LineColor Blue
+skinparam FontSize 16
+skinparam timingDiagram {
+    LineColor Blue
+    FontSize 16
+}
+
+robust "CU23 Acciones Administrador / UI" as C23
+robust "CU23 Servicio IA Gemini y Motor Reportes" as ST23
+
+@0
+C23 is Descanso
+ST23 is SinEntrada
+
+@5
+C23 is ActivarEntradaVozOTexto
+ST23 is EscuchandoWebSpeechAPI
+
+@15
+C23 is DictarInstruccionLenguajeNatural
+ST23 is TranscribiendoAudioATexto
+
+@25
+C23 is EnviarComandoAIAGemini
+ST23 is EnviandoPromptAGeminiLLM
+
+@35
+C23 is EsperandoInterpretacionAI
+ST23 is ParseandoNaturalReportInterpretation
+
+@45
+C23 is ProcesandoFiltrosYColumnas
+ST23 is ValidandoEntidadesYFiltrosReales
+
+@55
+C23 is VisualizarReporteInterpretadoYExportar
+ST23 is ReporteIaGeneradoYEnviado
+
+@65
+C23 is Descanso
+ST23 is Descanso
+
+' Sincronización entre líneas paralelas
+@25 : C23 -> ST23 : POST /reports/query (promptText)
+@35 : ST23 -> ST23 : Gemini LLM Interpretation
+@55 : ST23 -> C23 : entregarReportePersonalizado(PDF/CSV)
+
+' Restricciones de tiempo (SLA)
+@5 <-> @15 : {Captura de Voz}
+@25 <-> @55 : {SLA IA Gemini + Reporte <= 1500ms}
+
+highlight @25 to @45 #LightPink : Clasificación por IA (Sales/Inventory/Movements) y Mapeo de Columnas
+
+@enduml

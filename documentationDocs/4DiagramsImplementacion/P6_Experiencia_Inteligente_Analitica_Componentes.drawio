@@ -1,0 +1,607 @@
+﻿<?xml version="1.0"?>
+<!-- P6 - Experiencia inteligente y analitica | CU19, CU20, CU21, CU22, CU23 -->
+<!-- Flujo vertical por cada CU: FORM (interfaz) -> CLASS (servicio) -> TABLE (base de datos). -->
+<!-- Interfaces: FORM -> CLASS = interfaz requerida (halfCircle / laquo;requires); CLASS -> FORM = interfaz provista (circle / laquo;provides); CLASS -> TABLE = dependencia laquo;use (dashed). -->
+<!-- Nombres de tablas en minuscula. -->
+<mxGraphModel dx="1823" dy="1037" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2600" pageHeight="1000" math="0" shadow="0">
+  <root>
+    <mxCell id="0" />
+    <mxCell id="1" parent="0" />
+
+    <!-- ========== GRUPO PRINCIPAL (PAQUETE) ========== -->
+    <mxCell id="pkg-group" value="" style="group" vertex="1" connectable="0" parent="1">
+      <mxGeometry x="30" y="30" width="2510" height="880" as="geometry" />
+    </mxCell>
+
+    <!-- Carpeta del paquete -->
+    <mxCell id="pkg-folder" value="" style="shape=folder;fontStyle=1;spacingTop=10;tabWidth=480;tabHeight=33;tabPosition=left;html=1;whiteSpace=wrap;" vertex="1" parent="pkg-group">
+      <mxGeometry x="10" y="0" width="2490" height="880" as="geometry" />
+    </mxCell>
+
+    <!-- Titulo del paquete -->
+    <mxCell id="pkg-title" value="&lt;b&gt;pkg Experiencia Inteligente y AnalÃ­tica&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="pkg-group">
+      <mxGeometry x="-1" y="0" width="330" height="30" as="geometry" />
+    </mxCell>
+
+    <!-- ================================================================ -->
+    <!--          Etiquetas de los casos de uso (CU19 - CU23)             -->
+    <!-- ================================================================ -->
+
+    <mxCell id="cap-cu19" value="CU19 - Vestidor virtual" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;fontStyle=1;strokeColor=none;fillColor=none;" vertex="1" parent="pkg-group">
+      <mxGeometry x="40" y="28" width="310" height="18" as="geometry" />
+    </mxCell>
+    <mxCell id="cap-cu20" value="CU20 - Reportes y dashboards" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;fontStyle=1;strokeColor=none;fillColor=none;" vertex="1" parent="pkg-group">
+      <mxGeometry x="540" y="28" width="310" height="18" as="geometry" />
+    </mxCell>
+    <mxCell id="cap-cu21" value="CU21 - Recomendaciones de IA" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;fontStyle=1;strokeColor=none;fillColor=none;" vertex="1" parent="pkg-group">
+      <mxGeometry x="1040" y="28" width="310" height="18" as="geometry" />
+    </mxCell>
+    <mxCell id="cap-cu22" value="CU22 - Asistente virtual / chatbot" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;fontStyle=1;strokeColor=none;fillColor=none;" vertex="1" parent="pkg-group">
+      <mxGeometry x="1540" y="28" width="310" height="18" as="geometry" />
+    </mxCell>
+    <mxCell id="cap-cu23" value="CU23 - Reporte por voz (lenguaje natural)" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;fontStyle=1;strokeColor=none;fillColor=none;" vertex="1" parent="pkg-group">
+      <mxGeometry x="2040" y="28" width="310" height="18" as="geometry" />
+    </mxCell>
+
+    <!-- ================================================================ -->
+    <!--                    CAPA FORM (ARRIBA) - Rosa                     -->
+    <!-- ================================================================ -->
+
+    <!-- FORM CU19: fitting-room-page.component.ts -->
+    <mxCell id="form-fitting" value="&lt;p style=&quot;margin:0px;margin-top:6px;text-align:center;&quot;&gt;&lt;b&gt;&amp;lt;&amp;lt;FORM&amp;gt;&amp;gt;&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:8px;font-size:12px;&quot;&gt;fitting-room-page.component.ts&lt;/p&gt;" style="align=left;overflow=fill;html=1;dropTarget=0;whiteSpace=wrap;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="pkg-group">
+      <mxGeometry x="40" y="60" width="310" height="90" as="geometry" />
+    </mxCell>
+    <mxCell id="form-fitting-icon" value="" style="shape=component;jettyWidth=8;jettyHeight=4;" vertex="1" parent="form-fitting">
+      <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+        <mxPoint x="-24" y="4" as="offset" />
+      </mxGeometry>
+    </mxCell>
+
+    <!-- FORM CU20: admin-reports-page.component.ts -->
+    <mxCell id="form-reports" value="&lt;p style=&quot;margin:0px;margin-top:6px;text-align:center;&quot;&gt;&lt;b&gt;&amp;lt;&amp;lt;FORM&amp;gt;&amp;gt;&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:8px;font-size:12px;&quot;&gt;admin-reports-page.component.ts&lt;/p&gt;" style="align=left;overflow=fill;html=1;dropTarget=0;whiteSpace=wrap;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="pkg-group">
+      <mxGeometry x="540" y="60" width="310" height="90" as="geometry" />
+    </mxCell>
+    <mxCell id="form-reports-icon" value="" style="shape=component;jettyWidth=8;jettyHeight=4;" vertex="1" parent="form-reports">
+      <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+        <mxPoint x="-24" y="4" as="offset" />
+      </mxGeometry>
+    </mxCell>
+
+    <!-- FORM CU21: recommendations-page.component.ts -->
+    <mxCell id="form-recommendations" value="&lt;p style=&quot;margin:0px;margin-top:6px;text-align:center;&quot;&gt;&lt;b&gt;&amp;lt;&amp;lt;FORM&amp;gt;&amp;gt;&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:8px;font-size:12px;&quot;&gt;recommendations-page.component.ts&lt;/p&gt;" style="align=left;overflow=fill;html=1;dropTarget=0;whiteSpace=wrap;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="pkg-group">
+      <mxGeometry x="1040" y="60" width="310" height="90" as="geometry" />
+    </mxCell>
+    <mxCell id="form-recommendations-icon" value="" style="shape=component;jettyWidth=8;jettyHeight=4;" vertex="1" parent="form-recommendations">
+      <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+        <mxPoint x="-24" y="4" as="offset" />
+      </mxGeometry>
+    </mxCell>
+
+    <!-- FORM CU22: chatbot-widget.component.ts -->
+    <mxCell id="form-chatbot" value="&lt;p style=&quot;margin:0px;margin-top:6px;text-align:center;&quot;&gt;&lt;b&gt;&amp;lt;&amp;lt;FORM&amp;gt;&amp;gt;&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:8px;font-size:12px;&quot;&gt;chatbot-widget.component.ts&lt;/p&gt;" style="align=left;overflow=fill;html=1;dropTarget=0;whiteSpace=wrap;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="pkg-group">
+      <mxGeometry x="1540" y="60" width="310" height="90" as="geometry" />
+    </mxCell>
+    <mxCell id="form-chatbot-icon" value="" style="shape=component;jettyWidth=8;jettyHeight=4;" vertex="1" parent="form-chatbot">
+      <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+        <mxPoint x="-24" y="4" as="offset" />
+      </mxGeometry>
+    </mxCell>
+
+    <!-- FORM CU23: admin-voice-report-page.component.ts -->
+    <mxCell id="form-voice-report" value="&lt;p style=&quot;margin:0px;margin-top:6px;text-align:center;&quot;&gt;&lt;b&gt;&amp;lt;&amp;lt;FORM&amp;gt;&amp;gt;&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:8px;font-size:12px;&quot;&gt;admin-voice-report-page.component.ts&lt;/p&gt;" style="align=left;overflow=fill;html=1;dropTarget=0;whiteSpace=wrap;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="pkg-group">
+      <mxGeometry x="2040" y="60" width="310" height="90" as="geometry" />
+    </mxCell>
+    <mxCell id="form-voice-report-icon" value="" style="shape=component;jettyWidth=8;jettyHeight=4;" vertex="1" parent="form-voice-report">
+      <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+        <mxPoint x="-24" y="4" as="offset" />
+      </mxGeometry>
+    </mxCell>
+
+    <!-- ================================================================ -->
+    <!--         INTERFACES FORM -> CLASS (requires / provides)           -->
+    <!-- ================================================================ -->
+
+    <!-- CU19 -->
+    <mxCell id="edge-fitting-req" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;endArrow=halfCircle;endFill=0;" edge="1" source="form-fitting" parent="pkg-group">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="195" y="270" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="edge-fitting-prov" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;endArrow=circle;endFill=0;" edge="1" source="class-fitting" parent="pkg-group">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="195" y="270" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="lbl-fitting-req" value="&#171;requires&#187;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;" vertex="1" parent="pkg-group">
+      <mxGeometry height="20" width="70" x="105" y="250" as="geometry" />
+    </mxCell>
+    <mxCell id="lbl-fitting-prov" value="&#171;provides&#187;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;" vertex="1" parent="pkg-group">
+      <mxGeometry height="20" width="70" x="215" y="250" as="geometry" />
+    </mxCell>
+
+    <!-- CU20 -->
+    <mxCell id="edge-reports-req" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;endArrow=halfCircle;endFill=0;" edge="1" source="form-reports" parent="pkg-group">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="695" y="270" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="edge-reports-prov" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;endArrow=circle;endFill=0;" edge="1" source="class-reports" parent="pkg-group">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="695" y="270" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="lbl-reports-req" value="&#171;requires&#187;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;" vertex="1" parent="pkg-group">
+      <mxGeometry height="20" width="70" x="605" y="250" as="geometry" />
+    </mxCell>
+    <mxCell id="lbl-reports-prov" value="&#171;provides&#187;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;" vertex="1" parent="pkg-group">
+      <mxGeometry height="20" width="70" x="715" y="250" as="geometry" />
+    </mxCell>
+
+    <!-- CU21 -->
+    <mxCell id="edge-recommendations-req" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;endArrow=halfCircle;endFill=0;" edge="1" source="form-recommendations" parent="pkg-group">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="1195" y="270" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="edge-recommendations-prov" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;endArrow=circle;endFill=0;" edge="1" source="class-recommendations" parent="pkg-group">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="1195" y="270" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="lbl-recommendations-req" value="&#171;requires&#187;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;" vertex="1" parent="pkg-group">
+      <mxGeometry height="20" width="70" x="1105" y="250" as="geometry" />
+    </mxCell>
+    <mxCell id="lbl-recommendations-prov" value="&#171;provides&#187;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;" vertex="1" parent="pkg-group">
+      <mxGeometry height="20" width="70" x="1215" y="250" as="geometry" />
+    </mxCell>
+
+    <!-- CU22 -->
+    <mxCell id="edge-chatbot-req" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;endArrow=halfCircle;endFill=0;" edge="1" source="form-chatbot" parent="pkg-group">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="1695" y="270" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="edge-chatbot-prov" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;endArrow=circle;endFill=0;" edge="1" source="class-chatbot" parent="pkg-group">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="1695" y="270" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="lbl-chatbot-req" value="&#171;requires&#187;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;" vertex="1" parent="pkg-group">
+      <mxGeometry height="20" width="70" x="1605" y="250" as="geometry" />
+    </mxCell>
+    <mxCell id="lbl-chatbot-prov" value="&#171;provides&#187;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;" vertex="1" parent="pkg-group">
+      <mxGeometry height="20" width="70" x="1715" y="250" as="geometry" />
+    </mxCell>
+
+    <!-- CU23 -->
+    <mxCell id="edge-voice-report-req" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;endArrow=halfCircle;endFill=0;" edge="1" source="form-voice-report" parent="pkg-group">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="2195" y="270" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="edge-voice-report-prov" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;endArrow=circle;endFill=0;" edge="1" source="class-voice-report" parent="pkg-group">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="2195" y="270" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="lbl-voice-report-req" value="&#171;requires&#187;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;" vertex="1" parent="pkg-group">
+      <mxGeometry height="20" width="70" x="2105" y="250" as="geometry" />
+    </mxCell>
+    <mxCell id="lbl-voice-report-prov" value="&#171;provides&#187;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;" vertex="1" parent="pkg-group">
+      <mxGeometry height="20" width="70" x="2215" y="250" as="geometry" />
+    </mxCell>
+
+    <!-- ================================================================ -->
+    <!--                   CAPA CLASS (MEDIO) - Naranja                   -->
+    <!-- ================================================================ -->
+
+    <!-- CLASS CU19: fitting-room.service.ts -->
+    <mxCell id="class-fitting" value="&lt;p style=&quot;margin:0px;margin-top:6px;text-align:center;&quot;&gt;&lt;b&gt;&amp;lt;&amp;lt;CLASS&amp;gt;&amp;gt;&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:8px;font-size:13px;&quot;&gt;fitting-room.service.ts&lt;/p&gt;" style="align=left;overflow=fill;html=1;dropTarget=0;whiteSpace=wrap;fillColor=#fad7ac;strokeColor=#b46504;" vertex="1" parent="pkg-group">
+      <mxGeometry x="40" y="310" width="310" height="90" as="geometry" />
+    </mxCell>
+    <mxCell id="class-fitting-icon" value="" style="shape=component;jettyWidth=8;jettyHeight=4;" vertex="1" parent="class-fitting">
+      <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+        <mxPoint x="-24" y="4" as="offset" />
+      </mxGeometry>
+    </mxCell>
+
+    <!-- CLASS CU20: reports-api.service.ts -->
+    <mxCell id="class-reports" value="&lt;p style=&quot;margin:0px;margin-top:6px;text-align:center;&quot;&gt;&lt;b&gt;&amp;lt;&amp;lt;CLASS&amp;gt;&amp;gt;&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:8px;font-size:13px;&quot;&gt;reports-api.service.ts&lt;/p&gt;" style="align=left;overflow=fill;html=1;dropTarget=0;whiteSpace=wrap;fillColor=#fad7ac;strokeColor=#b46504;" vertex="1" parent="pkg-group">
+      <mxGeometry x="540" y="310" width="310" height="90" as="geometry" />
+    </mxCell>
+    <mxCell id="class-reports-icon" value="" style="shape=component;jettyWidth=8;jettyHeight=4;" vertex="1" parent="class-reports">
+      <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+        <mxPoint x="-24" y="4" as="offset" />
+      </mxGeometry>
+    </mxCell>
+
+    <!-- CLASS CU21: recommendations-api.service.ts -->
+    <mxCell id="class-recommendations" value="&lt;p style=&quot;margin:0px;margin-top:6px;text-align:center;&quot;&gt;&lt;b&gt;&amp;lt;&amp;lt;CLASS&amp;gt;&amp;gt;&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:8px;font-size:13px;&quot;&gt;recommendations-api.service.ts&lt;/p&gt;" style="align=left;overflow=fill;html=1;dropTarget=0;whiteSpace=wrap;fillColor=#fad7ac;strokeColor=#b46504;" vertex="1" parent="pkg-group">
+      <mxGeometry x="1040" y="310" width="310" height="90" as="geometry" />
+    </mxCell>
+    <mxCell id="class-recommendations-icon" value="" style="shape=component;jettyWidth=8;jettyHeight=4;" vertex="1" parent="class-recommendations">
+      <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+        <mxPoint x="-24" y="4" as="offset" />
+      </mxGeometry>
+    </mxCell>
+
+    <!-- CLASS CU22: chatbot-api.service.ts -->
+    <mxCell id="class-chatbot" value="&lt;p style=&quot;margin:0px;margin-top:6px;text-align:center;&quot;&gt;&lt;b&gt;&amp;lt;&amp;lt;CLASS&amp;gt;&amp;gt;&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:8px;font-size:13px;&quot;&gt;chatbot-api.service.ts&lt;/p&gt;" style="align=left;overflow=fill;html=1;dropTarget=0;whiteSpace=wrap;fillColor=#fad7ac;strokeColor=#b46504;" vertex="1" parent="pkg-group">
+      <mxGeometry x="1540" y="310" width="310" height="90" as="geometry" />
+    </mxCell>
+    <mxCell id="class-chatbot-icon" value="" style="shape=component;jettyWidth=8;jettyHeight=4;" vertex="1" parent="class-chatbot">
+      <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+        <mxPoint x="-24" y="4" as="offset" />
+      </mxGeometry>
+    </mxCell>
+
+    <!-- CLASS CU23: voice-report-api.service.ts -->
+    <mxCell id="class-voice-report" value="&lt;p style=&quot;margin:0px;margin-top:6px;text-align:center;&quot;&gt;&lt;b&gt;&amp;lt;&amp;lt;CLASS&amp;gt;&amp;gt;&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:8px;font-size:13px;&quot;&gt;voice-report-api.service.ts&lt;/p&gt;" style="align=left;overflow=fill;html=1;dropTarget=0;whiteSpace=wrap;fillColor=#fad7ac;strokeColor=#b46504;" vertex="1" parent="pkg-group">
+      <mxGeometry x="2040" y="310" width="310" height="90" as="geometry" />
+    </mxCell>
+    <mxCell id="class-voice-report-icon" value="" style="shape=component;jettyWidth=8;jettyHeight=4;" vertex="1" parent="class-voice-report">
+      <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+        <mxPoint x="-24" y="4" as="offset" />
+      </mxGeometry>
+    </mxCell>
+
+    <!-- ================================================================ -->
+    <!--              CAPA TABLE (ABAJO) - Azul                           -->
+    <!-- ================================================================ -->
+
+    <!-- TABLES CU19 -->
+    <mxCell id="table-cu19-products" value="&lt;p style=&quot;margin:6px 0 0;text-align:center;font-size:13px;&quot;&gt;&amp;lt;&amp;lt;Table&amp;gt;&amp;gt;&lt;/p&gt;&lt;hr style=&quot;border-style:solid;font-size:13px;&quot;&gt;&lt;p style=&quot;margin:0 0 0 8px;font-size:13px;&quot;&gt;products&lt;/p&gt;" style="align=left;overflow=fill;html=1;dropTarget=0;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=13;" vertex="1" parent="pkg-group">
+      <mxGeometry x="40" y="560" width="150" height="60" as="geometry" />
+    </mxCell>
+    <mxCell id="table-cu19-products-icon" value="" style="shape=component;jettyWidth=8;jettyHeight=4;" vertex="1" parent="table-cu19-products">
+      <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+        <mxPoint x="-24" y="4" as="offset" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="table-cu19-variants" value="&lt;p style=&quot;margin:6px 0 0;text-align:center;font-size:13px;&quot;&gt;&amp;lt;&amp;lt;Table&amp;gt;&amp;gt;&lt;/p&gt;&lt;hr style=&quot;border-style:solid;font-size:13px;&quot;&gt;&lt;p style=&quot;margin:0 0 0 8px;font-size:13px;&quot;&gt;product_variants&lt;/p&gt;" style="align=left;overflow=fill;html=1;dropTarget=0;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=13;" vertex="1" parent="pkg-group">
+      <mxGeometry x="210" y="560" width="190" height="60" as="geometry" />
+    </mxCell>
+    <mxCell id="table-cu19-variants-icon" value="" style="shape=component;jettyWidth=8;jettyHeight=4;" vertex="1" parent="table-cu19-variants">
+      <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+        <mxPoint x="-24" y="4" as="offset" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="table-cu19-colors" value="&lt;p style=&quot;margin:6px 0 0;text-align:center;font-size:13px;&quot;&gt;&amp;lt;&amp;lt;Table&amp;gt;&amp;gt;&lt;/p&gt;&lt;hr style=&quot;border-style:solid;font-size:13px;&quot;&gt;&lt;p style=&quot;margin:0 0 0 8px;font-size:13px;&quot;&gt;colors&lt;/p&gt;" style="align=left;overflow=fill;html=1;dropTarget=0;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=13;" vertex="1" parent="pkg-group">
+      <mxGeometry x="40" y="650" width="130" height="60" as="geometry" />
+    </mxCell>
+    <mxCell id="table-cu19-colors-icon" value="" style="shape=component;jettyWidth=8;jettyHeight=4;" vertex="1" parent="table-cu19-colors">
+      <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+        <mxPoint x="-24" y="4" as="offset" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="table-cu19-sizes" value="&lt;p style=&quot;margin:6px 0 0;text-align:center;font-size:13px;&quot;&gt;&amp;lt;&amp;lt;Table&amp;gt;&amp;gt;&lt;/p&gt;&lt;hr style=&quot;border-style:solid;font-size:13px;&quot;&gt;&lt;p style=&quot;margin:0 0 0 8px;font-size:13px;&quot;&gt;sizes&lt;/p&gt;" style="align=left;overflow=fill;html=1;dropTarget=0;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=13;" vertex="1" parent="pkg-group">
+      <mxGeometry x="190" y="650" width="120" height="60" as="geometry" />
+    </mxCell>
+    <mxCell id="table-cu19-sizes-icon" value="" style="shape=component;jettyWidth=8;jettyHeight=4;" vertex="1" parent="table-cu19-sizes">
+      <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+        <mxPoint x="-24" y="4" as="offset" />
+      </mxGeometry>
+    </mxCell>
+
+    <!-- TABLES CU20 -->
+    <mxCell id="table-cu20-sales" value="&lt;p style=&quot;margin:6px 0 0;text-align:center;font-size:13px;&quot;&gt;&amp;lt;&amp;lt;Table&amp;gt;&amp;gt;&lt;/p&gt;&lt;hr style=&quot;border-style:solid;font-size:13px;&quot;&gt;&lt;p style=&quot;margin:0 0 0 8px;font-size:13px;&quot;&gt;sales&lt;/p&gt;" style="align=left;overflow=fill;html=1;dropTarget=0;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=13;" vertex="1" parent="pkg-group">
+      <mxGeometry x="540" y="560" width="110" height="60" as="geometry" />
+    </mxCell>
+    <mxCell id="table-cu20-sales-icon" value="" style="shape=component;jettyWidth=8;jettyHeight=4;" vertex="1" parent="table-cu20-sales">
+      <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+        <mxPoint x="-24" y="4" as="offset" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="table-cu20-sale-items" value="&lt;p style=&quot;margin:6px 0 0;text-align:center;font-size:13px;&quot;&gt;&amp;lt;&amp;lt;Table&amp;gt;&amp;gt;&lt;/p&gt;&lt;hr style=&quot;border-style:solid;font-size:13px;&quot;&gt;&lt;p style=&quot;margin:0 0 0 8px;font-size:13px;&quot;&gt;sale_items&lt;/p&gt;" style="align=left;overflow=fill;html=1;dropTarget=0;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=13;" vertex="1" parent="pkg-group">
+      <mxGeometry x="660" y="560" width="160" height="60" as="geometry" />
+    </mxCell>
+    <mxCell id="table-cu20-sale-items-icon" value="" style="shape=component;jettyWidth=8;jettyHeight=4;" vertex="1" parent="table-cu20-sale-items">
+      <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+        <mxPoint x="-24" y="4" as="offset" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="table-cu20-inventory" value="&lt;p style=&quot;margin:6px 0 0;text-align:center;font-size:13px;&quot;&gt;&amp;lt;&amp;lt;Table&amp;gt;&amp;gt;&lt;/p&gt;&lt;hr style=&quot;border-style:solid;font-size:13px;&quot;&gt;&lt;p style=&quot;margin:0 0 0 8px;font-size:13px;&quot;&gt;inventory&lt;/p&gt;" style="align=left;overflow=fill;html=1;dropTarget=0;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=13;" vertex="1" parent="pkg-group">
+      <mxGeometry x="840" y="560" width="140" height="60" as="geometry" />
+    </mxCell>
+    <mxCell id="table-cu20-inventory-icon" value="" style="shape=component;jettyWidth=8;jettyHeight=4;" vertex="1" parent="table-cu20-inventory">
+      <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+        <mxPoint x="-24" y="4" as="offset" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="table-cu20-reservations" value="&lt;p style=&quot;margin:6px 0 0;text-align:center;font-size:13px;&quot;&gt;&amp;lt;&amp;lt;Table&amp;gt;&amp;gt;&lt;/p&gt;&lt;hr style=&quot;border-style:solid;font-size:13px;&quot;&gt;&lt;p style=&quot;margin:0 0 0 8px;font-size:13px;&quot;&gt;reservations&lt;/p&gt;" style="align=left;overflow=fill;html=1;dropTarget=0;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=13;" vertex="1" parent="pkg-group">
+      <mxGeometry x="540" y="650" width="180" height="60" as="geometry" />
+    </mxCell>
+    <mxCell id="table-cu20-reservations-icon" value="" style="shape=component;jettyWidth=8;jettyHeight=4;" vertex="1" parent="table-cu20-reservations">
+      <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+        <mxPoint x="-24" y="4" as="offset" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="table-cu20-branches" value="&lt;p style=&quot;margin:6px 0 0;text-align:center;font-size:13px;&quot;&gt;&amp;lt;&amp;lt;Table&amp;gt;&amp;gt;&lt;/p&gt;&lt;hr style=&quot;border-style:solid;font-size:13px;&quot;&gt;&lt;p style=&quot;margin:0 0 0 8px;font-size:13px;&quot;&gt;branches&lt;/p&gt;" style="align=left;overflow=fill;html=1;dropTarget=0;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=13;" vertex="1" parent="pkg-group">
+      <mxGeometry x="740" y="650" width="140" height="60" as="geometry" />
+    </mxCell>
+    <mxCell id="table-cu20-branches-icon" value="" style="shape=component;jettyWidth=8;jettyHeight=4;" vertex="1" parent="table-cu20-branches">
+      <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+        <mxPoint x="-24" y="4" as="offset" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="table-cu20-products" value="&lt;p style=&quot;margin:6px 0 0;text-align:center;font-size:13px;&quot;&gt;&amp;lt;&amp;lt;Table&amp;gt;&amp;gt;&lt;/p&gt;&lt;hr style=&quot;border-style:solid;font-size:13px;&quot;&gt;&lt;p style=&quot;margin:0 0 0 8px;font-size:13px;&quot;&gt;products&lt;/p&gt;" style="align=left;overflow=fill;html=1;dropTarget=0;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=13;" vertex="1" parent="pkg-group">
+      <mxGeometry x="900" y="650" width="150" height="60" as="geometry" />
+    </mxCell>
+    <mxCell id="table-cu20-products-icon" value="" style="shape=component;jettyWidth=8;jettyHeight=4;" vertex="1" parent="table-cu20-products">
+      <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+        <mxPoint x="-24" y="4" as="offset" />
+      </mxGeometry>
+    </mxCell>
+
+    <!-- TABLES CU21 -->
+    <mxCell id="table-cu21-users" value="&lt;p style=&quot;margin:6px 0 0;text-align:center;font-size:13px;&quot;&gt;&amp;lt;&amp;lt;Table&amp;gt;&amp;gt;&lt;/p&gt;&lt;hr style=&quot;border-style:solid;font-size:13px;&quot;&gt;&lt;p style=&quot;margin:0 0 0 8px;font-size:13px;&quot;&gt;users&lt;/p&gt;" style="align=left;overflow=fill;html=1;dropTarget=0;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=13;" vertex="1" parent="pkg-group">
+      <mxGeometry x="1040" y="560" width="110" height="60" as="geometry" />
+    </mxCell>
+    <mxCell id="table-cu21-users-icon" value="" style="shape=component;jettyWidth=8;jettyHeight=4;" vertex="1" parent="table-cu21-users">
+      <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+        <mxPoint x="-24" y="4" as="offset" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="table-cu21-orders" value="&lt;p style=&quot;margin:6px 0 0;text-align:center;font-size:13px;&quot;&gt;&amp;lt;&amp;lt;Table&amp;gt;&amp;gt;&lt;/p&gt;&lt;hr style=&quot;border-style:solid;font-size:13px;&quot;&gt;&lt;p style=&quot;margin:0 0 0 8px;font-size:13px;&quot;&gt;orders&lt;/p&gt;" style="align=left;overflow=fill;html=1;dropTarget=0;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=13;" vertex="1" parent="pkg-group">
+      <mxGeometry x="1160" y="560" width="130" height="60" as="geometry" />
+    </mxCell>
+    <mxCell id="table-cu21-orders-icon" value="" style="shape=component;jettyWidth=8;jettyHeight=4;" vertex="1" parent="table-cu21-orders">
+      <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+        <mxPoint x="-24" y="4" as="offset" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="table-cu21-order-items" value="&lt;p style=&quot;margin:6px 0 0;text-align:center;font-size:13px;&quot;&gt;&amp;lt;&amp;lt;Table&amp;gt;&amp;gt;&lt;/p&gt;&lt;hr style=&quot;border-style:solid;font-size:13px;&quot;&gt;&lt;p style=&quot;margin:0 0 0 8px;font-size:13px;&quot;&gt;order_items&lt;/p&gt;" style="align=left;overflow=fill;html=1;dropTarget=0;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=13;" vertex="1" parent="pkg-group">
+      <mxGeometry x="1300" y="560" width="190" height="60" as="geometry" />
+    </mxCell>
+    <mxCell id="table-cu21-order-items-icon" value="" style="shape=component;jettyWidth=8;jettyHeight=4;" vertex="1" parent="table-cu21-order-items">
+      <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+        <mxPoint x="-24" y="4" as="offset" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="table-cu21-products" value="&lt;p style=&quot;margin:6px 0 0;text-align:center;font-size:13px;&quot;&gt;&amp;lt;&amp;lt;Table&amp;gt;&amp;gt;&lt;/p&gt;&lt;hr style=&quot;border-style:solid;font-size:13px;&quot;&gt;&lt;p style=&quot;margin:0 0 0 8px;font-size:13px;&quot;&gt;products&lt;/p&gt;" style="align=left;overflow=fill;html=1;dropTarget=0;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=13;" vertex="1" parent="pkg-group">
+      <mxGeometry x="1040" y="650" width="150" height="60" as="geometry" />
+    </mxCell>
+    <mxCell id="table-cu21-products-icon" value="" style="shape=component;jettyWidth=8;jettyHeight=4;" vertex="1" parent="table-cu21-products">
+      <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+        <mxPoint x="-24" y="4" as="offset" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="table-cu21-variants" value="&lt;p style=&quot;margin:6px 0 0;text-align:center;font-size:13px;&quot;&gt;&amp;lt;&amp;lt;Table&amp;gt;&amp;gt;&lt;/p&gt;&lt;hr style=&quot;border-style:solid;font-size:13px;&quot;&gt;&lt;p style=&quot;margin:0 0 0 8px;font-size:13px;&quot;&gt;product_variants&lt;/p&gt;" style="align=left;overflow=fill;html=1;dropTarget=0;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=13;" vertex="1" parent="pkg-group">
+      <mxGeometry x="1210" y="650" width="200" height="60" as="geometry" />
+    </mxCell>
+    <mxCell id="table-cu21-variants-icon" value="" style="shape=component;jettyWidth=8;jettyHeight=4;" vertex="1" parent="table-cu21-variants">
+      <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+        <mxPoint x="-24" y="4" as="offset" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="table-cu21-seasons" value="&lt;p style=&quot;margin:6px 0 0;text-align:center;font-size:13px;&quot;&gt;&amp;lt;&amp;lt;Table&amp;gt;&amp;gt;&lt;/p&gt;&lt;hr style=&quot;border-style:solid;font-size:13px;&quot;&gt;&lt;p style=&quot;margin:0 0 0 8px;font-size:13px;&quot;&gt;seasons&lt;/p&gt;" style="align=left;overflow=fill;html=1;dropTarget=0;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=13;" vertex="1" parent="pkg-group">
+      <mxGeometry x="1430" y="650" width="140" height="60" as="geometry" />
+    </mxCell>
+    <mxCell id="table-cu21-seasons-icon" value="" style="shape=component;jettyWidth=8;jettyHeight=4;" vertex="1" parent="table-cu21-seasons">
+      <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+        <mxPoint x="-24" y="4" as="offset" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="table-cu21-interactions" value="&lt;p style=&quot;margin:6px 0 0;text-align:center;font-size:13px;&quot;&gt;&amp;lt;&amp;lt;Table&amp;gt;&amp;gt;&lt;/p&gt;&lt;hr style=&quot;border-style:solid;font-size:13px;&quot;&gt;&lt;p style=&quot;margin:0 0 0 8px;font-size:12px;&quot;&gt;user_product_interactions&lt;/p&gt;" style="align=left;overflow=fill;html=1;dropTarget=0;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=13;" vertex="1" parent="pkg-group">
+      <mxGeometry x="1070" y="740" width="210" height="60" as="geometry" />
+    </mxCell>
+    <mxCell id="table-cu21-interactions-icon" value="" style="shape=component;jettyWidth=8;jettyHeight=4;" vertex="1" parent="table-cu21-interactions">
+      <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+        <mxPoint x="-24" y="4" as="offset" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="table-cu21-embeddings" value="&lt;p style=&quot;margin:6px 0 0;text-align:center;font-size:13px;&quot;&gt;&amp;lt;&amp;lt;Table&amp;gt;&amp;gt;&lt;/p&gt;&lt;hr style=&quot;border-style:solid;font-size:13px;&quot;&gt;&lt;p style=&quot;margin:0 0 0 8px;font-size:12px;&quot;&gt;collaborative_embeddings&lt;/p&gt;" style="align=left;overflow=fill;html=1;dropTarget=0;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=13;" vertex="1" parent="pkg-group">
+      <mxGeometry x="1300" y="740" width="220" height="60" as="geometry" />
+    </mxCell>
+    <mxCell id="table-cu21-embeddings-icon" value="" style="shape=component;jettyWidth=8;jettyHeight=4;" vertex="1" parent="table-cu21-embeddings">
+      <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+        <mxPoint x="-24" y="4" as="offset" />
+      </mxGeometry>
+    </mxCell>
+
+    <!-- TABLES CU22 -->
+    <mxCell id="table-cu22-products" value="&lt;p style=&quot;margin:6px 0 0;text-align:center;font-size:13px;&quot;&gt;&amp;lt;&amp;lt;Table&amp;gt;&amp;gt;&lt;/p&gt;&lt;hr style=&quot;border-style:solid;font-size:13px;&quot;&gt;&lt;p style=&quot;margin:0 0 0 8px;font-size:13px;&quot;&gt;products&lt;/p&gt;" style="align=left;overflow=fill;html=1;dropTarget=0;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=13;" vertex="1" parent="pkg-group">
+      <mxGeometry x="1540" y="560" width="150" height="60" as="geometry" />
+    </mxCell>
+    <mxCell id="table-cu22-products-icon" value="" style="shape=component;jettyWidth=8;jettyHeight=4;" vertex="1" parent="table-cu22-products">
+      <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+        <mxPoint x="-24" y="4" as="offset" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="table-cu22-variants" value="&lt;p style=&quot;margin:6px 0 0;text-align:center;font-size:13px;&quot;&gt;&amp;lt;&amp;lt;Table&amp;gt;&amp;gt;&lt;/p&gt;&lt;hr style=&quot;border-style:solid;font-size:13px;&quot;&gt;&lt;p style=&quot;margin:0 0 0 8px;font-size:13px;&quot;&gt;product_variants&lt;/p&gt;" style="align=left;overflow=fill;html=1;dropTarget=0;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=13;" vertex="1" parent="pkg-group">
+      <mxGeometry x="1710" y="560" width="200" height="60" as="geometry" />
+    </mxCell>
+    <mxCell id="table-cu22-variants-icon" value="" style="shape=component;jettyWidth=8;jettyHeight=4;" vertex="1" parent="table-cu22-variants">
+      <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+        <mxPoint x="-24" y="4" as="offset" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="table-cu22-categories" value="&lt;p style=&quot;margin:6px 0 0;text-align:center;font-size:13px;&quot;&gt;&amp;lt;&amp;lt;Table&amp;gt;&amp;gt;&lt;/p&gt;&lt;hr style=&quot;border-style:solid;font-size:13px;&quot;&gt;&lt;p style=&quot;margin:0 0 0 8px;font-size:13px;&quot;&gt;categories&lt;/p&gt;" style="align=left;overflow=fill;html=1;dropTarget=0;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=13;" vertex="1" parent="pkg-group">
+      <mxGeometry x="1540" y="650" width="150" height="60" as="geometry" />
+    </mxCell>
+    <mxCell id="table-cu22-categories-icon" value="" style="shape=component;jettyWidth=8;jettyHeight=4;" vertex="1" parent="table-cu22-categories">
+      <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+        <mxPoint x="-24" y="4" as="offset" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="table-cu22-inventory" value="&lt;p style=&quot;margin:6px 0 0;text-align:center;font-size:13px;&quot;&gt;&amp;lt;&amp;lt;Table&amp;gt;&amp;gt;&lt;/p&gt;&lt;hr style=&quot;border-style:solid;font-size:13px;&quot;&gt;&lt;p style=&quot;margin:0 0 0 8px;font-size:13px;&quot;&gt;inventory&lt;/p&gt;" style="align=left;overflow=fill;html=1;dropTarget=0;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=13;" vertex="1" parent="pkg-group">
+      <mxGeometry x="1710" y="650" width="150" height="60" as="geometry" />
+    </mxCell>
+    <mxCell id="table-cu22-inventory-icon" value="" style="shape=component;jettyWidth=8;jettyHeight=4;" vertex="1" parent="table-cu22-inventory">
+      <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+        <mxPoint x="-24" y="4" as="offset" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="table-cu22-conversations" value="&lt;p style=&quot;margin:6px 0 0;text-align:center;font-size:13px;&quot;&gt;&amp;lt;&amp;lt;Table&amp;gt;&amp;gt;&lt;/p&gt;&lt;hr style=&quot;border-style:solid;font-size:13px;&quot;&gt;&lt;p style=&quot;margin:0 0 0 8px;font-size:12px;&quot;&gt;conversations&lt;/p&gt;" style="align=left;overflow=fill;html=1;dropTarget=0;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=13;" vertex="1" parent="pkg-group">
+      <mxGeometry x="1540" y="740" width="150" height="60" as="geometry" />
+    </mxCell>
+    <mxCell id="table-cu22-conversations-icon" value="" style="shape=component;jettyWidth=8;jettyHeight=4;" vertex="1" parent="table-cu22-conversations">
+      <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+        <mxPoint x="-24" y="4" as="offset" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="table-cu22-messages" value="&lt;p style=&quot;margin:6px 0 0;text-align:center;font-size:13px;&quot;&gt;&amp;lt;&amp;lt;Table&amp;gt;&amp;gt;&lt;/p&gt;&lt;hr style=&quot;border-style:solid;font-size:13px;&quot;&gt;&lt;p style=&quot;margin:0 0 0 8px;font-size:12px;&quot;&gt;conversation_messages&lt;/p&gt;" style="align=left;overflow=fill;html=1;dropTarget=0;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=13;" vertex="1" parent="pkg-group">
+      <mxGeometry x="1710" y="740" width="200" height="60" as="geometry" />
+    </mxCell>
+    <mxCell id="table-cu22-messages-icon" value="" style="shape=component;jettyWidth=8;jettyHeight=4;" vertex="1" parent="table-cu22-messages">
+      <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+        <mxPoint x="-24" y="4" as="offset" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="table-cu22-profiles" value="&lt;p style=&quot;margin:6px 0 0;text-align:center;font-size:13px;&quot;&gt;&amp;lt;&amp;lt;Table&amp;gt;&amp;gt;&lt;/p&gt;&lt;hr style=&quot;border-style:solid;font-size:13px;&quot;&gt;&lt;p style=&quot;margin:0 0 0 8px;font-size:12px;&quot;&gt;user_body_profiles&lt;/p&gt;" style="align=left;overflow=fill;html=1;dropTarget=0;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=13;" vertex="1" parent="pkg-group">
+      <mxGeometry x="1930" y="740" width="180" height="60" as="geometry" />
+    </mxCell>
+    <mxCell id="table-cu22-profiles-icon" value="" style="shape=component;jettyWidth=8;jettyHeight=4;" vertex="1" parent="table-cu22-profiles">
+      <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+        <mxPoint x="-24" y="4" as="offset" />
+      </mxGeometry>
+    </mxCell>
+
+    <!-- TABLES CU23 -->
+    <mxCell id="table-cu23-sales" value="&lt;p style=&quot;margin:6px 0 0;text-align:center;font-size:13px;&quot;&gt;&amp;lt;&amp;lt;Table&amp;gt;&amp;gt;&lt;/p&gt;&lt;hr style=&quot;border-style:solid;font-size:13px;&quot;&gt;&lt;p style=&quot;margin:0 0 0 8px;font-size:13px;&quot;&gt;sales&lt;/p&gt;" style="align=left;overflow=fill;html=1;dropTarget=0;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=13;" vertex="1" parent="pkg-group">
+      <mxGeometry x="2040" y="560" width="110" height="60" as="geometry" />
+    </mxCell>
+    <mxCell id="table-cu23-sales-icon" value="" style="shape=component;jettyWidth=8;jettyHeight=4;" vertex="1" parent="table-cu23-sales">
+      <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+        <mxPoint x="-24" y="4" as="offset" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="table-cu23-sale-items" value="&lt;p style=&quot;margin:6px 0 0;text-align:center;font-size:13px;&quot;&gt;&amp;lt;&amp;lt;Table&amp;gt;&amp;gt;&lt;/p&gt;&lt;hr style=&quot;border-style:solid;font-size:13px;&quot;&gt;&lt;p style=&quot;margin:0 0 0 8px;font-size:13px;&quot;&gt;sale_items&lt;/p&gt;" style="align=left;overflow=fill;html=1;dropTarget=0;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=13;" vertex="1" parent="pkg-group">
+      <mxGeometry x="2160" y="560" width="160" height="60" as="geometry" />
+    </mxCell>
+    <mxCell id="table-cu23-sale-items-icon" value="" style="shape=component;jettyWidth=8;jettyHeight=4;" vertex="1" parent="table-cu23-sale-items">
+      <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+        <mxPoint x="-24" y="4" as="offset" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="table-cu23-inventory" value="&lt;p style=&quot;margin:6px 0 0;text-align:center;font-size:13px;&quot;&gt;&amp;lt;&amp;lt;Table&amp;gt;&amp;gt;&lt;/p&gt;&lt;hr style=&quot;border-style:solid;font-size:13px;&quot;&gt;&lt;p style=&quot;margin:0 0 0 8px;font-size:13px;&quot;&gt;inventory&lt;/p&gt;" style="align=left;overflow=fill;html=1;dropTarget=0;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=13;" vertex="1" parent="pkg-group">
+      <mxGeometry x="2340" y="560" width="140" height="60" as="geometry" />
+    </mxCell>
+    <mxCell id="table-cu23-inventory-icon" value="" style="shape=component;jettyWidth=8;jettyHeight=4;" vertex="1" parent="table-cu23-inventory">
+      <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+        <mxPoint x="-24" y="4" as="offset" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="table-cu23-branches" value="&lt;p style=&quot;margin:6px 0 0;text-align:center;font-size:13px;&quot;&gt;&amp;lt;&amp;lt;Table&amp;gt;&amp;gt;&lt;/p&gt;&lt;hr style=&quot;border-style:solid;font-size:13px;&quot;&gt;&lt;p style=&quot;margin:0 0 0 8px;font-size:13px;&quot;&gt;branches&lt;/p&gt;" style="align=left;overflow=fill;html=1;dropTarget=0;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=13;" vertex="1" parent="pkg-group">
+      <mxGeometry x="2040" y="650" width="140" height="60" as="geometry" />
+    </mxCell>
+    <mxCell id="table-cu23-branches-icon" value="" style="shape=component;jettyWidth=8;jettyHeight=4;" vertex="1" parent="table-cu23-branches">
+      <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+        <mxPoint x="-24" y="4" as="offset" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="table-cu23-products" value="&lt;p style=&quot;margin:6px 0 0;text-align:center;font-size:13px;&quot;&gt;&amp;lt;&amp;lt;Table&amp;gt;&amp;gt;&lt;/p&gt;&lt;hr style=&quot;border-style:solid;font-size:13px;&quot;&gt;&lt;p style=&quot;margin:0 0 0 8px;font-size:13px;&quot;&gt;products&lt;/p&gt;" style="align=left;overflow=fill;html=1;dropTarget=0;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=13;" vertex="1" parent="pkg-group">
+      <mxGeometry x="2200" y="650" width="150" height="60" as="geometry" />
+    </mxCell>
+    <mxCell id="table-cu23-products-icon" value="" style="shape=component;jettyWidth=8;jettyHeight=4;" vertex="1" parent="table-cu23-products">
+      <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+        <mxPoint x="-24" y="4" as="offset" />
+      </mxGeometry>
+    </mxCell>
+
+    <!-- ================================================================ -->
+    <!--          RELACIONES CLASS -> TABLE (dashed / laquo;use)           -->
+    <!-- ================================================================ -->
+
+    <!-- CU19: fitting-room.service.ts -> productos (imagen), variantes, colores, tallas -->
+    <mxCell id="edge-fit-products" value="&#171;use&#187;" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;dashed=1;endArrow=open;endFill=0;fontSize=10;labelBackgroundColor=#FFFFFF;" edge="1" source="class-fitting" target="table-cu19-products" parent="pkg-group">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="edge-fit-variants" value="&#171;use&#187;" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.55;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;dashed=1;endArrow=open;endFill=0;fontSize=10;labelBackgroundColor=#FFFFFF;" edge="1" source="class-fitting" target="table-cu19-variants" parent="pkg-group">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="edge-fit-colors" value="&#171;use&#187;" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.35;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;dashed=1;endArrow=open;endFill=0;fontSize=10;labelBackgroundColor=#FFFFFF;" edge="1" source="class-fitting" target="table-cu19-colors" parent="pkg-group">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="edge-fit-sizes" value="&#171;use&#187;" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.7;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;dashed=1;endArrow=open;endFill=0;fontSize=10;labelBackgroundColor=#FFFFFF;" edge="1" source="class-fitting" target="table-cu19-sizes" parent="pkg-group">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+
+    <!-- CU20: reports-api.service.ts -> ventas, ventas_items, inventario, reservas, sucursales, productos -->
+    <mxCell id="edge-reports-sales" value="&#171;use&#187;" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.15;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;dashed=1;endArrow=open;endFill=0;fontSize=10;labelBackgroundColor=#FFFFFF;" edge="1" source="class-reports" target="table-cu20-sales" parent="pkg-group">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="edge-reports-sale-items" value="&#171;use&#187;" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.35;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;dashed=1;endArrow=open;endFill=0;fontSize=10;labelBackgroundColor=#FFFFFF;" edge="1" source="class-reports" target="table-cu20-sale-items" parent="pkg-group">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="edge-reports-inventory" value="&#171;use&#187;" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.6;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;dashed=1;endArrow=open;endFill=0;fontSize=10;labelBackgroundColor=#FFFFFF;" edge="1" source="class-reports" target="table-cu20-inventory" parent="pkg-group">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="edge-reports-reservations" value="&#171;use&#187;" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.2;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;dashed=1;endArrow=open;endFill=0;fontSize=10;labelBackgroundColor=#FFFFFF;" edge="1" source="class-reports" target="table-cu20-reservations" parent="pkg-group">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="edge-reports-branches" value="&#171;use&#187;" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;dashed=1;endArrow=open;endFill=0;fontSize=10;labelBackgroundColor=#FFFFFF;" edge="1" source="class-reports" target="table-cu20-branches" parent="pkg-group">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="edge-reports-products" value="&#171;use&#187;" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.78;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;dashed=1;endArrow=open;endFill=0;fontSize=10;labelBackgroundColor=#FFFFFF;" edge="1" source="class-reports" target="table-cu20-products" parent="pkg-group">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+
+    <!-- CU21: recommendations-api.service.ts -> usuario, historial de pedidos, productos, temporada, variantes, interacciones, embeddings -->
+    <mxCell id="edge-reco-users" value="&#171;use&#187;" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.12;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;dashed=1;endArrow=open;endFill=0;fontSize=10;labelBackgroundColor=#FFFFFF;" edge="1" source="class-recommendations" target="table-cu21-users" parent="pkg-group">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="edge-reco-orders" value="&#171;use&#187;" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.3;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;dashed=1;endArrow=open;endFill=0;fontSize=10;labelBackgroundColor=#FFFFFF;" edge="1" source="class-recommendations" target="table-cu21-orders" parent="pkg-group">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="edge-reco-order-items" value="&#171;use&#187;" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.55;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;dashed=1;endArrow=open;endFill=0;fontSize=10;labelBackgroundColor=#FFFFFF;" edge="1" source="class-recommendations" target="table-cu21-order-items" parent="pkg-group">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="edge-reco-products" value="&#171;use&#187;" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.2;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;dashed=1;endArrow=open;endFill=0;fontSize=10;labelBackgroundColor=#FFFFFF;" edge="1" source="class-recommendations" target="table-cu21-products" parent="pkg-group">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="edge-reco-variants" value="&#171;use&#187;" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;dashed=1;endArrow=open;endFill=0;fontSize=10;labelBackgroundColor=#FFFFFF;" edge="1" source="class-recommendations" target="table-cu21-variants" parent="pkg-group">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="edge-reco-seasons" value="&#171;use&#187;" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.8;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;dashed=1;endArrow=open;endFill=0;fontSize=10;labelBackgroundColor=#FFFFFF;" edge="1" source="class-recommendations" target="table-cu21-seasons" parent="pkg-group">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="edge-reco-interactions" value="&#171;use&#187;" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;dashed=1;endArrow=open;endFill=0;fontSize=10;labelBackgroundColor=#FFFFFF;" edge="1" source="class-recommendations" target="table-cu21-interactions" parent="pkg-group">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="edge-reco-embeddings" value="&#171;use&#187;" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.6;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;dashed=1;endArrow=open;endFill=0;fontSize=10;labelBackgroundColor=#FFFFFF;" edge="1" source="class-recommendations" target="table-cu21-embeddings" parent="pkg-group">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+
+    <!-- CU22: chatbot-api.service.ts -> catÃ¡logo, disponibilidad, conversaciones, perfiles -->
+    <mxCell id="edge-chat-products" value="&#171;use&#187;" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;dashed=1;endArrow=open;endFill=0;fontSize=10;labelBackgroundColor=#FFFFFF;" edge="1" source="class-chatbot" target="table-cu22-products" parent="pkg-group">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="edge-chat-variants" value="&#171;use&#187;" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.6;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;dashed=1;endArrow=open;endFill=0;fontSize=10;labelBackgroundColor=#FFFFFF;" edge="1" source="class-chatbot" target="table-cu22-variants" parent="pkg-group">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="edge-chat-categories" value="&#171;use&#187;" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.3;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;dashed=1;endArrow=open;endFill=0;fontSize=10;labelBackgroundColor=#FFFFFF;" edge="1" source="class-chatbot" target="table-cu22-categories" parent="pkg-group">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="edge-chat-inventory" value="&#171;use&#187;" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.68;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;dashed=1;endArrow=open;endFill=0;fontSize=10;labelBackgroundColor=#FFFFFF;" edge="1" source="class-chatbot" target="table-cu22-inventory" parent="pkg-group">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="edge-chat-conversations" value="&#171;use&#187;" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.15;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;dashed=1;endArrow=open;endFill=0;fontSize=10;labelBackgroundColor=#FFFFFF;" edge="1" source="class-chatbot" target="table-cu22-conversations" parent="pkg-group">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="edge-chat-messages" value="&#171;use&#187;" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.4;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;dashed=1;endArrow=open;endFill=0;fontSize=10;labelBackgroundColor=#FFFFFF;" edge="1" source="class-chatbot" target="table-cu22-messages" parent="pkg-group">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="edge-chat-profiles" value="&#171;use&#187;" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.9;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;dashed=1;endArrow=open;endFill=0;fontSize=10;labelBackgroundColor=#FFFFFF;" edge="1" source="class-chatbot" target="table-cu22-profiles" parent="pkg-group">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+
+    <!-- CU23: voice-report-api.service.ts -> reutiliza los datos de reportes -->
+    <mxCell id="edge-voice-sales" value="&#171;use&#187;" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.15;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;dashed=1;endArrow=open;endFill=0;fontSize=10;labelBackgroundColor=#FFFFFF;" edge="1" source="class-voice-report" target="table-cu23-sales" parent="pkg-group">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="edge-voice-sale-items" value="&#171;use&#187;" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.4;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;dashed=1;endArrow=open;endFill=0;fontSize=10;labelBackgroundColor=#FFFFFF;" edge="1" source="class-voice-report" target="table-cu23-sale-items" parent="pkg-group">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="edge-voice-inventory" value="&#171;use&#187;" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.65;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;dashed=1;endArrow=open;endFill=0;fontSize=10;labelBackgroundColor=#FFFFFF;" edge="1" source="class-voice-report" target="table-cu23-inventory" parent="pkg-group">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="edge-voice-branches" value="&#171;use&#187;" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.3;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;dashed=1;endArrow=open;endFill=0;fontSize=10;labelBackgroundColor=#FFFFFF;" edge="1" source="class-voice-report" target="table-cu23-branches" parent="pkg-group">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="edge-voice-products" value="&#171;use&#187;" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.65;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;dashed=1;endArrow=open;endFill=0;fontSize=10;labelBackgroundColor=#FFFFFF;" edge="1" source="class-voice-report" target="table-cu23-products" parent="pkg-group">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+
+  </root>
+</mxGraphModel>

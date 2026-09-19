@@ -1,0 +1,67 @@
+@startuml CU15_Diagrama_de_Estados
+' ==========================================
+' Estilos y Configuración General
+' ==========================================
+skinparam backgroundColor #FFFFFF
+skinparam shadowing false
+skinparam defaultFontName Arial
+skinparam defaultFontSize 12
+
+skinparam state {
+    BackgroundColor #FFE6CC
+    BorderColor #D79B00
+    FontColor #000000
+    StartColor #E67E22
+    EndColor #000000
+}
+
+' ==========================================
+' Inicio: Consulta del Carrito
+' ==========================================
+[*] --> ConsultandoCarrito : Abrir el carrito de compras
+
+ConsultandoCarrito --> CarritoConsultado : Cargar el contenido del carrito
+CarritoConsultado : Productos agregados con cantidades y totales
+
+' ==========================================
+' Adición de Productos
+' ==========================================
+CarritoConsultado --> AgregandoProducto : Seleccionar un producto del catálogo
+AgregandoProducto --> ProductoAgregado : Confirmar adición al carrito
+AgregandoProducto --> ErrorStock : [Cantidad supera el stock disponible]
+
+ErrorStock --> CarritoConsultado : Aviso de stock insuficiente
+ProductoAgregado --> CarritoConsultado : Refrescar el carrito
+
+' ==========================================
+' Edición de Cantidades
+' ==========================================
+CarritoConsultado --> EditandoCantidad : Aumentar o disminuir cantidad
+EditandoCantidad --> CarritoConsultado : Cantidad actualizada
+EditandoCantidad --> CarritoConsultado : Cantidad en cero, el ítem se elimina
+
+' ==========================================
+' Eliminación de Productos
+' ==========================================
+CarritoConsultado --> EliminandoProducto : Clic en "Eliminar"
+EliminandoProducto --> CarritoConsultado : Ítem eliminado del carrito
+
+' ==========================================
+' Vaciado del Carrito
+' ==========================================
+CarritoConsultado --> ConfirmandoVaciado : Clic en "Vaciar carrito"
+
+state ConfirmandoVaciado <<choice>>
+ConfirmandoVaciado --> CarritoVacio : [Confirmar]
+ConfirmandoVaciado --> CarritoConsultado : [Cancelar]
+
+CarritoVacio : Carrito sin productos
+CarritoVacio --> AgregandoProducto : Añadir un producto de nuevo
+
+' ==========================================
+' Fin
+' ==========================================
+CarritoConsultado --> [*] : Salir del carrito
+CarritoVacio --> [*] : Salir del carrito
+
+@enduml

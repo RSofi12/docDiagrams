@@ -1,0 +1,61 @@
+@startuml CU18_Diagrama_de_Comunicacion
+' ==========================================
+' Estilos y Configuración General
+' ==========================================
+skinparam style strictuml
+skinparam handwritten false
+skinparam shadowing false
+skinparam defaultFontName "Helvetica"
+skinparam defaultFontSize 12
+
+' ==========================================
+' Participantes (distribución horizontal:
+' Actor -> Boundary -> Control -> Entities)
+' ==========================================
+actor ":Cajero" as cajero
+boundary ":SalesPageComponent" as ui
+control ":SalesController" as ctrl
+entity ":Sucursal" as entSucursal
+entity ":Reserva" as entReserva
+entity ":Variante" as entVariante
+entity ":Inventario" as entInventario
+entity ":MovimientoInventario" as entMovimiento
+entity ":Venta" as entVenta
+entity ":ItemVenta" as entItem
+
+' Enlaces ocultos para forzar el orden horizontal de izquierda a derecha
+cajero -[hidden]right- ui
+ui -[hidden]right- ctrl
+ctrl -[hidden]right- entSucursal
+entSucursal -[hidden]right- entReserva
+entReserva -[hidden]right- entVariante
+entVariante -[hidden]right- entInventario
+entInventario -[hidden]right- entMovimiento
+entMovimiento -[hidden]right- entVenta
+entVenta -[hidden]right- entItem
+
+' ==========================================
+' Mensajes numerados (funciones reales, sin parámetros)
+' Los retornos de las entidades son implícitos (UML 2.5+,
+' las entidades no envían mensajes de vuelta al controlador)
+' ==========================================
+cajero -- ui : "1: consultarVentasSucursal()"
+ui -- ctrl : "1.1: listBranchSales()"
+ctrl -- entSucursal : "1.2: verificarSucursal()"
+ctrl -- entVenta : "1.3: list_sales_by_branch()"
+ctrl -- ui : "1.4: mostrarVentasSucursal()"
+ui -- cajero : "1.5: renderizarVentasSucursal()"
+
+cajero -- ui : "2: registrarVentaPresencial()"
+ui -- ctrl : "2.1: createSale()"
+ctrl -- entSucursal : "2.2: verificarSucursal()"
+ctrl -- entReserva : "2.3: _get_reservation_for_branch()"
+ctrl -- entVariante : "2.4: obtenerDatosVariante()"
+ctrl -- entInventario : "2.5: _get_inventory_for_update()"
+ctrl -- entMovimiento : "2.6: registrarMovimientoInventario()"
+ctrl -- entVenta : "2.7: _create_sale_from_items()"
+ctrl -- entItem : "2.8: agregarItemVenta()"
+ctrl -- ui : "2.9: mostrarVentaRegistrada()"
+ui -- cajero : "2.10: renderizarConfirmacionVenta()"
+
+@enduml

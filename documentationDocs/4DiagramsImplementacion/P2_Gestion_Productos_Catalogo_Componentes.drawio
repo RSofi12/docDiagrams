@@ -1,0 +1,284 @@
+<mxGraphModel dx="1823" dy="1037" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="900" math="0" shadow="0">
+  <root>
+    <mxCell id="0" />
+    <mxCell id="1" parent="0" />
+
+    <!-- ========== GRUPO PRINCIPAL (PAQUETE) ========== -->
+    <mxCell id="pkg-group" value="" style="group" vertex="1" connectable="0" parent="1">
+      <mxGeometry x="30" y="30" width="1340" height="780" as="geometry" />
+    </mxCell>
+
+    <!-- Carpeta del paquete -->
+    <mxCell id="pkg-folder" value="" style="shape=folder;fontStyle=1;spacingTop=10;tabWidth=460;tabHeight=33;tabPosition=left;html=1;whiteSpace=wrap;" vertex="1" parent="pkg-group">
+      <mxGeometry x="10" y="0" width="1330" height="780" as="geometry" />
+    </mxCell>
+
+    <!-- Título del paquete -->
+    <mxCell id="pkg-title" value="&lt;b&gt;pkg Gestión de Productos y Catálogo&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="pkg-group">
+      <mxGeometry x="-1" y="0" width="310" height="30" as="geometry" />
+    </mxCell>
+
+    <!-- ================================================================ -->
+    <!--                    CAPA FORM (ARRIBA) - Rosa                     -->
+    <!-- ================================================================ -->
+
+    <!-- FORM 1: admin-catalog-page.component.ts -->
+    <mxCell id="form-admin-catalog" value="&lt;p style=&quot;margin:0px;margin-top:6px;text-align:center;&quot;&gt;&lt;b&gt;&amp;lt;&amp;lt;FORM&amp;gt;&amp;gt;&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:8px;font-size:12px;&quot;&gt;admin-catalog-page.component.ts&lt;/p&gt;" style="align=left;overflow=fill;html=1;dropTarget=0;whiteSpace=wrap;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="pkg-group">
+      <mxGeometry x="130" y="60" width="240" height="90" as="geometry" />
+    </mxCell>
+    <mxCell id="form-admin-catalog-icon" value="" style="shape=component;jettyWidth=8;jettyHeight=4;" vertex="1" parent="form-admin-catalog">
+      <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+        <mxPoint x="-24" y="4" as="offset" />
+      </mxGeometry>
+    </mxCell>
+
+    <!-- FORM 2: catalog-page.component.ts (cliente) -->
+    <mxCell id="form-client-catalog" value="&lt;p style=&quot;margin:0px;margin-top:6px;text-align:center;&quot;&gt;&lt;b&gt;&amp;lt;&amp;lt;FORM&amp;gt;&amp;gt;&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:8px;font-size:12px;&quot;&gt;catalog-page.component.ts&lt;/p&gt;" style="align=left;overflow=fill;html=1;dropTarget=0;whiteSpace=wrap;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="pkg-group">
+      <mxGeometry x="550" y="60" width="240" height="90" as="geometry" />
+    </mxCell>
+    <mxCell id="form-client-catalog-icon" value="" style="shape=component;jettyWidth=8;jettyHeight=4;" vertex="1" parent="form-client-catalog">
+      <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+        <mxPoint x="-24" y="4" as="offset" />
+      </mxGeometry>
+    </mxCell>
+
+    <!-- FORM 3: admin-provider-page.component.ts -->
+    <mxCell id="form-admin-provider" value="&lt;p style=&quot;margin:0px;margin-top:6px;text-align:center;&quot;&gt;&lt;b&gt;&amp;lt;&amp;lt;FORM&amp;gt;&amp;gt;&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:8px;font-size:12px;&quot;&gt;admin-provider-page.component.ts&lt;/p&gt;" style="align=left;overflow=fill;html=1;dropTarget=0;whiteSpace=wrap;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="pkg-group">
+      <mxGeometry x="960" y="60" width="250" height="90" as="geometry" />
+    </mxCell>
+    <mxCell id="form-admin-provider-icon" value="" style="shape=component;jettyWidth=8;jettyHeight=4;" vertex="1" parent="form-admin-provider">
+      <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+        <mxPoint x="-24" y="4" as="offset" />
+      </mxGeometry>
+    </mxCell>
+
+    <!-- ================================================================ -->
+    <!--         INTERFACES FORM → CLASS (provides/requires)              -->
+    <!-- ================================================================ -->
+
+    <!-- admin-catalog-page → halfCircle (requires) -->
+    <mxCell id="edge-admcat-req" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;endArrow=halfCircle;endFill=0;" edge="1" source="form-admin-catalog" parent="pkg-group">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="250" y="270" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+
+    <!-- catalog-api.service provides → admin-catalog-page -->
+    <mxCell id="edge-catserv-prov-admcat" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;endArrow=circle;endFill=0;" edge="1" source="class-catalog" parent="pkg-group">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="250" y="270" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+
+    <!-- catalog-page (cliente) → halfCircle (requires) -->
+    <mxCell id="edge-clicat-req" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;endArrow=halfCircle;endFill=0;" edge="1" source="form-client-catalog" parent="pkg-group">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="670" y="270" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+
+    <!-- catalog-api.service provides → catalog-page (cliente) -->
+    <mxCell id="edge-catserv-prov-clicat" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;endArrow=circle;endFill=0;" edge="1" source="class-catalog2" parent="pkg-group">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="670" y="270" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+
+    <!-- admin-provider-page → halfCircle (requires) -->
+    <mxCell id="edge-admprov-req" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;endArrow=halfCircle;endFill=0;" edge="1" source="form-admin-provider" parent="pkg-group">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="1085" y="270" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+
+    <!-- admin-provider.service provides → admin-provider-page -->
+    <mxCell id="edge-provserv-prov-admprov" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;endArrow=circle;endFill=0;" edge="1" source="class-provider" parent="pkg-group">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="1085" y="270" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+
+    <!-- ================================================================ -->
+    <!--                   CAPA CLASS (MEDIO) - Naranja                   -->
+    <!-- ================================================================ -->
+
+    <!-- CLASS 1: catalog-api.service.ts (para admin) -->
+    <mxCell id="class-catalog" value="&lt;p style=&quot;margin:0px;margin-top:6px;text-align:center;&quot;&gt;&lt;b&gt;&amp;lt;&amp;lt;CLASS&amp;gt;&amp;gt;&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:8px;font-size:13px;&quot;&gt;catalog-api.service.ts&lt;/p&gt;" style="align=left;overflow=fill;html=1;dropTarget=0;whiteSpace=wrap;fillColor=#fad7ac;strokeColor=#b46504;" vertex="1" parent="pkg-group">
+      <mxGeometry x="130" y="310" width="240" height="90" as="geometry" />
+    </mxCell>
+    <mxCell id="class-catalog-icon" value="" style="shape=component;jettyWidth=8;jettyHeight=4;" vertex="1" parent="class-catalog">
+      <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+        <mxPoint x="-24" y="4" as="offset" />
+      </mxGeometry>
+    </mxCell>
+
+    <!-- CLASS 2: catalog-api.service.ts (para cliente - misma clase) -->
+    <mxCell id="class-catalog2" value="&lt;p style=&quot;margin:0px;margin-top:6px;text-align:center;&quot;&gt;&lt;b&gt;&amp;lt;&amp;lt;CLASS&amp;gt;&amp;gt;&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:8px;font-size:13px;&quot;&gt;catalog-api.service.ts&lt;/p&gt;" style="align=left;overflow=fill;html=1;dropTarget=0;whiteSpace=wrap;fillColor=#fad7ac;strokeColor=#b46504;" vertex="1" parent="pkg-group">
+      <mxGeometry x="550" y="310" width="240" height="90" as="geometry" />
+    </mxCell>
+    <mxCell id="class-catalog2-icon" value="" style="shape=component;jettyWidth=8;jettyHeight=4;" vertex="1" parent="class-catalog2">
+      <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+        <mxPoint x="-24" y="4" as="offset" />
+      </mxGeometry>
+    </mxCell>
+
+    <!-- CLASS 3: admin-provider.service.ts -->
+    <mxCell id="class-provider" value="&lt;p style=&quot;margin:0px;margin-top:6px;text-align:center;&quot;&gt;&lt;b&gt;&amp;lt;&amp;lt;CLASS&amp;gt;&amp;gt;&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:8px;font-size:13px;&quot;&gt;admin-provider.service.ts&lt;/p&gt;" style="align=left;overflow=fill;html=1;dropTarget=0;whiteSpace=wrap;fillColor=#fad7ac;strokeColor=#b46504;" vertex="1" parent="pkg-group">
+      <mxGeometry x="960" y="310" width="250" height="90" as="geometry" />
+    </mxCell>
+    <mxCell id="class-provider-icon" value="" style="shape=component;jettyWidth=8;jettyHeight=4;" vertex="1" parent="class-provider">
+      <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+        <mxPoint x="-24" y="4" as="offset" />
+      </mxGeometry>
+    </mxCell>
+
+    <!-- ================================================================ -->
+    <!--              CAPA TABLE (ABAJO) - Azul                           -->
+    <!-- ================================================================ -->
+
+    <!-- TABLE: products (CU08 - incluye descuento: discount_type, discount_value) -->
+    <mxCell id="table-products" value="&lt;p style=&quot;margin:6px 0 0;text-align:center;font-size:13px;&quot;&gt;&amp;lt;&amp;lt;Table&amp;gt;&amp;gt;&lt;/p&gt;&lt;hr style=&quot;border-style:solid;font-size:13px;&quot;&gt;&lt;p style=&quot;margin:0 0 0 8px;font-size:13px;&quot;&gt;products&lt;/p&gt;" style="align=left;overflow=fill;html=1;dropTarget=0;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=13;" vertex="1" parent="pkg-group">
+      <mxGeometry x="30" y="610" width="140" height="60" as="geometry" />
+    </mxCell>
+    <mxCell id="table-products-icon" value="" style="shape=component;jettyWidth=8;jettyHeight=4;" vertex="1" parent="table-products">
+      <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+        <mxPoint x="-24" y="4" as="offset" />
+      </mxGeometry>
+    </mxCell>
+
+    <!-- TABLE: product_variants -->
+    <mxCell id="table-variants" value="&lt;p style=&quot;margin:6px 0 0;text-align:center;font-size:13px;&quot;&gt;&amp;lt;&amp;lt;Table&amp;gt;&amp;gt;&lt;/p&gt;&lt;hr style=&quot;border-style:solid;font-size:13px;&quot;&gt;&lt;p style=&quot;margin:0 0 0 8px;font-size:13px;&quot;&gt;product_variants&lt;/p&gt;" style="align=left;overflow=fill;html=1;dropTarget=0;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=13;" vertex="1" parent="pkg-group">
+      <mxGeometry x="210" y="610" width="170" height="60" as="geometry" />
+    </mxCell>
+    <mxCell id="table-variants-icon" value="" style="shape=component;jettyWidth=8;jettyHeight=4;" vertex="1" parent="table-variants">
+      <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+        <mxPoint x="-24" y="4" as="offset" />
+      </mxGeometry>
+    </mxCell>
+
+    <!-- TABLE: categories -->
+    <mxCell id="table-categories" value="&lt;p style=&quot;margin:6px 0 0;text-align:center;font-size:13px;&quot;&gt;&amp;lt;&amp;lt;Table&amp;gt;&amp;gt;&lt;/p&gt;&lt;hr style=&quot;border-style:solid;font-size:13px;&quot;&gt;&lt;p style=&quot;margin:0 0 0 8px;font-size:13px;&quot;&gt;categories&lt;/p&gt;" style="align=left;overflow=fill;html=1;dropTarget=0;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=13;" vertex="1" parent="pkg-group">
+      <mxGeometry x="430" y="610" width="130" height="60" as="geometry" />
+    </mxCell>
+    <mxCell id="table-categories-icon" value="" style="shape=component;jettyWidth=8;jettyHeight=4;" vertex="1" parent="table-categories">
+      <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+        <mxPoint x="-24" y="4" as="offset" />
+      </mxGeometry>
+    </mxCell>
+
+    <!-- TABLE: sizes -->
+    <mxCell id="table-sizes" value="&lt;p style=&quot;margin:6px 0 0;text-align:center;font-size:13px;&quot;&gt;&amp;lt;&amp;lt;Table&amp;gt;&amp;gt;&lt;/p&gt;&lt;hr style=&quot;border-style:solid;font-size:13px;&quot;&gt;&lt;p style=&quot;margin:0 0 0 8px;font-size:13px;&quot;&gt;sizes&lt;/p&gt;" style="align=left;overflow=fill;html=1;dropTarget=0;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=13;" vertex="1" parent="pkg-group">
+      <mxGeometry x="610" y="610" width="110" height="60" as="geometry" />
+    </mxCell>
+    <mxCell id="table-sizes-icon" value="" style="shape=component;jettyWidth=8;jettyHeight=4;" vertex="1" parent="table-sizes">
+      <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+        <mxPoint x="-24" y="4" as="offset" />
+      </mxGeometry>
+    </mxCell>
+
+    <!-- TABLE: colors -->
+    <mxCell id="table-colors" value="&lt;p style=&quot;margin:6px 0 0;text-align:center;font-size:13px;&quot;&gt;&amp;lt;&amp;lt;Table&amp;gt;&amp;gt;&lt;/p&gt;&lt;hr style=&quot;border-style:solid;font-size:13px;&quot;&gt;&lt;p style=&quot;margin:0 0 0 8px;font-size:13px;&quot;&gt;colors&lt;/p&gt;" style="align=left;overflow=fill;html=1;dropTarget=0;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=13;" vertex="1" parent="pkg-group">
+      <mxGeometry x="770" y="610" width="110" height="60" as="geometry" />
+    </mxCell>
+    <mxCell id="table-colors-icon" value="" style="shape=component;jettyWidth=8;jettyHeight=4;" vertex="1" parent="table-colors">
+      <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+        <mxPoint x="-24" y="4" as="offset" />
+      </mxGeometry>
+    </mxCell>
+
+    <!-- TABLE: seasons -->
+    <mxCell id="table-seasons" value="&lt;p style=&quot;margin:6px 0 0;text-align:center;font-size:13px;&quot;&gt;&amp;lt;&amp;lt;Table&amp;gt;&amp;gt;&lt;/p&gt;&lt;hr style=&quot;border-style:solid;font-size:13px;&quot;&gt;&lt;p style=&quot;margin:0 0 0 8px;font-size:13px;&quot;&gt;seasons&lt;/p&gt;" style="align=left;overflow=fill;html=1;dropTarget=0;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=13;" vertex="1" parent="pkg-group">
+      <mxGeometry x="930" y="610" width="110" height="60" as="geometry" />
+    </mxCell>
+    <mxCell id="table-seasons-icon" value="" style="shape=component;jettyWidth=8;jettyHeight=4;" vertex="1" parent="table-seasons">
+      <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+        <mxPoint x="-24" y="4" as="offset" />
+      </mxGeometry>
+    </mxCell>
+
+    <!-- TABLE: collections -->
+    <mxCell id="table-collections" value="&lt;p style=&quot;margin:6px 0 0;text-align:center;font-size:13px;&quot;&gt;&amp;lt;&amp;lt;Table&amp;gt;&amp;gt;&lt;/p&gt;&lt;hr style=&quot;border-style:solid;font-size:13px;&quot;&gt;&lt;p style=&quot;margin:0 0 0 8px;font-size:13px;&quot;&gt;collections&lt;/p&gt;" style="align=left;overflow=fill;html=1;dropTarget=0;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=13;" vertex="1" parent="pkg-group">
+      <mxGeometry x="1090" y="610" width="120" height="60" as="geometry" />
+    </mxCell>
+    <mxCell id="table-collections-icon" value="" style="shape=component;jettyWidth=8;jettyHeight=4;" vertex="1" parent="table-collections">
+      <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+        <mxPoint x="-24" y="4" as="offset" />
+      </mxGeometry>
+    </mxCell>
+
+    <!-- TABLE: providers -->
+    <mxCell id="table-providers" value="&lt;p style=&quot;margin:6px 0 0;text-align:center;font-size:13px;&quot;&gt;&amp;lt;&amp;lt;Table&amp;gt;&amp;gt;&lt;/p&gt;&lt;hr style=&quot;border-style:solid;font-size:13px;&quot;&gt;&lt;p style=&quot;margin:0 0 0 8px;font-size:13px;&quot;&gt;providers&lt;/p&gt;" style="align=left;overflow=fill;html=1;dropTarget=0;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=13;" vertex="1" parent="pkg-group">
+      <mxGeometry x="30" y="710" width="140" height="55" as="geometry" />
+    </mxCell>
+    <mxCell id="table-providers-icon" value="" style="shape=component;jettyWidth=8;jettyHeight=4;" vertex="1" parent="table-providers">
+      <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+        <mxPoint x="-24" y="4" as="offset" />
+      </mxGeometry>
+    </mxCell>
+
+    <!-- TABLE: provider_variant_availability (CU07 - disponibilidad comunicada por el proveedor) -->
+    <mxCell id="table-provavailability" value="&lt;p style=&quot;margin:6px 0 0;text-align:center;font-size:12px;&quot;&gt;&amp;lt;&amp;lt;Table&amp;gt;&amp;gt;&lt;/p&gt;&lt;hr style=&quot;border-style:solid;font-size:13px;&quot;&gt;&lt;p style=&quot;margin:0 0 0 8px;font-size:12px;&quot;&gt;provider_variant_availability&lt;/p&gt;" style="align=left;overflow=fill;html=1;dropTarget=0;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=13;" vertex="1" parent="pkg-group">
+      <mxGeometry x="210" y="710" width="200" height="55" as="geometry" />
+    </mxCell>
+    <mxCell id="table-provavailability-icon" value="" style="shape=component;jettyWidth=8;jettyHeight=4;" vertex="1" parent="table-provavailability">
+      <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+        <mxPoint x="-24" y="4" as="offset" />
+      </mxGeometry>
+    </mxCell>
+
+    <!-- ================================================================ -->
+    <!--          RELACIONES CLASS → TABLE (dashed / «use»)               -->
+    <!-- ================================================================ -->
+
+    <!-- catalog-api.service (admin) → products -->
+    <mxCell id="edge-cat-products" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.15;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;dashed=1;endArrow=open;endFill=0;" edge="1" source="class-catalog" target="table-products" parent="pkg-group">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+
+    <!-- catalog-api.service (admin) → product_variants -->
+    <mxCell id="edge-cat-variants" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.4;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;dashed=1;endArrow=open;endFill=0;" edge="1" source="class-catalog" target="table-variants" parent="pkg-group">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+
+    <!-- catalog-api.service (admin) → categories -->
+    <mxCell id="edge-cat-categories" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.65;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;dashed=1;endArrow=open;endFill=0;" edge="1" source="class-catalog" target="table-categories" parent="pkg-group">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+
+    <!-- catalog-api.service (admin) → sizes -->
+    <mxCell id="edge-cat-sizes" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.85;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;dashed=1;endArrow=open;endFill=0;" edge="1" source="class-catalog" target="table-sizes" parent="pkg-group">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+
+    <!-- catalog-api.service (cliente) → colors -->
+    <mxCell id="edge-cat2-colors" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;dashed=1;endArrow=open;endFill=0;" edge="1" source="class-catalog2" target="table-colors" parent="pkg-group">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+
+    <!-- catalog-api.service (cliente) → seasons -->
+    <mxCell id="edge-cat2-seasons" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;dashed=1;endArrow=open;endFill=0;" edge="1" source="class-catalog2" target="table-seasons" parent="pkg-group">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+
+    <!-- catalog-api.service (cliente) → collections -->
+    <mxCell id="edge-cat2-collections" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;dashed=1;endArrow=open;endFill=0;" edge="1" source="class-catalog2" target="table-collections" parent="pkg-group">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+
+    <!-- admin-provider.service → providers -->
+    <mxCell id="edge-prov-providers" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;dashed=1;endArrow=open;endFill=0;" edge="1" source="class-provider" target="table-providers" parent="pkg-group">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+
+    <!-- admin-provider.service → products -->
+    <mxCell id="edge-prov-products" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0.5;entryDx=0;entryDy=0;dashed=1;endArrow=open;endFill=0;" edge="1" source="class-provider" target="table-products" parent="pkg-group">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+
+    <!-- catalog-api.service (CU07) → provider_variant_availability -->
+    <mxCell id="edge-cat-provavailability" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;dashed=1;endArrow=open;endFill=0;" edge="1" source="class-catalog" target="table-provavailability" parent="pkg-group">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+
+  </root>
+</mxGraphModel>

@@ -1,0 +1,65 @@
+@startuml CU17_Diagrama_de_Comunicacion
+' ==========================================
+' Estilos y Configuración General
+' ==========================================
+skinparam style strictuml
+skinparam handwritten false
+skinparam shadowing false
+skinparam defaultFontName "Helvetica"
+skinparam defaultFontSize 12
+
+' ==========================================
+' Participantes (distribución horizontal:
+' Actor -> Boundary -> Control -> Entities)
+' ==========================================
+actor ":EncargadoSucursal" as encargado
+boundary ":ReservationsPageComponent" as ui
+control ":ReservationController" as ctrl
+entity ":Sucursal" as entSucursal
+entity ":Reserva" as entReserva
+entity ":DetalleReserva" as entDetalle
+entity ":Inventario" as entInventario
+
+' Enlaces ocultos para forzar el orden horizontal de izquierda a derecha
+encargado -[hidden]right- ui
+ui -[hidden]right- ctrl
+ctrl -[hidden]right- entSucursal
+entSucursal -[hidden]right- entReserva
+entReserva -[hidden]right- entDetalle
+entDetalle -[hidden]right- entInventario
+
+' ==========================================
+' Mensajes numerados (funciones reales, sin parámetros)
+' Los retornos de las entidades son implícitos (UML 2.5+,
+' las entidades no envían mensajes de vuelta al controlador)
+' ==========================================
+encargado -- ui : "1: consultarReservasSucursal()"
+ui -- ctrl : "1.1: list_reservations_by_branch()"
+ctrl -- entSucursal : "1.2: verificarPermisosSucursal()"
+ctrl -- entReserva : "1.3: obtenerReservasPorSucursal()"
+ctrl -- entDetalle : "1.4: obtenerItemsReserva()"
+ctrl -- ui : "1.5: mostrarReservasSucursal()"
+ui -- encargado : "1.6: renderizarListaReservas()"
+
+encargado -- ui : "2: confirmarLlegadaCliente()"
+ui -- ctrl : "2.1: confirm_reservation_arrival()"
+ctrl -- entReserva : "2.2: actualizarEstadoLlegada()"
+ctrl -- ui : "2.3: mostrarLlegadaConfirmada()"
+ui -- encargado : "2.4: renderizarEstadoReserva()"
+
+encargado -- ui : "3: atenderReservaEntrega()"
+ui -- ctrl : "3.1: attend_reservation()"
+ctrl -- entReserva : "3.2: actualizarEstadoAtendida()"
+ctrl -- entDetalle : "3.3: obtenerItemsReserva()"
+ctrl -- entInventario : "3.4: descontarStockReservado()"
+ctrl -- ui : "3.5: mostrarReservaAtendida()"
+ui -- encargado : "3.6: renderizarConfirmacionAtencion()"
+
+encargado -- ui : "4: cancelarReservaEnSucursal()"
+ui -- ctrl : "4.1: cancel_branch_reservation()"
+ctrl -- entReserva : "4.2: actualizarEstadoCancelada()"
+ctrl -- entInventario : "4.3: liberarStockReservado()"
+ctrl -- ui : "4.4: mostrarReservaCancelada()"
+ui -- encargado : "4.5: renderizarCancelacionSucursal()"
+
+@enduml

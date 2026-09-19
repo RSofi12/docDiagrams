@@ -1,0 +1,48 @@
+@startuml CU22_Diagrama_de_Tiempo
+title Diagrama de Tiempo UML 2.5 - CU22: Consultar asistente virtual / chatbot
+
+header Sistema FashionStore - Ciclo 3 (Experiencia Inteligente y Analítica)
+footer Diagrama de Tiempo según especificación UML 2.5+
+
+skinparam LineColor Blue
+skinparam FontSize 16
+skinparam timingDiagram {
+    LineColor Blue
+    FontSize 16
+}
+
+robust "CU22 Acciones Cliente / UI" as C22
+robust "CU22 Motor Conversacional IA DB" as ST22
+
+@0
+C22 is Descanso
+ST22 is EstadoReposo
+
+@5
+C22 is AbrirAsistenteVirtual
+ST22 is InicializandoSesionChat
+
+@15
+C22 is RedactarOIngresarConsulta
+ST22 is ProcesandoEntradaLenguajeNatural
+
+@25
+C22 is EnviarPreguntaChatbot
+ST22 is ConsultandoContextoCatalogoYPrendas
+
+@35
+C22 is EsperandoRespuestaConversacional
+ST22 is SintetizandoRespuestaIA
+
+@45
+C22 is VisualizarRespuestaYRecomendaciones
+ST22 is EnviandoMensajeAInterfaz
+
+@55
+C22 is Descanso
+ST22 is EstadoReposo
+
+' Restricción de tiempo (SLA)
+@25 <-> @45 : {SLA Respuesta Chatbot <= 800ms}
+
+@enduml

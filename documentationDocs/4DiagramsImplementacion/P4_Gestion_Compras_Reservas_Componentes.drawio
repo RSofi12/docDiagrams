@@ -1,0 +1,318 @@
+<mxGraphModel dx="1823" dy="1037" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="900" math="0" shadow="0">
+  <root>
+    <mxCell id="0" />
+    <mxCell id="1" parent="0" />
+
+    <!-- ========== GRUPO PRINCIPAL (PAQUETE) ========== -->
+    <mxCell id="pkg-group" value="" style="group" vertex="1" connectable="0" parent="1">
+      <mxGeometry x="30" y="30" width="1340" height="800" as="geometry" />
+    </mxCell>
+
+    <!-- Carpeta del paquete -->
+    <mxCell id="pkg-folder" value="" style="shape=folder;fontStyle=1;spacingTop=10;tabWidth=440;tabHeight=33;tabPosition=left;html=1;whiteSpace=wrap;" vertex="1" parent="pkg-group">
+      <mxGeometry x="10" y="0" width="1330" height="800" as="geometry" />
+    </mxCell>
+
+    <!-- Título del paquete -->
+    <mxCell id="pkg-title" value="&lt;b&gt;pkg Gestión de Compras y Reservas&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="pkg-group">
+      <mxGeometry x="-1" y="0" width="300" height="30" as="geometry" />
+    </mxCell>
+
+    <!-- ================================================================ -->
+    <!--                    CAPA FORM (ARRIBA) - Rosa                     -->
+    <!-- ================================================================ -->
+
+    <!-- FORM 1: cart-page.component.ts -->
+    <mxCell id="form-cart" value="&lt;p style=&quot;margin:0px;margin-top:6px;text-align:center;&quot;&gt;&lt;b&gt;&amp;lt;&amp;lt;FORM&amp;gt;&amp;gt;&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:8px;font-size:12px;&quot;&gt;cart-page.component.ts&lt;/p&gt;" style="align=left;overflow=fill;html=1;dropTarget=0;whiteSpace=wrap;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="pkg-group">
+      <mxGeometry x="80" y="60" width="230" height="90" as="geometry" />
+    </mxCell>
+    <mxCell id="form-cart-icon" value="" style="shape=component;jettyWidth=8;jettyHeight=4;" vertex="1" parent="form-cart">
+      <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+        <mxPoint x="-24" y="4" as="offset" />
+      </mxGeometry>
+    </mxCell>
+
+    <!-- FORM 2: promotions-page.component.ts (admin/encargado, CU25) -->
+    <mxCell id="form-promotions" value="&lt;p style=&quot;margin:0px;margin-top:6px;text-align:center;&quot;&gt;&lt;b&gt;&amp;lt;&amp;lt;FORM&amp;gt;&amp;gt;&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:8px;font-size:12px;&quot;&gt;promotions-page.component.ts&lt;br&gt;(admin / encargado)&lt;/p&gt;" style="align=left;overflow=fill;html=1;dropTarget=0;whiteSpace=wrap;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="pkg-group">
+      <mxGeometry x="350" y="60" width="230" height="90" as="geometry" />
+    </mxCell>
+    <mxCell id="form-promotions-icon" value="" style="shape=component;jettyWidth=8;jettyHeight=4;" vertex="1" parent="form-promotions">
+      <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+        <mxPoint x="-24" y="4" as="offset" />
+      </mxGeometry>
+    </mxCell>
+
+    <!-- FORM 3: client reservations-page.component.ts -->
+    <mxCell id="form-res-client" value="&lt;p style=&quot;margin:0px;margin-top:6px;text-align:center;&quot;&gt;&lt;b&gt;&amp;lt;&amp;lt;FORM&amp;gt;&amp;gt;&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:8px;font-size:12px;&quot;&gt;reservations-page.component.ts (cliente)&lt;/p&gt;" style="align=left;overflow=fill;html=1;dropTarget=0;whiteSpace=wrap;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="pkg-group">
+      <mxGeometry x="620" y="60" width="250" height="90" as="geometry" />
+    </mxCell>
+    <mxCell id="form-res-client-icon" value="" style="shape=component;jettyWidth=8;jettyHeight=4;" vertex="1" parent="form-res-client">
+      <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+        <mxPoint x="-24" y="4" as="offset" />
+      </mxGeometry>
+    </mxCell>
+
+    <!-- FORM 4: encargado reservations-page.component.ts -->
+    <mxCell id="form-res-encargado" value="&lt;p style=&quot;margin:0px;margin-top:6px;text-align:center;&quot;&gt;&lt;b&gt;&amp;lt;&amp;lt;FORM&amp;gt;&amp;gt;&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:8px;font-size:12px;&quot;&gt;reservations-page.component.ts (encargado)&lt;/p&gt;" style="align=left;overflow=fill;html=1;dropTarget=0;whiteSpace=wrap;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="pkg-group">
+      <mxGeometry x="910" y="60" width="250" height="90" as="geometry" />
+    </mxCell>
+    <mxCell id="form-res-encargado-icon" value="" style="shape=component;jettyWidth=8;jettyHeight=4;" vertex="1" parent="form-res-encargado">
+      <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+        <mxPoint x="-24" y="4" as="offset" />
+      </mxGeometry>
+    </mxCell>
+
+    <!-- ================================================================ -->
+    <!--         INTERFACES FORM → CLASS (provides/requires)              -->
+    <!-- ================================================================ -->
+
+    <!-- cart-page → halfCircle (requires) -->
+    <mxCell id="edge-cart-req" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;endArrow=halfCircle;endFill=0;" edge="1" source="form-cart" parent="pkg-group">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="195" y="270" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+
+    <!-- cart-api & checkout-api provide → cart-page -->
+    <mxCell id="edge-cartserv-prov" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;endArrow=circle;endFill=0;" edge="1" source="class-cartapi" parent="pkg-group">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="195" y="270" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+
+    <!-- promotions-page → halfCircle (requires) -->
+    <mxCell id="edge-prom-req" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;endArrow=halfCircle;endFill=0;" edge="1" source="form-promotions" parent="pkg-group">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="465" y="270" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+
+    <!-- promotion-api.service provides → promotions-page -->
+    <mxCell id="edge-promserv-prov" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;endArrow=circle;endFill=0;" edge="1" source="class-promotion" parent="pkg-group">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="465" y="270" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+
+    <!-- reservations-page (cliente) → halfCircle (requires) -->
+    <mxCell id="edge-rescli-req" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;endArrow=halfCircle;endFill=0;" edge="1" source="form-res-client" parent="pkg-group">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="745" y="270" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+
+    <!-- reservation-api.service provides → reservations-page (cliente) -->
+    <mxCell id="edge-resserv-prov-cli" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;endArrow=circle;endFill=0;" edge="1" source="class-reservationapi" parent="pkg-group">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="745" y="270" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+
+    <!-- reservations-page (encargado) → halfCircle (requires) -->
+    <mxCell id="edge-resenc-req" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;endArrow=halfCircle;endFill=0;" edge="1" source="form-res-encargado" parent="pkg-group">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="1035" y="270" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+
+    <!-- reservation-api.service provides → reservations-page (encargado) -->
+    <mxCell id="edge-resserv-prov-enc" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.8;exitY=0;exitDx=0;exitDy=0;endArrow=circle;endFill=0;" edge="1" source="class-reservationapi" parent="pkg-group">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="1035" y="270" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+
+    <!-- ================================================================ -->
+    <!--                   CAPA CLASS (MEDIO) - Naranja                   -->
+    <!-- ================================================================ -->
+
+    <!-- CLASS 1: cart-api.service.ts / checkout-api.service.ts -->
+    <mxCell id="class-cartapi" value="&lt;p style=&quot;margin:0px;margin-top:6px;text-align:center;&quot;&gt;&lt;b&gt;&amp;lt;&amp;lt;CLASS&amp;gt;&amp;gt;&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:8px;font-size:12px;&quot;&gt;cart-api.service.ts&lt;br&gt;checkout-api.service.ts&lt;/p&gt;" style="align=left;overflow=fill;html=1;dropTarget=0;whiteSpace=wrap;fillColor=#fad7ac;strokeColor=#b46504;" vertex="1" parent="pkg-group">
+      <mxGeometry x="80" y="310" width="240" height="90" as="geometry" />
+    </mxCell>
+    <mxCell id="class-cartapi-icon" value="" style="shape=component;jettyWidth=8;jettyHeight=4;" vertex="1" parent="class-cartapi">
+      <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+        <mxPoint x="-24" y="4" as="offset" />
+      </mxGeometry>
+    </mxCell>
+
+    <!-- CLASS 2: promotion-api.service.ts -->
+    <mxCell id="class-promotion" value="&lt;p style=&quot;margin:0px;margin-top:6px;text-align:center;&quot;&gt;&lt;b&gt;&amp;lt;&amp;lt;CLASS&amp;gt;&amp;gt;&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:8px;font-size:13px;&quot;&gt;promotion-api.service.ts&lt;/p&gt;" style="align=left;overflow=fill;html=1;dropTarget=0;whiteSpace=wrap;fillColor=#fad7ac;strokeColor=#b46504;" vertex="1" parent="pkg-group">
+      <mxGeometry x="350" y="310" width="240" height="90" as="geometry" />
+    </mxCell>
+    <mxCell id="class-promotion-icon" value="" style="shape=component;jettyWidth=8;jettyHeight=4;" vertex="1" parent="class-promotion">
+      <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+        <mxPoint x="-24" y="4" as="offset" />
+      </mxGeometry>
+    </mxCell>
+
+    <!-- CLASS 3: reservation-api.service.ts -->
+    <mxCell id="class-reservationapi" value="&lt;p style=&quot;margin:0px;margin-top:6px;text-align:center;&quot;&gt;&lt;b&gt;&amp;lt;&amp;lt;CLASS&amp;gt;&amp;gt;&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:8px;font-size:13px;&quot;&gt;reservation-api.service.ts&lt;/p&gt;" style="align=left;overflow=fill;html=1;dropTarget=0;whiteSpace=wrap;fillColor=#fad7ac;strokeColor=#b46504;" vertex="1" parent="pkg-group">
+      <mxGeometry x="910" y="310" width="250" height="90" as="geometry" />
+    </mxCell>
+    <mxCell id="class-reservationapi-icon" value="" style="shape=component;jettyWidth=8;jettyHeight=4;" vertex="1" parent="class-reservationapi">
+      <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+        <mxPoint x="-24" y="4" as="offset" />
+      </mxGeometry>
+    </mxCell>
+
+    <!-- ================================================================ -->
+    <!--              CAPA TABLE (ABAJO) - Azul                           -->
+    <!-- ================================================================ -->
+
+    <!-- TABLE 1: carts -->
+    <mxCell id="table-carts" value="&lt;p style=&quot;margin:6px 0 0;text-align:center;font-size:13px;&quot;&gt;&amp;lt;&amp;lt;Table&amp;gt;&amp;gt;&lt;/p&gt;&lt;hr style=&quot;border-style:solid;font-size:13px;&quot;&gt;&lt;p style=&quot;margin:0 0 0 8px;font-size:13px;&quot;&gt;carts&lt;/p&gt;" style="align=left;overflow=fill;html=1;dropTarget=0;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=13;" vertex="1" parent="pkg-group">
+      <mxGeometry x="40" y="600" width="130" height="60" as="geometry" />
+    </mxCell>
+    <mxCell id="table-carts-icon" value="" style="shape=component;jettyWidth=8;jettyHeight=4;" vertex="1" parent="table-carts">
+      <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+        <mxPoint x="-24" y="4" as="offset" />
+      </mxGeometry>
+    </mxCell>
+
+    <!-- TABLE 2: cart_items -->
+    <mxCell id="table-cartitems" value="&lt;p style=&quot;margin:6px 0 0;text-align:center;font-size:13px;&quot;&gt;&amp;lt;&amp;lt;Table&amp;gt;&amp;gt;&lt;/p&gt;&lt;hr style=&quot;border-style:solid;font-size:13px;&quot;&gt;&lt;p style=&quot;margin:0 0 0 8px;font-size:13px;&quot;&gt;cart_items&lt;/p&gt;" style="align=left;overflow=fill;html=1;dropTarget=0;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=13;" vertex="1" parent="pkg-group">
+      <mxGeometry x="190" y="600" width="140" height="60" as="geometry" />
+    </mxCell>
+    <mxCell id="table-cartitems-icon" value="" style="shape=component;jettyWidth=8;jettyHeight=4;" vertex="1" parent="table-cartitems">
+      <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+        <mxPoint x="-24" y="4" as="offset" />
+      </mxGeometry>
+    </mxCell>
+
+    <!-- TABLE 3: orders -->
+    <mxCell id="table-orders" value="&lt;p style=&quot;margin:6px 0 0;text-align:center;font-size:13px;&quot;&gt;&amp;lt;&amp;lt;Table&amp;gt;&amp;gt;&lt;/p&gt;&lt;hr style=&quot;border-style:solid;font-size:13px;&quot;&gt;&lt;p style=&quot;margin:0 0 0 8px;font-size:13px;&quot;&gt;orders&lt;/p&gt;" style="align=left;overflow=fill;html=1;dropTarget=0;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=13;" vertex="1" parent="pkg-group">
+      <mxGeometry x="350" y="600" width="130" height="60" as="geometry" />
+    </mxCell>
+    <mxCell id="table-orders-icon" value="" style="shape=component;jettyWidth=8;jettyHeight=4;" vertex="1" parent="table-orders">
+      <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+        <mxPoint x="-24" y="4" as="offset" />
+      </mxGeometry>
+    </mxCell>
+
+    <!-- TABLE 4: order_items -->
+    <mxCell id="table-orderitems" value="&lt;p style=&quot;margin:6px 0 0;text-align:center;font-size:13px;&quot;&gt;&amp;lt;&amp;lt;Table&amp;gt;&amp;gt;&lt;/p&gt;&lt;hr style=&quot;border-style:solid;font-size:13px;&quot;&gt;&lt;p style=&quot;margin:0 0 0 8px;font-size:13px;&quot;&gt;order_items&lt;/p&gt;" style="align=left;overflow=fill;html=1;dropTarget=0;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=13;" vertex="1" parent="pkg-group">
+      <mxGeometry x="500" y="600" width="140" height="60" as="geometry" />
+    </mxCell>
+    <mxCell id="table-orderitems-icon" value="" style="shape=component;jettyWidth=8;jettyHeight=4;" vertex="1" parent="table-orderitems">
+      <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+        <mxPoint x="-24" y="4" as="offset" />
+      </mxGeometry>
+    </mxCell>
+
+    <!-- TABLE 5: payment_attempts (CU16 checkout) -->
+    <mxCell id="table-paymentattempts" value="&lt;p style=&quot;margin:6px 0 0;text-align:center;font-size:13px;&quot;&gt;&amp;lt;&amp;lt;Table&amp;gt;&amp;gt;&lt;/p&gt;&lt;hr style=&quot;border-style:solid;font-size:13px;&quot;&gt;&lt;p style=&quot;margin:0 0 0 8px;font-size:12px;&quot;&gt;payment_attempts&lt;/p&gt;" style="align=left;overflow=fill;html=1;dropTarget=0;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=13;" vertex="1" parent="pkg-group">
+      <mxGeometry x="660" y="600" width="160" height="60" as="geometry" />
+    </mxCell>
+    <mxCell id="table-paymentattempts-icon" value="" style="shape=component;jettyWidth=8;jettyHeight=4;" vertex="1" parent="table-paymentattempts">
+      <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+        <mxPoint x="-24" y="4" as="offset" />
+      </mxGeometry>
+    </mxCell>
+
+    <!-- TABLE 6: stripe_events (CU16 checkout) -->
+    <mxCell id="table-stripeevents" value="&lt;p style=&quot;margin:6px 0 0;text-align:center;font-size:13px;&quot;&gt;&amp;lt;&amp;lt;Table&amp;gt;&amp;gt;&lt;/p&gt;&lt;hr style=&quot;border-style:solid;font-size:13px;&quot;&gt;&lt;p style=&quot;margin:0 0 0 8px;font-size:12px;&quot;&gt;stripe_events&lt;/p&gt;" style="align=left;overflow=fill;html=1;dropTarget=0;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=13;" vertex="1" parent="pkg-group">
+      <mxGeometry x="840" y="600" width="150" height="60" as="geometry" />
+    </mxCell>
+    <mxCell id="table-stripeevents-icon" value="" style="shape=component;jettyWidth=8;jettyHeight=4;" vertex="1" parent="table-stripeevents">
+      <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+        <mxPoint x="-24" y="4" as="offset" />
+      </mxGeometry>
+    </mxCell>
+
+    <!-- TABLE 7: reservations -->
+    <mxCell id="table-reservations" value="&lt;p style=&quot;margin:6px 0 0;text-align:center;font-size:13px;&quot;&gt;&amp;lt;&amp;lt;Table&amp;gt;&amp;gt;&lt;/p&gt;&lt;hr style=&quot;border-style:solid;font-size:13px;&quot;&gt;&lt;p style=&quot;margin:0 0 0 8px;font-size:13px;&quot;&gt;reservations&lt;/p&gt;" style="align=left;overflow=fill;html=1;dropTarget=0;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=13;" vertex="1" parent="pkg-group">
+      <mxGeometry x="1020" y="600" width="140" height="60" as="geometry" />
+    </mxCell>
+    <mxCell id="table-reservations-icon" value="" style="shape=component;jettyWidth=8;jettyHeight=4;" vertex="1" parent="table-reservations">
+      <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+        <mxPoint x="-24" y="4" as="offset" />
+      </mxGeometry>
+    </mxCell>
+
+    <!-- TABLE 8: reservation_items -->
+    <mxCell id="table-reservationitems" value="&lt;p style=&quot;margin:6px 0 0;text-align:center;font-size:13px;&quot;&gt;&amp;lt;&amp;lt;Table&amp;gt;&amp;gt;&lt;/p&gt;&lt;hr style=&quot;border-style:solid;font-size:13px;&quot;&gt;&lt;p style=&quot;margin:0 0 0 8px;font-size:12px;&quot;&gt;reservation_items&lt;/p&gt;" style="align=left;overflow=fill;html=1;dropTarget=0;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=13;" vertex="1" parent="pkg-group">
+      <mxGeometry x="1190" y="600" width="160" height="60" as="geometry" />
+    </mxCell>
+    <mxCell id="table-reservationitems-icon" value="" style="shape=component;jettyWidth=8;jettyHeight=4;" vertex="1" parent="table-reservationitems">
+      <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+        <mxPoint x="-24" y="4" as="offset" />
+      </mxGeometry>
+    </mxCell>
+
+    <!-- TABLE 9: promotion_codes (CU25) -->
+    <mxCell id="table-promotioncodes" value="&lt;p style=&quot;margin:6px 0 0;text-align:center;font-size:13px;&quot;&gt;&amp;lt;&amp;lt;Table&amp;gt;&amp;gt;&lt;/p&gt;&lt;hr style=&quot;border-style:solid;font-size:13px;&quot;&gt;&lt;p style=&quot;margin:0 0 0 8px;font-size:12px;&quot;&gt;promotion_codes&lt;/p&gt;" style="align=left;overflow=fill;html=1;dropTarget=0;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=13;" vertex="1" parent="pkg-group">
+      <mxGeometry x="560" y="720" width="160" height="60" as="geometry" />
+    </mxCell>
+    <mxCell id="table-promotioncodes-icon" value="" style="shape=component;jettyWidth=8;jettyHeight=4;" vertex="1" parent="table-promotioncodes">
+      <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+        <mxPoint x="-24" y="4" as="offset" />
+      </mxGeometry>
+    </mxCell>
+
+    <!-- TABLE 10: promotion_code_usages (CU25) -->
+    <mxCell id="table-promotioncodeusages" value="&lt;p style=&quot;margin:6px 0 0;text-align:center;font-size:13px;&quot;&gt;&amp;lt;&amp;lt;Table&amp;gt;&amp;gt;&lt;/p&gt;&lt;hr style=&quot;border-style:solid;font-size:13px;&quot;&gt;&lt;p style=&quot;margin:0 0 0 8px;font-size:12px;&quot;&gt;promotion_code_usages&lt;/p&gt;" style="align=left;overflow=fill;html=1;dropTarget=0;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=13;" vertex="1" parent="pkg-group">
+      <mxGeometry x="750" y="720" width="180" height="60" as="geometry" />
+    </mxCell>
+    <mxCell id="table-promotioncodeusages-icon" value="" style="shape=component;jettyWidth=8;jettyHeight=4;" vertex="1" parent="table-promotioncodeusages">
+      <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+        <mxPoint x="-24" y="4" as="offset" />
+      </mxGeometry>
+    </mxCell>
+
+    <!-- ================================================================ -->
+    <!--          RELACIONES CLASS → TABLE (dashed / «use»)               -->
+    <!-- ================================================================ -->
+
+    <!-- cart-api / checkout-api → carts -->
+    <mxCell id="edge-cartapi-carts" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.1;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;dashed=1;endArrow=open;endFill=0;" edge="1" source="class-cartapi" target="table-carts" parent="pkg-group">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+
+    <!-- cart-api / checkout-api → cart_items -->
+    <mxCell id="edge-cartapi-cartitems" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.3;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;dashed=1;endArrow=open;endFill=0;" edge="1" source="class-cartapi" target="table-cartitems" parent="pkg-group">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+
+    <!-- cart-api / checkout-api → orders -->
+    <mxCell id="edge-cartapi-orders" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;dashed=1;endArrow=open;endFill=0;" edge="1" source="class-cartapi" target="table-orders" parent="pkg-group">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+
+    <!-- cart-api / checkout-api → order_items -->
+    <mxCell id="edge-cartapi-orderitems" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.65;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;dashed=1;endArrow=open;endFill=0;" edge="1" source="class-cartapi" target="table-orderitems" parent="pkg-group">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+
+    <!-- checkout-api → payment_attempts -->
+    <mxCell id="edge-cartapi-paymentattempts" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.85;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;dashed=1;endArrow=open;endFill=0;" edge="1" source="class-cartapi" target="table-paymentattempts" parent="pkg-group">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+
+    <!-- checkout-api → stripe_events -->
+    <mxCell id="edge-cartapi-stripeevents" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0;entryDx=0;entryDy=0;dashed=1;endArrow=open;endFill=0;" edge="1" source="class-cartapi" target="table-stripeevents" parent="pkg-group">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+
+    <!-- promotion-api → promotion_codes -->
+    <mxCell id="edge-promotion-codes" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.4;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;dashed=1;endArrow=open;endFill=0;" edge="1" source="class-promotion" target="table-promotioncodes" parent="pkg-group">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+
+    <!-- promotion-api → promotion_code_usages -->
+    <mxCell id="edge-promotion-usages" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.7;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;dashed=1;endArrow=open;endFill=0;" edge="1" source="class-promotion" target="table-promotioncodeusages" parent="pkg-group">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+
+    <!-- reservation-api → reservations -->
+    <mxCell id="edge-resapi-reservations" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;dashed=1;endArrow=open;endFill=0;" edge="1" source="class-reservationapi" target="table-reservations" parent="pkg-group">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+
+    <!-- reservation-api → reservation_items -->
+    <mxCell id="edge-resapi-reservationitems" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.8;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;dashed=1;endArrow=open;endFill=0;" edge="1" source="class-reservationapi" target="table-reservationitems" parent="pkg-group">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+
+  </root>
+</mxGraphModel>

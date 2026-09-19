@@ -1,0 +1,49 @@
+@startuml CU12_Diagrama_de_Comunicacion
+' ==========================================
+' Estilos y Configuración General
+' ==========================================
+skinparam style strictuml
+skinparam handwritten false
+skinparam shadowing false
+skinparam defaultFontName "Helvetica"
+skinparam defaultFontSize 12
+
+' ==========================================
+' Participantes (distribución horizontal:
+' Actor -> Boundary -> Control -> Entities)
+' ==========================================
+actor ":EncargadoSucursal" as encargado
+actor ":Cajero" as cajero
+boundary ":AdminInventoryPageComponent" as ui
+control ":InventoryController" as ctrl
+entity ":Sucursal" as entSucursal
+entity ":Variante" as entVariante
+entity ":Inventario" as entInventario
+entity ":MovimientoInventario" as entMovimiento
+
+' Enlaces ocultos para forzar el orden horizontal de izquierda a derecha
+encargado -[hidden]down- cajero
+cajero -[hidden]right- ui
+ui -[hidden]right- ctrl
+ctrl -[hidden]right- entSucursal
+entSucursal -[hidden]right- entVariante
+entVariante -[hidden]right- entInventario
+entInventario -[hidden]right- entMovimiento
+
+' ==========================================
+' Mensajes numerados (funciones reales, sin parámetros)
+' Los retornos de las entidades son implícitos (UML 2.5+,
+' las entidades no envían mensajes de vuelta al controlador)
+' ==========================================
+encargado -- ui : "1: registrarMovimientoInventario()"
+cajero -- ui : "1.1: registrarMovimientoInventario()"
+ui -- ctrl : "1.2: registerMovement()"
+ctrl -- entSucursal : "1.3: obtenerSucursal()"
+ctrl -- entVariante : "1.4: obtenerVariante()"
+ctrl -- entInventario : "1.5: actualizarStockDisponibilidad()"
+ctrl -- entMovimiento : "1.6: crearMovimiento()"
+ctrl -- ui : "1.7: mostrarConfirmacionMovimiento()"
+ui -- encargado : "1.8: renderizarConfirmacionMovimiento()"
+ui -- cajero : "1.9: renderizarConfirmacionMovimiento()"
+
+@enduml

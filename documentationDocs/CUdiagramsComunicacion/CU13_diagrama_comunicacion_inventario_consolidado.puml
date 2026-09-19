@@ -1,0 +1,51 @@
+@startuml CU13_Diagrama_de_Comunicacion
+' ==========================================
+' Estilos y Configuración General
+' ==========================================
+skinparam style strictuml
+skinparam handwritten false
+skinparam shadowing false
+skinparam defaultFontName "Helvetica"
+skinparam defaultFontSize 12
+
+' ==========================================
+' Participantes (distribución horizontal:
+' Actor -> Boundary -> Control -> Entities)
+' ==========================================
+actor ":Administrador" as admin
+boundary ":AdminInventoryPageComponent" as ui
+control ":InventoryController" as ctrl
+entity ":Inventario" as entInventario
+entity ":Variante" as entVariante
+entity ":Producto" as entProducto
+entity ":Sucursal" as entSucursal
+entity ":Talla" as entTalla
+entity ":Color" as entColor
+
+' Enlaces ocultos para forzar el orden horizontal de izquierda a derecha
+admin -[hidden]right- ui
+ui -[hidden]right- ctrl
+ctrl -[hidden]right- entInventario
+entInventario -[hidden]right- entVariante
+entVariante -[hidden]right- entProducto
+entProducto -[hidden]right- entSucursal
+entSucursal -[hidden]right- entTalla
+entTalla -[hidden]right- entColor
+
+' ==========================================
+' Mensajes numerados (funciones reales, sin parámetros)
+' Los retornos de las entidades son implícitos (UML 2.5+,
+' las entidades no envían mensajes de vuelta al controlador)
+' ==========================================
+admin -- ui : "1: consultarInventarioConsolidado()"
+ui -- ctrl : "1.1: getConsolidatedStock()"
+ctrl -- entInventario : "1.2: obtenerExistenciasPorSucursal()"
+ctrl -- entVariante : "1.3: obtenerDetalleVariantes()"
+ctrl -- entProducto : "1.4: obtenerDatosProductos()"
+ctrl -- entSucursal : "1.5: obtenerSucursales()"
+ctrl -- entTalla : "1.6: obtenerTallas()"
+ctrl -- entColor : "1.7: obtenerColores()"
+ctrl -- ui : "1.8: mostrarInventarioConsolidado()"
+ui -- admin : "1.9: renderizarInventarioConsolidado()"
+
+@enduml

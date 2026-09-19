@@ -1,0 +1,48 @@
+@startuml CU21_Diagrama_de_Tiempo
+title Diagrama de Tiempo UML 2.5 - CU21: Recibir recomendaciones de IA
+
+header Sistema FashionStore - Ciclo 3 (Experiencia Inteligente y Analítica)
+footer Diagrama de Tiempo según especificación UML 2.5+
+
+skinparam LineColor Blue
+skinparam FontSize 16
+skinparam timingDiagram {
+    LineColor Blue
+    FontSize 16
+}
+
+robust "CU21 Acciones Cliente / UI" as C21
+robust "CU21 Motor Recomendaciones IA DB" as ST21
+
+@0
+C21 is Descanso
+ST21 is SinSolicitud
+
+@5
+C21 is AccederASeccionParaTi
+ST21 is AnalizandoHistorialComprasNavegacion
+
+@15
+C21 is SeleccionarFiltroOTemporada
+ST21 is EvaluandoTendenciasYTemporadaActual
+
+@25
+C21 is EsperandoSugerenciasIA
+ST21 is FiltrandoDisponibilidadYStockSucursal
+
+@35
+C21 is VisualizarProductosRecomendados
+ST21 is GenerandoRankingDeRecomendaciones
+
+@45
+C21 is SeleccionarPrendaSugerida
+ST21 is EntregandoCatalogoPersonalizado
+
+@55
+C21 is Descanso
+ST21 is SinSolicitud
+
+' Restricción de tiempo (SLA)
+@15 <-> @45 : {SLA Generacion Recomendaciones <= 400ms}
+
+@enduml

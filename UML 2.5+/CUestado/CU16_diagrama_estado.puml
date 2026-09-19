@@ -1,0 +1,66 @@
+@startuml CU16_Diagrama_de_Estados
+' ==========================================
+' Estilos y Configuración General
+' ==========================================
+skinparam backgroundColor #FFFFFF
+skinparam shadowing false
+skinparam defaultFontName Arial
+skinparam defaultFontSize 12
+
+skinparam state {
+    BackgroundColor #FFE6CC
+    BorderColor #D79B00
+    FontColor #000000
+    StartColor #E67E22
+    EndColor #000000
+}
+
+' ==========================================
+' Inicio: Consulta de Pedidos
+' ==========================================
+[*] --> ConsultandoPedidos : Abrir la pantalla de pedidos
+
+ConsultandoPedidos --> PedidosConsultados : Cargar los pedidos del cliente
+PedidosConsultados : Cada pedido muestra su estado (pagado, en preparación, listo)
+
+' ==========================================
+' Compra Digital
+' ==========================================
+PedidosConsultados --> RevisandoCarrito : Iniciar una nueva compra
+RevisandoCarrito --> SeleccionandoFormaPago : Elegir el método de pago
+
+state SeleccionandoFormaPago <<choice>>
+SeleccionandoFormaPago --> ProcesandoEfectivo : [Pago en efectivo]
+SeleccionandoFormaPago --> ProcesandoTarjeta : [Pago con tarjeta]
+
+ProcesandoEfectivo --> PedidoPagado : [Pedido válido con stock disponible]
+ProcesandoEfectivo --> ErrorPago : [Pedido inválido o sin stock]
+
+ProcesandoTarjeta --> AutorizandoPago : Enviar el pago a la pasarela
+AutorizandoPago --> PedidoPagado : [Pago autorizado y confirmado]
+AutorizandoPago --> ErrorPago : [Pago rechazado o fallo de conexión]
+
+ErrorPago --> SeleccionandoFormaPago : Reintentar con otro método de pago
+PedidoPagado : Pedido confirmado y pagado
+
+' ==========================================
+' Seguimiento del Pedido
+' ==========================================
+PedidoPagado --> PedidoEnPreparacion : La sucursal inicia la preparación
+PedidoEnPreparacion --> PedidoListo : Preparación finalizada
+PedidoListo : Listo para el retiro o la entrega
+PedidoListo --> [*] : Entregar el pedido al cliente
+
+' ==========================================
+' Consulta de Estado
+' ==========================================
+PedidosConsultados --> ConsultandoEstado : Seleccionar un pedido
+ConsultandoEstado --> EstadoDelPedido : Consultar el estado actual
+EstadoDelPedido --> PedidosConsultados : Volver a la lista de pedidos
+
+' ==========================================
+' Fin
+' ==========================================
+PedidosConsultados --> [*] : Salir de la pantalla
+
+@enduml

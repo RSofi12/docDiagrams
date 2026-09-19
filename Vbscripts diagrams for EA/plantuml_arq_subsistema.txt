@@ -1,0 +1,160 @@
+@startuml
+' ============================================================
+' DIAGRAMA DE COMPONENTES - FASHIONSTORE
+' Todo dentro del paquete, con conexiones entre capas
+' ============================================================
+
+top to bottom direction
+skinparam packageStyle rectangle
+skinparam componentStyle rectangle
+skinparam linetype ortho
+
+' ------------------------------------------------------------
+' MÓDULO 1: GESTIÓN DE USUARIOS Y SEGURIDAD
+' ------------------------------------------------------------
+package "P1. GESTIÓN DE USUARIOS Y SEGURIDAD" {
+  ' Fila 1: Vistas
+  component "auth/login" <<form>>
+  component "usuarios/index" <<form>>
+  component "permisos/index" <<form>>
+  component "perfil/index" <<form>>
+
+  ' Fila 2: Controladores
+  component "LoginController" <<class>>
+  component "UsuarioController" <<class>>
+  component "PermisoRolController" <<class>>
+  component "BitacoraController" <<class>>
+  component "PerfilController" <<class>>
+
+  ' Fila 3: Tablas
+  component "users" <<table>>
+  component "roles" <<table>>
+  component "bitacora/role" <<table>>
+  component "bitacoras" <<table>>
+  component "personal_administrativos" <<table>>
+
+  ' Conexiones (vista -> controlador -> tabla)
+  "auth/login" --> "LoginController"
+  "usuarios/index" --> "UsuarioController"
+  "permisos/index" --> "PermisoRolController"
+  "perfil/index" --> "PerfilController"
+  "LoginController" --> "users"
+  "UsuarioController" --> "roles"
+  "PermisoRolController" --> "bitacora/role"
+  "BitacoraController" --> "bitacoras"
+  "PerfilController" --> "personal_administrativos"
+}
+
+' ------------------------------------------------------------
+' MÓDULO 2: CATÁLOGO
+' ------------------------------------------------------------
+package "P2. CATÁLOGO" {
+  component "productos/index" <<form>>
+  component "categorias/index" <<form>>
+  component "proveedores/index" <<form>>
+  component "temporadas/index" <<form>>
+
+  component "ProductoController" <<class>>
+  component "CategoriaController" <<class>>
+  component "ProveedorController" <<class>>
+  component "TemporadaController" <<class>>
+
+  component "productos" <<table>>
+  component "categorias" <<table>>
+  component "proveedores" <<table>>
+  component "temporadas" <<table>>
+
+  "productos/index" --> "ProductoController"
+  "categorias/index" --> "CategoriaController"
+  "proveedores/index" --> "ProveedorController"
+  "temporadas/index" --> "TemporadaController"
+  "ProductoController" --> "productos"
+  "CategoriaController" --> "categorias"
+  "ProveedorController" --> "proveedores"
+  "TemporadaController" --> "temporadas"
+}
+
+' ------------------------------------------------------------
+' MÓDULO 3: INVENTARIO Y DISPONIBILIDAD
+' ------------------------------------------------------------
+package "P3. INVENTARIO Y DISPONIBILIDAD" {
+  component "inventario/index" <<form>>
+  component "movimientos/index" <<form>>
+
+  component "InventarioController" <<class>>
+  component "MovimientoController" <<class>>
+
+  component "inventario" <<table>>
+  component "movimientos_inventario" <<table>>
+
+  "inventario/index" --> "InventarioController"
+  "movimientos/index" --> "MovimientoController"
+  "InventarioController" --> "inventario"
+  "MovimientoController" --> "movimientos_inventario"
+}
+
+' ------------------------------------------------------------
+' MÓDULO 4: RESERVAS
+' ------------------------------------------------------------
+package "P4. RESERVAS" {
+  component "reservas/index" <<form>>
+  component "preparar/index" <<form>>
+
+  component "ReservaController" <<class>>
+  component "ReservaItemController" <<class>>
+  component "PreparacionController" <<class>>
+
+  component "reservas" <<table>>
+  component "reserva_items" <<table>>
+
+  "reservas/index" --> "ReservaController"
+  "preparar/index" --> "PreparacionController"
+  "ReservaController" --> "reservas"
+  "ReservaItemController" --> "reserva_items"
+}
+
+' ------------------------------------------------------------
+' MÓDULO 5: VENTAS Y PAGOS
+' ------------------------------------------------------------
+package "P5. VENTAS Y PAGOS" {
+  component "ventas/index" <<form>>
+  component "pagos/index" <<form>>
+
+  component "VentaController" <<class>>
+  component "VentaItemController" <<class>>
+  component "PagoController" <<class>>
+
+  component "ventas" <<table>>
+  component "venta_items" <<table>>
+  component "pagos" <<table>>
+
+  "ventas/index" --> "VentaController"
+  "pagos/index" --> "PagoController"
+  "VentaController" --> "ventas"
+  "VentaItemController" --> "venta_items"
+  "PagoController" --> "pagos"
+}
+
+' ------------------------------------------------------------
+' MÓDULO 6: INTELIGENCIA Y REPORTES
+' ------------------------------------------------------------
+package "P6. INTELIGENCIA Y REPORTES" {
+  component "reportes/index" <<form>>
+  component "ra/index" <<form>>
+
+  component "ReporteController" <<class>>
+  component "RAController" <<class>>
+  component "RecomendacionController" <<class>>
+
+  component "reportes" <<table>>
+  component "ra" <<table>>
+  component "recomendaciones" <<table>>
+
+  "reportes/index" --> "ReporteController"
+  "ra/index" --> "RAController"
+  "ReporteController" --> "reportes"
+  "RAController" --> "ra"
+  "RecomendacionController" --> "recomendaciones"
+}
+
+@enduml

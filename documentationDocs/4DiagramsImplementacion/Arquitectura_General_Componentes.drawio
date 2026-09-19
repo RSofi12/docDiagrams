@@ -1,0 +1,409 @@
+<?xml version="1.0"?>
+<!-- Diagrama de componentes - Arquitectura general (implementacion) - FashionStore / WomenStyle -->
+<!-- Estructura (según ejemplo): API REST -> capas (Model, Components, Controlador, Routes, Middleware), login/auth REST, 6 paquetes P1-P6 + Reportes, y Base de Datos PostgreSQL. -->
+<!-- Flechas discontinuas abiertas = dependencia / uso (UML «use»). -->
+<mxGraphModel dx="1998" dy="871" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1450" pageHeight="1500" math="0" shadow="0">
+  <root>
+    <mxCell id="0" />
+    <mxCell id="1" parent="0" />
+
+    <!-- ================================================================ -->
+    <!--    CAPAS DE LA API REST (IZQUIERDA) - Model/Components/...       -->
+    <!-- ================================================================ -->
+
+    <mxCell id="ga-model" parent="1" style="align=left;overflow=fill;html=1;dropTarget=0;whiteSpace=wrap;fillColor=#b1ddf0;strokeColor=#10739e;" value="&lt;p style=&quot;margin:0px;margin-top:6px;text-align:center;&quot;&gt;&lt;b&gt;Model&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:8px;font-size:11px;&quot;&gt;app/models (SQLAlchemy ORM)&lt;/p&gt;" vertex="1">
+      <mxGeometry height="90" width="180" x="319" y="166" as="geometry" />
+    </mxCell>
+    <mxCell id="ga-model-icon" parent="ga-model" style="shape=component;jettyWidth=8;jettyHeight=4;" value="" vertex="1">
+      <mxGeometry height="20" relative="1" width="20" x="1" as="geometry">
+        <mxPoint x="-24" y="4" as="offset" />
+      </mxGeometry>
+    </mxCell>
+
+    <mxCell id="ga-components" parent="1" style="align=left;overflow=fill;html=1;dropTarget=0;whiteSpace=wrap;fillColor=#b1ddf0;strokeColor=#10739e;" value="&lt;p style=&quot;margin:0px;margin-top:6px;text-align:center;&quot;&gt;&lt;b&gt;Components&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:8px;font-size:11px;&quot;&gt;app/services (lógica de negocio)&lt;/p&gt;" vertex="1">
+      <mxGeometry height="90" width="180" x="319" y="267" as="geometry" />
+    </mxCell>
+    <mxCell id="ga-components-icon" parent="ga-components" style="shape=component;jettyWidth=8;jettyHeight=4;" value="" vertex="1">
+      <mxGeometry height="20" relative="1" width="20" x="1" as="geometry">
+        <mxPoint x="-24" y="4" as="offset" />
+      </mxGeometry>
+    </mxCell>
+
+    <mxCell id="ga-controlador" parent="1" style="align=left;overflow=fill;html=1;dropTarget=0;whiteSpace=wrap;fillColor=#b1ddf0;strokeColor=#10739e;" value="&lt;p style=&quot;margin:0px;margin-top:6px;text-align:center;&quot;&gt;&lt;b&gt;Controlador&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:8px;font-size:11px;&quot;&gt;app/routes (routers por módulo)&lt;/p&gt;" vertex="1">
+      <mxGeometry height="90" width="180" x="319" y="368" as="geometry" />
+    </mxCell>
+    <mxCell id="ga-controlador-icon" parent="ga-controlador" style="shape=component;jettyWidth=8;jettyHeight=4;" value="" vertex="1">
+      <mxGeometry height="20" relative="1" width="20" x="1" as="geometry">
+        <mxPoint x="-24" y="4" as="offset" />
+      </mxGeometry>
+    </mxCell>
+
+    <mxCell id="ga-routes" parent="1" style="align=left;overflow=fill;html=1;dropTarget=0;whiteSpace=wrap;fillColor=#b1ddf0;strokeColor=#10739e;" value="&lt;p style=&quot;margin:0px;margin-top:6px;text-align:center;&quot;&gt;&lt;b&gt;Routes&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:8px;font-size:11px;&quot;&gt;api_router (registro /api)&lt;/p&gt;" vertex="1">
+      <mxGeometry height="90" width="180" x="319" y="468" as="geometry" />
+    </mxCell>
+    <mxCell id="ga-routes-icon" parent="ga-routes" style="shape=component;jettyWidth=8;jettyHeight=4;" value="" vertex="1">
+      <mxGeometry height="20" relative="1" width="20" x="1" as="geometry">
+        <mxPoint x="-24" y="4" as="offset" />
+      </mxGeometry>
+    </mxCell>
+
+    <mxCell id="ga-middleware" parent="1" style="align=left;overflow=fill;html=1;dropTarget=0;whiteSpace=wrap;fillColor=#b1ddf0;strokeColor=#10739e;" value="&lt;p style=&quot;margin:0px;margin-top:6px;text-align:center;&quot;&gt;&lt;b&gt;Middleware&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:8px;font-size:11px;&quot;&gt;app/core · app/auth (CORS, JWT, errores)&lt;/p&gt;" vertex="1">
+      <mxGeometry height="90" width="180" x="319" y="568" as="geometry" />
+    </mxCell>
+    <mxCell id="ga-middleware-icon" parent="ga-middleware" style="shape=component;jettyWidth=8;jettyHeight=4;" value="" vertex="1">
+      <mxGeometry height="20" relative="1" width="20" x="1" as="geometry">
+        <mxPoint x="-24" y="4" as="offset" />
+      </mxGeometry>
+    </mxCell>
+
+    <!-- ================================================================ -->
+    <!--        ARTEFACTOS DE LA API REST (CENTRO) - login/main/db        -->
+    <!-- ================================================================ -->
+
+    <mxCell id="ga-login" parent="1" style="align=left;overflow=fill;html=1;dropTarget=0;whiteSpace=wrap;fillColor=#fad9d5;strokeColor=#ae4132;" value="&lt;p style=&quot;margin:0px;margin-top:6px;text-align:center;&quot;&gt;&lt;b&gt;auth.py&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:8px;font-size:11px;&quot;&gt;Login REST · POST /api/auth/login (JWT)&lt;/p&gt;" vertex="1">
+      <mxGeometry height="90" width="180" x="639" y="226" as="geometry" />
+    </mxCell>
+    <mxCell id="ga-login-icon" parent="ga-login" style="shape=component;jettyWidth=8;jettyHeight=4;" value="" vertex="1">
+      <mxGeometry height="20" relative="1" width="20" x="1" as="geometry">
+        <mxPoint x="-24" y="4" as="offset" />
+      </mxGeometry>
+    </mxCell>
+
+    <mxCell id="ga-main" parent="1" style="align=left;overflow=fill;html=1;dropTarget=0;whiteSpace=wrap;fillColor=#fad9d5;strokeColor=#ae4132;" value="&lt;p style=&quot;margin:0px;margin-top:6px;text-align:center;&quot;&gt;&lt;b&gt;main.py&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:8px;font-size:11px;&quot;&gt;FastAPI · API REST bajo /api&lt;/p&gt;" vertex="1">
+      <mxGeometry height="90" width="180" x="639" y="374" as="geometry" />
+    </mxCell>
+    <mxCell id="ga-main-icon" parent="ga-main" style="shape=component;jettyWidth=8;jettyHeight=4;" value="" vertex="1">
+      <mxGeometry height="20" relative="1" width="20" x="1" as="geometry">
+        <mxPoint x="-24" y="4" as="offset" />
+      </mxGeometry>
+    </mxCell>
+
+    <mxCell id="ga-bd" parent="1" style="align=left;overflow=fill;html=1;dropTarget=0;whiteSpace=wrap;fillColor=#fad9d5;strokeColor=#ae4132;" value="&lt;p style=&quot;margin:0px;margin-top:6px;text-align:center;&quot;&gt;&lt;b&gt;core/database.py&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:8px;font-size:11px;&quot;&gt;SQLAlchemy · sesión PostgreSQL&lt;/p&gt;" vertex="1">
+      <mxGeometry height="90" width="180" x="639" y="526" as="geometry" />
+    </mxCell>
+    <mxCell id="ga-bd-icon" parent="ga-bd" style="shape=component;jettyWidth=8;jettyHeight=4;" value="" vertex="1">
+      <mxGeometry height="20" relative="1" width="20" x="1" as="geometry">
+        <mxPoint x="-24" y="4" as="offset" />
+      </mxGeometry>
+    </mxCell>
+
+    <!-- ================================================================ -->
+    <!--            PAQUETES DE ARQUITECTURA P1-P6 + REPORTES             -->
+    <!-- ================================================================ -->
+
+    <mxCell id="ga-pkg-group-1" connectable="0" parent="1" style="group" value="" vertex="1">
+      <mxGeometry height="105" width="210" x="1060" y="202" as="geometry" />
+    </mxCell>
+    <mxCell id="ga-pkg-folder-1" parent="ga-pkg-group-1" style="shape=folder;fontStyle=1;spacingTop=10;tabWidth=190;tabHeight=20;tabPosition=left;html=1;whiteSpace=wrap;fillColor=#fff2cc;strokeColor=#d6b656;" value="" vertex="1">
+      <mxGeometry height="100" width="200" x="5" y="3" as="geometry" />
+    </mxCell>
+    <mxCell id="ga-pkg-title-1" parent="ga-pkg-group-1" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" value="P1. Usuarios y Acceso" vertex="1">
+      <mxGeometry height="30" width="190" x="10" y="1" as="geometry" />
+    </mxCell>
+
+    <mxCell id="ga-pkg-group-2" connectable="0" parent="1" style="group" value="" vertex="1">
+      <mxGeometry height="105" width="210" x="1060" y="312" as="geometry" />
+    </mxCell>
+    <mxCell id="ga-pkg-folder-2" parent="ga-pkg-group-2" style="shape=folder;fontStyle=1;spacingTop=10;tabWidth=190;tabHeight=20;tabPosition=left;html=1;whiteSpace=wrap;fillColor=#fff2cc;strokeColor=#d6b656;" value="" vertex="1">
+      <mxGeometry height="100" width="200" x="5" y="3" as="geometry" />
+    </mxCell>
+    <mxCell id="ga-pkg-title-2" parent="ga-pkg-group-2" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" value="P2. Productos y Catálogo" vertex="1">
+      <mxGeometry height="30" width="190" x="10" y="1" as="geometry" />
+    </mxCell>
+
+    <mxCell id="ga-pkg-group-3" connectable="0" parent="1" style="group" value="" vertex="1">
+      <mxGeometry height="105" width="210" x="1060" y="422" as="geometry" />
+    </mxCell>
+    <mxCell id="ga-pkg-folder-3" parent="ga-pkg-group-3" style="shape=folder;fontStyle=1;spacingTop=10;tabWidth=190;tabHeight=20;tabPosition=left;html=1;whiteSpace=wrap;fillColor=#fff2cc;strokeColor=#d6b656;" value="" vertex="1">
+      <mxGeometry height="100" width="200" x="5" y="3" as="geometry" />
+    </mxCell>
+    <mxCell id="ga-pkg-title-3" parent="ga-pkg-group-3" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" value="P3. Inventario y Disponibilidad" vertex="1">
+      <mxGeometry height="30" width="190" x="10" y="1" as="geometry" />
+    </mxCell>
+
+    <mxCell id="ga-pkg-group-4" connectable="0" parent="1" style="group" value="" vertex="1">
+      <mxGeometry height="105" width="210" x="1060" y="532" as="geometry" />
+    </mxCell>
+    <mxCell id="ga-pkg-folder-4" parent="ga-pkg-group-4" style="shape=folder;fontStyle=1;spacingTop=10;tabWidth=190;tabHeight=20;tabPosition=left;html=1;whiteSpace=wrap;fillColor=#fff2cc;strokeColor=#d6b656;" value="" vertex="1">
+      <mxGeometry height="100" width="200" x="5" y="3" as="geometry" />
+    </mxCell>
+    <mxCell id="ga-pkg-title-4" parent="ga-pkg-group-4" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" value="P4. Compras y Reservas" vertex="1">
+      <mxGeometry height="30" width="190" x="10" y="1" as="geometry" />
+    </mxCell>
+
+    <mxCell id="ga-pkg-group-5" connectable="0" parent="1" style="group" value="" vertex="1">
+      <mxGeometry height="105" width="210" x="1060" y="642" as="geometry" />
+    </mxCell>
+    <mxCell id="ga-pkg-folder-5" parent="ga-pkg-group-5" style="shape=folder;fontStyle=1;spacingTop=10;tabWidth=190;tabHeight=20;tabPosition=left;html=1;whiteSpace=wrap;fillColor=#fff2cc;strokeColor=#d6b656;" value="" vertex="1">
+      <mxGeometry height="100" width="200" x="5" y="3" as="geometry" />
+    </mxCell>
+    <mxCell id="ga-pkg-title-5" parent="ga-pkg-group-5" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" value="P5. Ventas y Sucursal" vertex="1">
+      <mxGeometry height="30" width="190" x="10" y="1" as="geometry" />
+    </mxCell>
+
+    <mxCell id="ga-pkg-group-6" connectable="0" parent="1" style="group" value="" vertex="1">
+      <mxGeometry height="105" width="210" x="1060" y="752" as="geometry" />
+    </mxCell>
+    <mxCell id="ga-pkg-folder-6" parent="ga-pkg-group-6" style="shape=folder;fontStyle=1;spacingTop=10;tabWidth=190;tabHeight=20;tabPosition=left;html=1;whiteSpace=wrap;fillColor=#fff2cc;strokeColor=#d6b656;" value="" vertex="1">
+      <mxGeometry height="100" width="200" x="5" y="3" as="geometry" />
+    </mxCell>
+    <mxCell id="ga-pkg-title-6" parent="ga-pkg-group-6" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" value="P6. Experiencia y Analítica" vertex="1">
+      <mxGeometry height="30" width="190" x="10" y="1" as="geometry" />
+    </mxCell>
+
+    <mxCell id="ga-pkg-group-7" connectable="0" parent="1" style="group" value="" vertex="1">
+      <mxGeometry height="105" width="210" x="1060" y="862" as="geometry" />
+    </mxCell>
+    <mxCell id="ga-pkg-folder-7" parent="ga-pkg-group-7" style="shape=folder;fontStyle=1;spacingTop=10;tabWidth=190;tabHeight=20;tabPosition=left;html=1;whiteSpace=wrap;fillColor=#fff2cc;strokeColor=#d6b656;" value="" vertex="1">
+      <mxGeometry height="100" width="200" x="5" y="3" as="geometry" />
+    </mxCell>
+    <mxCell id="ga-pkg-title-7" parent="ga-pkg-group-7" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" value="Reportes y Dashboards" vertex="1">
+      <mxGeometry height="30" width="190" x="10" y="1" as="geometry" />
+    </mxCell>
+
+    <!-- ================================================================ -->
+    <!--                    BASE DE DATOS (ABAJO)                         -->
+    <!-- ================================================================ -->
+
+    <mxCell id="ga-db-group" connectable="0" parent="1" style="group" value="" vertex="1">
+      <mxGeometry height="430" width="1400" x="50" y="1010" as="geometry" />
+    </mxCell>
+    <mxCell id="ga-db-folder" parent="ga-db-group" style="shape=folder;fontStyle=1;spacingTop=10;tabWidth=380;tabHeight=33;tabPosition=left;html=1;whiteSpace=wrap;fillColor=#fff2cc;strokeColor=#d6b656;" value="" vertex="1">
+      <mxGeometry height="430" width="1380" x="10" y="0" as="geometry" />
+    </mxCell>
+    <mxCell id="ga-db-title" parent="ga-db-group" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" value="Base de Datos - PostgreSQL (FashionStore)" vertex="1">
+      <mxGeometry height="30" width="380" x="0" y="0" as="geometry" />
+    </mxCell>
+
+    <mxCell id="ga-db-postgres" parent="ga-db-group" style="align=left;overflow=fill;html=1;dropTarget=0;whiteSpace=wrap;fillColor=#f8cecc;strokeColor=#b85450;" value="&lt;p style=&quot;margin:0px;margin-top:6px;text-align:center;&quot;&gt;&lt;b&gt;PostgreSQL&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:8px;font-size:11px;&quot;&gt;servidor de base de datos&lt;/p&gt;" vertex="1">
+      <mxGeometry height="70" width="170" x="30" y="50" as="geometry" />
+    </mxCell>
+    <mxCell id="ga-db-postgres-icon" parent="ga-db-postgres" style="shape=component;jettyWidth=8;jettyHeight=4;" value="" vertex="1">
+      <mxGeometry height="20" relative="1" width="20" x="1" as="geometry">
+        <mxPoint x="-24" y="4" as="offset" />
+      </mxGeometry>
+    </mxCell>
+
+    <mxCell id="ga-db-script" parent="ga-db-group" style="align=center;overflow=fill;html=1;dropTarget=0;whiteSpace=wrap;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=13;" value="&lt;p style=&quot;margin:6px 0px 0px;font-size:13px;&quot;&gt;&lt;b&gt;&amp;lt;&amp;lt;Script&amp;gt;&amp;gt;&lt;/b&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px 0px 0px 8px;font-size:13px;&quot;&gt;alembic (migraciones)&lt;/p&gt;" vertex="1">
+      <mxGeometry height="70" width="200" x="1150" y="50" as="geometry" />
+    </mxCell>
+    <mxCell id="ga-db-script-icon" parent="ga-db-script" style="shape=component;jettyWidth=8;jettyHeight=4;" value="" vertex="1">
+      <mxGeometry height="20" relative="1" width="20" x="1" as="geometry">
+        <mxPoint x="-24" y="4" as="offset" />
+      </mxGeometry>
+    </mxCell>
+
+    <!-- TABLAS ESENCIALES (minúscula, snake_case) -->
+
+    <mxCell id="ga-t-users" parent="ga-db-group" style="align=left;overflow=fill;html=1;dropTarget=0;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=13;" value="&lt;p style=&quot;margin:6px 0px 0px;text-align:center;font-size:13px;&quot;&gt;&amp;lt;&amp;lt;Table&amp;gt;&amp;gt;&lt;/p&gt;&lt;hr style=&quot;border-style:solid;font-size:13px;&quot;&gt;&lt;p style=&quot;margin:0px 0px 0px 8px;font-size:13px;&quot;&gt;users&lt;/p&gt;" vertex="1">
+      <mxGeometry height="60" width="140" x="60" y="190" as="geometry" />
+    </mxCell>
+    <mxCell id="ga-t-users-icon" parent="ga-t-users" style="shape=component;jettyWidth=8;jettyHeight=4;" value="" vertex="1">
+      <mxGeometry height="20" relative="1" width="20" x="1" as="geometry">
+        <mxPoint x="-24" y="4" as="offset" />
+      </mxGeometry>
+    </mxCell>
+
+    <mxCell id="ga-t-products" parent="ga-db-group" style="align=left;overflow=fill;html=1;dropTarget=0;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=13;" value="&lt;p style=&quot;margin:6px 0px 0px;text-align:center;font-size:13px;&quot;&gt;&amp;lt;&amp;lt;Table&amp;gt;&amp;gt;&lt;/p&gt;&lt;hr style=&quot;border-style:solid;font-size:13px;&quot;&gt;&lt;p style=&quot;margin:0px 0px 0px 8px;font-size:13px;&quot;&gt;products&lt;/p&gt;" vertex="1">
+      <mxGeometry height="60" width="140" x="260" y="190" as="geometry" />
+    </mxCell>
+    <mxCell id="ga-t-products-icon" parent="ga-t-products" style="shape=component;jettyWidth=8;jettyHeight=4;" value="" vertex="1">
+      <mxGeometry height="20" relative="1" width="20" x="1" as="geometry">
+        <mxPoint x="-24" y="4" as="offset" />
+      </mxGeometry>
+    </mxCell>
+
+    <mxCell id="ga-t-variants" parent="ga-db-group" style="align=left;overflow=fill;html=1;dropTarget=0;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=13;" value="&lt;p style=&quot;margin:6px 0px 0px;text-align:center;font-size:13px;&quot;&gt;&amp;lt;&amp;lt;Table&amp;gt;&amp;gt;&lt;/p&gt;&lt;hr style=&quot;border-style:solid;font-size:13px;&quot;&gt;&lt;p style=&quot;margin:0px 0px 0px 8px;font-size:13px;&quot;&gt;product_variants&lt;/p&gt;" vertex="1">
+      <mxGeometry height="60" width="180" x="460" y="190" as="geometry" />
+    </mxCell>
+    <mxCell id="ga-t-variants-icon" parent="ga-t-variants" style="shape=component;jettyWidth=8;jettyHeight=4;" value="" vertex="1">
+      <mxGeometry height="20" relative="1" width="20" x="1" as="geometry">
+        <mxPoint x="-24" y="4" as="offset" />
+      </mxGeometry>
+    </mxCell>
+
+    <mxCell id="ga-t-inventory" parent="ga-db-group" style="align=left;overflow=fill;html=1;dropTarget=0;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=13;" value="&lt;p style=&quot;margin:6px 0px 0px;text-align:center;font-size:13px;&quot;&gt;&amp;lt;&amp;lt;Table&amp;gt;&amp;gt;&lt;/p&gt;&lt;hr style=&quot;border-style:solid;font-size:13px;&quot;&gt;&lt;p style=&quot;margin:0px 0px 0px 8px;font-size:13px;&quot;&gt;inventory&lt;/p&gt;" vertex="1">
+      <mxGeometry height="60" width="140" x="710" y="190" as="geometry" />
+    </mxCell>
+    <mxCell id="ga-t-inventory-icon" parent="ga-t-inventory" style="shape=component;jettyWidth=8;jettyHeight=4;" value="" vertex="1">
+      <mxGeometry height="20" relative="1" width="20" x="1" as="geometry">
+        <mxPoint x="-24" y="4" as="offset" />
+      </mxGeometry>
+    </mxCell>
+
+    <mxCell id="ga-t-categories" parent="ga-db-group" style="align=left;overflow=fill;html=1;dropTarget=0;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=13;" value="&lt;p style=&quot;margin:6px 0px 0px;text-align:center;font-size:13px;&quot;&gt;&amp;lt;&amp;lt;Table&amp;gt;&amp;gt;&lt;/p&gt;&lt;hr style=&quot;border-style:solid;font-size:13px;&quot;&gt;&lt;p style=&quot;margin:0px 0px 0px 8px;font-size:13px;&quot;&gt;categories&lt;/p&gt;" vertex="1">
+      <mxGeometry height="60" width="150" x="920" y="190" as="geometry" />
+    </mxCell>
+    <mxCell id="ga-t-categories-icon" parent="ga-t-categories" style="shape=component;jettyWidth=8;jettyHeight=4;" value="" vertex="1">
+      <mxGeometry height="20" relative="1" width="20" x="1" as="geometry">
+        <mxPoint x="-24" y="4" as="offset" />
+      </mxGeometry>
+    </mxCell>
+
+    <mxCell id="ga-t-branches" parent="ga-db-group" style="align=left;overflow=fill;html=1;dropTarget=0;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=13;" value="&lt;p style=&quot;margin:6px 0px 0px;text-align:center;font-size:13px;&quot;&gt;&amp;lt;&amp;lt;Table&amp;gt;&amp;gt;&lt;/p&gt;&lt;hr style=&quot;border-style:solid;font-size:13px;&quot;&gt;&lt;p style=&quot;margin:0px 0px 0px 8px;font-size:13px;&quot;&gt;branches&lt;/p&gt;" vertex="1">
+      <mxGeometry height="60" width="140" x="60" y="285" as="geometry" />
+    </mxCell>
+    <mxCell id="ga-t-branches-icon" parent="ga-t-branches" style="shape=component;jettyWidth=8;jettyHeight=4;" value="" vertex="1">
+      <mxGeometry height="20" relative="1" width="20" x="1" as="geometry">
+        <mxPoint x="-24" y="4" as="offset" />
+      </mxGeometry>
+    </mxCell>
+
+    <mxCell id="ga-t-movements" parent="ga-db-group" style="align=left;overflow=fill;html=1;dropTarget=0;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=13;" value="&lt;p style=&quot;margin:6px 0px 0px;text-align:center;font-size:13px;&quot;&gt;&amp;lt;&amp;lt;Table&amp;gt;&amp;gt;&lt;/p&gt;&lt;hr style=&quot;border-style:solid;font-size:13px;&quot;&gt;&lt;p style=&quot;margin:0px 0px 0px 8px;font-size:13px;&quot;&gt;inventory_movements&lt;/p&gt;" vertex="1">
+      <mxGeometry height="60" width="210" x="250" y="285" as="geometry" />
+    </mxCell>
+    <mxCell id="ga-t-movements-icon" parent="ga-t-movements" style="shape=component;jettyWidth=8;jettyHeight=4;" value="" vertex="1">
+      <mxGeometry height="20" relative="1" width="20" x="1" as="geometry">
+        <mxPoint x="-24" y="4" as="offset" />
+      </mxGeometry>
+    </mxCell>
+
+    <mxCell id="ga-t-carts" parent="ga-db-group" style="align=left;overflow=fill;html=1;dropTarget=0;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=13;" value="&lt;p style=&quot;margin:6px 0px 0px;text-align:center;font-size:13px;&quot;&gt;&amp;lt;&amp;lt;Table&amp;gt;&amp;gt;&lt;/p&gt;&lt;hr style=&quot;border-style:solid;font-size:13px;&quot;&gt;&lt;p style=&quot;margin:0px 0px 0px 8px;font-size:13px;&quot;&gt;carts&lt;/p&gt;" vertex="1">
+      <mxGeometry height="60" width="140" x="540" y="285" as="geometry" />
+    </mxCell>
+    <mxCell id="ga-t-carts-icon" parent="ga-t-carts" style="shape=component;jettyWidth=8;jettyHeight=4;" value="" vertex="1">
+      <mxGeometry height="20" relative="1" width="20" x="1" as="geometry">
+        <mxPoint x="-24" y="4" as="offset" />
+      </mxGeometry>
+    </mxCell>
+
+    <mxCell id="ga-t-reservations" parent="ga-db-group" style="align=left;overflow=fill;html=1;dropTarget=0;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=13;" value="&lt;p style=&quot;margin:6px 0px 0px;text-align:center;font-size:13px;&quot;&gt;&amp;lt;&amp;lt;Table&amp;gt;&amp;gt;&lt;/p&gt;&lt;hr style=&quot;border-style:solid;font-size:13px;&quot;&gt;&lt;p style=&quot;margin:0px 0px 0px 8px;font-size:13px;&quot;&gt;reservations&lt;/p&gt;" vertex="1">
+      <mxGeometry height="60" width="170" x="740" y="285" as="geometry" />
+    </mxCell>
+    <mxCell id="ga-t-reservations-icon" parent="ga-t-reservations" style="shape=component;jettyWidth=8;jettyHeight=4;" value="" vertex="1">
+      <mxGeometry height="20" relative="1" width="20" x="1" as="geometry">
+        <mxPoint x="-24" y="4" as="offset" />
+      </mxGeometry>
+    </mxCell>
+
+    <mxCell id="ga-t-orders" parent="ga-db-group" style="align=left;overflow=fill;html=1;dropTarget=0;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=13;" value="&lt;p style=&quot;margin:6px 0px 0px;text-align:center;font-size:13px;&quot;&gt;&amp;lt;&amp;lt;Table&amp;gt;&amp;gt;&lt;/p&gt;&lt;hr style=&quot;border-style:solid;font-size:13px;&quot;&gt;&lt;p style=&quot;margin:0px 0px 0px 8px;font-size:13px;&quot;&gt;orders&lt;/p&gt;" vertex="1">
+      <mxGeometry height="60" width="140" x="980" y="285" as="geometry" />
+    </mxCell>
+    <mxCell id="ga-t-orders-icon" parent="ga-t-orders" style="shape=component;jettyWidth=8;jettyHeight=4;" value="" vertex="1">
+      <mxGeometry height="20" relative="1" width="20" x="1" as="geometry">
+        <mxPoint x="-24" y="4" as="offset" />
+      </mxGeometry>
+    </mxCell>
+
+    <mxCell id="ga-t-sales" parent="ga-db-group" style="align=left;overflow=fill;html=1;dropTarget=0;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=13;" value="&lt;p style=&quot;margin:6px 0px 0px;text-align:center;font-size:13px;&quot;&gt;&amp;lt;&amp;lt;Table&amp;gt;&amp;gt;&lt;/p&gt;&lt;hr style=&quot;border-style:solid;font-size:13px;&quot;&gt;&lt;p style=&quot;margin:0px 0px 0px 8px;font-size:13px;&quot;&gt;sales&lt;/p&gt;" vertex="1">
+      <mxGeometry height="60" width="120" x="60" y="380" as="geometry" />
+    </mxCell>
+    <mxCell id="ga-t-sales-icon" parent="ga-t-sales" style="shape=component;jettyWidth=8;jettyHeight=4;" value="" vertex="1">
+      <mxGeometry height="20" relative="1" width="20" x="1" as="geometry">
+        <mxPoint x="-24" y="4" as="offset" />
+      </mxGeometry>
+    </mxCell>
+
+    <mxCell id="ga-t-sale-items" parent="ga-db-group" style="align=left;overflow=fill;html=1;dropTarget=0;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=13;" value="&lt;p style=&quot;margin:6px 0px 0px;text-align:center;font-size:13px;&quot;&gt;&amp;lt;&amp;lt;Table&amp;gt;&amp;gt;&lt;/p&gt;&lt;hr style=&quot;border-style:solid;font-size:13px;&quot;&gt;&lt;p style=&quot;margin:0px 0px 0px 8px;font-size:13px;&quot;&gt;sale_items&lt;/p&gt;" vertex="1">
+      <mxGeometry height="60" width="160" x="250" y="380" as="geometry" />
+    </mxCell>
+    <mxCell id="ga-t-sale-items-icon" parent="ga-t-sale-items" style="shape=component;jettyWidth=8;jettyHeight=4;" value="" vertex="1">
+      <mxGeometry height="20" relative="1" width="20" x="1" as="geometry">
+        <mxPoint x="-24" y="4" as="offset" />
+      </mxGeometry>
+    </mxCell>
+
+    <!-- ================================================================ -->
+    <!--                    RELACIONES (dependencia / uso)                -->
+    <!-- ================================================================ -->
+
+    <!-- login (auth.py) -> main.py -->
+    <mxCell id="ga-e-login-main" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;endArrow=open;endFill=0;dashed=1;" source="ga-login" target="ga-main">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+
+    <!-- main.py -> capas de la API (Model, Components, Controlador, Routes, Middleware) -->
+    <mxCell id="ga-e-main-model" edge="1" parent="1" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.3;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=open;endFill=0;dashed=1;" source="ga-main" target="ga-model">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="ga-e-main-components" edge="1" parent="1" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.4;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=open;endFill=0;dashed=1;" source="ga-main" target="ga-components">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="ga-e-main-controlador" edge="1" parent="1" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=open;endFill=0;dashed=1;" source="ga-main" target="ga-controlador">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="ga-e-main-routes" edge="1" parent="1" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.6;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=open;endFill=0;dashed=1;" source="ga-main" target="ga-routes">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="ga-e-main-middleware" edge="1" parent="1" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.68;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=open;endFill=0;dashed=1;" source="ga-main" target="ga-middleware">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+
+    <!-- main.py -> core/database.py -->
+    <mxCell id="ga-e-main-bd" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;endArrow=open;endFill=0;dashed=1;" source="ga-main" target="ga-bd">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+
+    <!-- main.py -> paquetes P1-P6 y Reportes -->
+    <mxCell id="ga-e-main-pkg1" edge="1" parent="1" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0;entryDx=0;entryDy=50;entryPerimeter=0;endArrow=open;endFill=0;endSize=12;dashed=1;" source="ga-main" target="ga-pkg-folder-1">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="ga-e-main-pkg2" edge="1" parent="1" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0;entryDx=0;entryDy=50;entryPerimeter=0;endArrow=open;endFill=0;endSize=12;dashed=1;" source="ga-main" target="ga-pkg-folder-2">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="ga-e-main-pkg3" edge="1" parent="1" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0;entryDx=0;entryDy=50;entryPerimeter=0;endArrow=open;endFill=0;endSize=12;dashed=1;" source="ga-main" target="ga-pkg-folder-3">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="ga-e-main-pkg4" edge="1" parent="1" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0;entryDx=0;entryDy=50;entryPerimeter=0;endArrow=open;endFill=0;endSize=12;dashed=1;" source="ga-main" target="ga-pkg-folder-4">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="ga-e-main-pkg5" edge="1" parent="1" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0;entryDx=0;entryDy=50;entryPerimeter=0;endArrow=open;endFill=0;endSize=12;dashed=1;" source="ga-main" target="ga-pkg-folder-5">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="ga-e-main-pkg6" edge="1" parent="1" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0;entryDx=0;entryDy=50;entryPerimeter=0;endArrow=open;endFill=0;endSize=12;dashed=1;" source="ga-main" target="ga-pkg-folder-6">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="ga-e-main-pkg7" edge="1" parent="1" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0;entryDx=0;entryDy=50;entryPerimeter=0;endArrow=open;endFill=0;endSize=12;dashed=1;" source="ga-main" target="ga-pkg-folder-7">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+
+    <!-- core/database.py -> Base de Datos -->
+    <mxCell id="ga-e-bd-db" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.55;entryY=0.05;entryDx=0;entryDy=0;entryPerimeter=0;endArrow=open;endFill=0;dashed=1;" source="ga-bd" target="ga-db-folder">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+
+    <!-- tablas -> script (<<Script>> alembic) -->
+    <mxCell id="ga-e-t-users" edge="1" parent="ga-db-group" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.15;entryDx=0;entryDy=0;endArrow=open;endFill=0;dashed=1;" source="ga-t-users" target="ga-db-script">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="ga-e-t-products" edge="1" parent="ga-db-group" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.3;entryDx=0;entryDy=0;endArrow=open;endFill=0;dashed=1;" source="ga-t-products" target="ga-db-script">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="ga-e-t-variants" edge="1" parent="ga-db-group" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.45;entryDx=0;entryDy=0;endArrow=open;endFill=0;dashed=1;" source="ga-t-variants" target="ga-db-script">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="ga-e-t-inventory" edge="1" parent="ga-db-group" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.55;entryDx=0;entryDy=0;endArrow=open;endFill=0;dashed=1;" source="ga-t-inventory" target="ga-db-script">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="ga-e-t-categories" edge="1" parent="ga-db-group" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.7;entryDx=0;entryDy=0;endArrow=open;endFill=0;dashed=1;" source="ga-t-categories" target="ga-db-script">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="ga-e-t-branches" edge="1" parent="ga-db-group" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.2;entryDx=0;entryDy=0;endArrow=open;endFill=0;dashed=1;" source="ga-t-branches" target="ga-db-script">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="ga-e-t-movements" edge="1" parent="ga-db-group" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.35;entryDx=0;entryDy=0;endArrow=open;endFill=0;dashed=1;" source="ga-t-movements" target="ga-db-script">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="ga-e-t-carts" edge="1" parent="ga-db-group" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=open;endFill=0;dashed=1;" source="ga-t-carts" target="ga-db-script">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="ga-e-t-reservations" edge="1" parent="ga-db-group" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.65;entryDx=0;entryDy=0;endArrow=open;endFill=0;dashed=1;" source="ga-t-reservations" target="ga-db-script">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="ga-e-t-orders" edge="1" parent="ga-db-group" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.8;entryDx=0;entryDy=0;endArrow=open;endFill=0;dashed=1;" source="ga-t-orders" target="ga-db-script">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="ga-e-t-sales" edge="1" parent="ga-db-group" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.4;entryDx=0;entryDy=0;endArrow=open;endFill=0;dashed=1;" source="ga-t-sales" target="ga-db-script">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="ga-e-t-sale-items" edge="1" parent="ga-db-group" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.6;entryDx=0;entryDy=0;endArrow=open;endFill=0;dashed=1;" source="ga-t-sale-items" target="ga-db-script">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+
+    <!-- script (alembic) -> PostgreSQL -->
+    <mxCell id="ga-e-script-pg" edge="1" parent="ga-db-group" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=open;endFill=0;dashed=1;" source="ga-db-script" target="ga-db-postgres">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+
+  </root>
+</mxGraphModel>

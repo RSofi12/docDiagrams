@@ -1,0 +1,68 @@
+@startuml CU14_Diagrama_de_Estados
+' ==========================================
+' Estilos y Configuración General
+' ==========================================
+skinparam backgroundColor #FFFFFF
+skinparam shadowing false
+skinparam defaultFontName Arial
+skinparam defaultFontSize 12
+
+skinparam state {
+    BackgroundColor #FFE6CC
+    BorderColor #D79B00
+    FontColor #000000
+    StartColor #E67E22
+    EndColor #000000
+}
+
+' ==========================================
+' Inicio: Consulta de Reservas
+' ==========================================
+[*] --> ConsultandoReservas : Abrir pantalla "Mis reservas"
+
+ConsultandoReservas --> ReservasConsultadas : Cargar sucursales, catálogo y reservas
+ReservasConsultadas : Lista con el estado de cada reserva
+
+' ==========================================
+' Selección de Prendas, Sucursal y Fecha
+' ==========================================
+ReservasConsultadas --> SeleccionandoPrenda : Seleccionar una prenda del catálogo
+SeleccionandoPrenda --> SeleccionandoPrenda : Ajustar cantidad del ítem
+SeleccionandoPrenda --> ReservasConsultadas : Quitar prenda de la selección
+
+SeleccionandoPrenda --> SeleccionandoSucursal : Elegir sucursal
+SeleccionandoSucursal --> SeleccionandoFechaVisita : Elegir fecha de visita
+
+' ==========================================
+' Registro de la Reserva
+' ==========================================
+SeleccionandoFechaVisita --> ValidandoReserva : Clic en "Reservar"
+
+state ValidandoReserva <<choice>>
+ValidandoReserva --> ReservaPendiente : [Datos válidos]
+ValidandoReserva --> ErrorValidacion : [Sucursal inactiva / prenda sin stock]
+
+ErrorValidacion --> SeleccionandoPrenda : Corregir la selección y reintentar
+
+ReservaPendiente : Reserva registrada (pendiente de atención en sucursal)
+ReservaPendiente --> ReservasConsultadas : Refrescar la lista de reservas
+ReservaPendiente --> ReservaExpirada : [Fecha límite vencida]
+
+ReservaExpirada --> ReservasConsultadas : Mostrar reserva como expirada
+
+' ==========================================
+' Cancelación de la Reserva
+' ==========================================
+ReservasConsultadas --> CancelandoReserva : Clic en "Cancelar"
+CancelandoReserva --> ReservaCancelada : Cancelación confirmada
+CancelandoReserva --> ErrorCancelacion : Fallo de red o del servidor
+
+ReservaCancelada --> ReservasConsultadas : Refrescar la lista de reservas
+ErrorCancelacion --> ReservasConsultadas : Reintentar cancelación
+
+' ==========================================
+' Fin
+' ==========================================
+ReservasConsultadas --> [*] : Salir de la pantalla
+
+@enduml

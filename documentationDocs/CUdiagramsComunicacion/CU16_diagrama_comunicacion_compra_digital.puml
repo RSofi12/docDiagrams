@@ -1,0 +1,64 @@
+@startuml CU16_Diagrama_de_Comunicacion
+' ==========================================
+' Estilos y Configuración General
+' ==========================================
+skinparam style strictuml
+skinparam handwritten false
+skinparam shadowing false
+skinparam defaultFontName "Helvetica"
+skinparam defaultFontSize 12
+
+' ==========================================
+' Participantes (distribución horizontal:
+' Actor -> Boundary -> Control -> Entities)
+' ==========================================
+actor ":Cliente" as cliente
+boundary ":CartPageComponent" as ui
+control ":OrderController" as ctrl
+entity ":Usuario" as entUsuario
+entity ":Pedido" as entPedido
+entity ":Variante" as entVariante
+entity ":PasarelaPago" as entPago
+
+' Enlaces ocultos para forzar el orden horizontal de izquierda a derecha
+cliente -[hidden]right- ui
+ui -[hidden]right- ctrl
+ctrl -[hidden]right- entUsuario
+entUsuario -[hidden]right- entPedido
+entPedido -[hidden]right- entVariante
+entVariante -[hidden]right- entPago
+
+' ==========================================
+' Mensajes numerados (funciones reales, sin parámetros)
+' Los retornos de las entidades son implícitos (UML 2.5+,
+' las entidades no envían mensajes de vuelta al controlador)
+' ==========================================
+cliente -- ui : "1: consultarEstadoPedido()"
+ui -- ctrl : "1.1: list_orders()"
+ctrl -- entUsuario : "1.2: verificarUsuarioAutenticado()"
+ctrl -- entPedido : "1.3: obtenerPedidosUsuario()"
+ctrl -- ui : "1.4: mostrarEstadoPedido()"
+ui -- cliente : "1.5: renderizarEstadoPedido()"
+
+cliente -- ui : "2: realizarCompraEfectivo()"
+ui -- ctrl : "2.1: checkout_cash()"
+ctrl -- entUsuario : "2.2: verificarUsuarioAutenticado()"
+ctrl -- entPedido : "2.3: _create_order_from_cart()"
+ctrl -- entVariante : "2.4: _allocate_inventory()"
+ctrl -- ui : "2.5: mostrarConfirmacionPedido()"
+ui -- cliente : "2.6: renderizarConfirmacionPedido()"
+
+cliente -- ui : "3: iniciarPagoStripe()"
+ui -- ctrl : "3.1: create_stripe_payment()"
+ctrl -- entPedido : "3.2: _create_order_from_cart()"
+ctrl -- entPago : "3.3: crearPaymentIntent()"
+ctrl -- ui : "3.4: mostrarClientSecret()"
+ui -- cliente : "3.5: renderizarFormularioStripe()"
+
+entPago -- ctrl : "4: notificarWebhookSucceeded()"
+ctrl -- entPedido : "4.1: confirm_stripe_payment()"
+ctrl -- entVariante : "4.2: _allocate_inventory()"
+ctrl -- ui : "4.3: mostrarPagoConfirmado()"
+ui -- cliente : "4.4: renderizarCompraExitosa()"
+
+@enduml
