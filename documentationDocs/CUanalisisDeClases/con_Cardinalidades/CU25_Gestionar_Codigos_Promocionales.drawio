@@ -1,0 +1,116 @@
+<mxGraphModel dx="2742" dy="1318" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+  <root>
+    <mxCell id="0" />
+    <mxCell id="1" parent="0" />
+
+    <mxCell id="CU25-A" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;fontStyle=0;fontSize=12;labelBackgroundColor=none;fillColor=#fad9d5;strokeColor=#ae4132;" value="Encargado Sucursal / Administrador" vertex="1">
+      <mxGeometry height="60" width="40" x="50" y="260" as="geometry" />
+    </mxCell>
+
+    <mxCell id="CU25-e0" edge="1" parent="1" source="CU25-A" target="CU25-I" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontSize=12;startSize=8;endSize=8;endArrow=none;endFill=0;labelBackgroundColor=none;fontColor=default;">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="CU25-e0-act" connectable="0" parent="CU25-e0" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="gestiona códigos promocionales (crea y consulta)" vertex="1">
+      <mxGeometry relative="1" x="-0.25" as="geometry">
+        <mxPoint as="offset" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="CU25-e0-c1" connectable="0" parent="CU25-e0" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="+1" vertex="1">
+      <mxGeometry relative="1" x="-0.8" y="-2" as="geometry">
+        <mxPoint as="offset" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="CU25-e0-c2" connectable="0" parent="CU25-e0" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="+1" vertex="1">
+      <mxGeometry relative="1" x="0.8" y="-2" as="geometry">
+        <mxPoint as="offset" />
+      </mxGeometry>
+    </mxCell>
+
+    <mxCell id="CU25-I" parent="1" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;labelBackgroundColor=none;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;i&gt;&amp;lt;&amp;lt;Interface&amp;gt;&amp;gt;&lt;/i&gt;&lt;br&gt;&lt;b&gt;PromotionsPageComponent&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ codes: List&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ loading: Boolean&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ error: String&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ modalOpen: Boolean&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ noExpiration: Boolean&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ validUntilError: Boolean&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ form: FormGroup&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ load(): void&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ openModal(): void&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ create(): void&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ closeModal(): void&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ toggleNoExpiration(): void&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ selectValidUntil(date): void&lt;/p&gt;" vertex="1">
+      <mxGeometry height="290" width="240" x="210" y="40" as="geometry" />
+    </mxCell>
+
+    <mxCell id="CU25-e00" edge="1" parent="1" source="CU25-I" target="CU25-C" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontSize=12;startSize=8;endSize=8;endArrow=none;endFill=0;labelBackgroundColor=none;fontColor=default;">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="CU25-e00-c1" connectable="0" parent="CU25-e00" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="+1" vertex="1">
+      <mxGeometry relative="1" x="-0.8" y="-2" as="geometry">
+        <mxPoint as="offset" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="CU25-e00-c2" connectable="0" parent="CU25-e00" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="+1" vertex="1">
+      <mxGeometry relative="1" x="0.8" y="-2" as="geometry">
+        <mxPoint as="offset" />
+      </mxGeometry>
+    </mxCell>
+
+    <mxCell id="CU25-C" parent="1" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;labelBackgroundColor=none;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;i&gt;&amp;lt;&amp;lt;Controller&amp;gt;&amp;gt;&lt;/i&gt;&lt;br&gt;&lt;b&gt;PromotionController&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ get_promotion_codes_route(): List&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ create_promotion_code_route(payload): void&lt;/p&gt;" vertex="1">
+      <mxGeometry height="130" width="240" x="500" y="120" as="geometry" />
+    </mxCell>
+
+    <mxCell id="CU25-ce1" edge="1" parent="1" source="CU25-C" target="CU25-PC" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.3;exitDx=0;exitDy=0;entryX=0;entryY=0.4;entryDx=0;entryDy=0;fontSize=12;endArrow=none;endFill=0;labelBackgroundColor=none;fontColor=default;">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="CU25-ce2" edge="1" parent="1" source="CU25-C" target="CU25-BR" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.6;exitDx=0;exitDy=0;entryX=0;entryY=0.3;entryDx=0;entryDy=0;fontSize=12;endArrow=none;endFill=0;labelBackgroundColor=none;fontColor=default;">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="CU25-ce3" edge="1" parent="1" source="CU25-C" target="CU25-US" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.7;exitY=1;exitDx=0;exitDy=0;entryX=0.4;entryY=0;entryDx=0;entryDy=0;fontSize=12;endArrow=none;endFill=0;labelBackgroundColor=none;fontColor=default;">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+
+    <mxCell id="CU25-PC" parent="1" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;labelBackgroundColor=none;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;i&gt;&amp;lt;&amp;lt;Entity&amp;gt;&amp;gt;&lt;/i&gt;&lt;br&gt;&lt;b&gt;PromotionCode&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ id: UUID [PK]&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ code: String [unique]&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ discount_type: Enum [percentage|&lt;br&gt;    fixed]&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ discount_value: Numeric&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ valid_from: DateTime [nullable]&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ valid_until: DateTime [nullable]&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ branch_id: UUID [FK]&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ created_by: UUID [FK]&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ is_active: Boolean&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ created_at: DateTime&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ findByScope(): List&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ save(): void&lt;/p&gt;" vertex="1">
+      <mxGeometry height="310" width="260" x="780" y="40" as="geometry" />
+    </mxCell>
+
+    <mxCell id="CU25-BR" parent="1" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;labelBackgroundColor=none;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;i&gt;&amp;lt;&amp;lt;Entity&amp;gt;&amp;gt;&lt;/i&gt;&lt;br&gt;&lt;b&gt;Branch&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ id: UUID [PK]&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ name: String&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ city: String&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ is_default: Boolean&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ is_active: Boolean&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ findById(): Branch&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ findAll(): List&lt;/p&gt;" vertex="1">
+      <mxGeometry height="200" width="210" x="1100" y="60" as="geometry" />
+    </mxCell>
+
+    <mxCell id="CU25-US" parent="1" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;labelBackgroundColor=none;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;i&gt;&amp;lt;&amp;lt;Entity&amp;gt;&amp;gt;&lt;/i&gt;&lt;br&gt;&lt;b&gt;User&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ id: UUID [PK]&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ name: String&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ email: String&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ rol: Enum [administrador|&lt;br&gt;    encargado]&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ branch_id: UUID [FK]&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ findById(): User&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ findAll(): List&lt;/p&gt;" vertex="1">
+      <mxGeometry height="210" width="220" x="300" y="470" as="geometry" />
+    </mxCell>
+
+    <mxCell id="CU25-e_pc_br" edge="1" parent="1" source="CU25-PC" target="CU25-BR" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.6;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;labelBackgroundColor=none;fontColor=default;">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="CU25-e_pc_br_c1" connectable="0" parent="CU25-e_pc_br" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="+0..1" vertex="1">
+      <mxGeometry relative="1" x="-0.75" y="-2" as="geometry">
+        <mxPoint as="offset" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="CU25-e_pc_br_c2" connectable="0" parent="CU25-e_pc_br" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="+0..*" vertex="1">
+      <mxGeometry relative="1" x="0.75" y="-2" as="geometry">
+        <mxPoint as="offset" />
+      </mxGeometry>
+    </mxCell>
+
+    <mxCell id="CU25-e_pc_us" edge="1" parent="1" source="CU25-PC" target="CU25-US" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;endArrow=none;endFill=0;labelBackgroundColor=none;fontColor=default;">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="CU25-e_pc_us_c1" connectable="0" parent="CU25-e_pc_us" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="+1" vertex="1">
+      <mxGeometry relative="1" x="-0.75" y="-2" as="geometry">
+        <mxPoint as="offset" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="CU25-e_pc_us_c2" connectable="0" parent="CU25-e_pc_us" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="+0..*" vertex="1">
+      <mxGeometry relative="1" x="0.75" y="-2" as="geometry">
+        <mxPoint as="offset" />
+      </mxGeometry>
+    </mxCell>
+
+    <mxCell id="CU25-e_us_br" edge="1" parent="1" source="CU25-US" target="CU25-BR" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.3;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;endArrow=none;endFill=0;labelBackgroundColor=none;fontColor=default;">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="CU25-e_us_br_c1" connectable="0" parent="CU25-e_us_br" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="+0..1" vertex="1">
+      <mxGeometry relative="1" x="-0.75" y="-2" as="geometry">
+        <mxPoint as="offset" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="CU25-e_us_br_c2" connectable="0" parent="CU25-e_us_br" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="+0..*" vertex="1">
+      <mxGeometry relative="1" x="0.75" y="-2" as="geometry">
+        <mxPoint as="offset" />
+      </mxGeometry>
+    </mxCell>
+
+  </root>
+</mxGraphModel>

@@ -1,0 +1,115 @@
+<mxGraphModel dx="700" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+  <root>
+    <mxCell id="0" />
+    <mxCell id="1" parent="0" />
+
+    <mxCell id="CU19-A" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;fontStyle=0;fontSize=12;labelBackgroundColor=none;fillColor=#fad9d5;strokeColor=#ae4132;" value="Cliente" vertex="1">
+      <mxGeometry height="60" width="40" x="40" y="330" as="geometry" />
+    </mxCell>
+
+    <mxCell id="CU19-e0" edge="1" parent="1" source="CU19-A" target="CU19-I" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontSize=12;startSize=8;endSize=8;endArrow=none;endFill=0;labelBackgroundColor=none;fontColor=default;">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="CU19-e0-act" connectable="0" parent="CU19-e0" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="activa el vestidor virtual desde la ficha de una prenda (autoriza la cámara y visualiza la prenda superpuesta en tiempo real)" vertex="1">
+      <mxGeometry relative="1" x="-0.3" as="geometry">
+        <mxPoint as="offset" />
+      </mxGeometry>
+    </mxCell>
+
+    <mxCell id="CU19-I" parent="1" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;labelBackgroundColor=none;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;i&gt;&amp;lt;&amp;lt;Interface&amp;gt;&amp;gt;&lt;/i&gt;&lt;br&gt;&lt;b&gt;VirtualTryOnComponent&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ productName: String&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ garmentImageUrl: String&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ open: Boolean&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ tryOnFrame: ElementRef&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ openModal(): void&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ closeModal(): void&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ sendConfiguration(): void&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ handleMessage(event): void&lt;/p&gt;" vertex="1">
+      <mxGeometry height="240" width="250" x="170" y="120" as="geometry" />
+    </mxCell>
+
+    <mxCell id="CU19-e1" edge="1" parent="1" source="CU19-I" target="CU19-DF" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=12;endArrow=none;endFill=0;labelBackgroundColor=none;fontColor=default;">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="CU19-e1-act" connectable="0" parent="CU19-e1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="carga iframe y envía config por postMessage (decart-try-on-config | decart-try-on-expired)" vertex="1">
+      <mxGeometry relative="1" x="-0.05" as="geometry">
+        <mxPoint as="offset" />
+      </mxGeometry>
+    </mxCell>
+
+    <mxCell id="CU19-DF" parent="1" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;labelBackgroundColor=none;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;i&gt;&amp;lt;&amp;lt;Interface&amp;gt;&amp;gt;&lt;/i&gt;&lt;br&gt;&lt;b&gt;DecartTryOnFrame&lt;/b&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-top:2px;text-align:center;font-size:10px;&quot;&gt;iframe embebido /decart-try-on.html&lt;br&gt;SDK @decartai/sdk - lucy-vton-latest&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ apiKey: String&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ garmentImageUrl: String&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ productName: String&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ model: String [lucy-vton-latest]&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ cameraStream: MediaStream&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ realtimeClient: RealtimeClient&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ selectedGarment: File&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ variantGarmentActive: Boolean&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ applyConfiguration(data): void&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ startSession(): void&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ setImage(blob, options): Promise&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ stopEverything(): void&lt;/p&gt;" vertex="1">
+      <mxGeometry height="290" width="240" x="175" y="430" as="geometry" />
+    </mxCell>
+
+    <mxCell id="CU19-e00" edge="1" parent="1" source="CU19-I" target="CU19-C" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontSize=12;startSize=8;endSize=8;endArrow=none;endFill=0;labelBackgroundColor=none;fontColor=default;">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="CU19-e00-act" connectable="0" parent="CU19-e00" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="obtiene la imagen de la prenda/variante (vía ProductDetailPageComponent - GET /catalog/products/{product_id})" vertex="1">
+      <mxGeometry relative="1" x="-0.3" as="geometry">
+        <mxPoint as="offset" />
+      </mxGeometry>
+    </mxCell>
+
+    <mxCell id="CU19-C" parent="1" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;labelBackgroundColor=none;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;i&gt;&amp;lt;&amp;lt;Controller&amp;gt;&amp;gt;&lt;/i&gt;&lt;br&gt;&lt;b&gt;CatalogController&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ get_product_route(product_id, branch_id): ProductDetail&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ record_product_view_route(): void&lt;/p&gt;" vertex="1">
+      <mxGeometry height="130" width="280" x="460" y="180" as="geometry" />
+    </mxCell>
+
+    <mxCell id="CU19-ce1" edge="1" parent="1" source="CU19-C" target="CU19-PD" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.35;exitDx=0;exitDy=0;entryX=0;entryY=0.4;entryDx=0;entryDy=0;fontSize=12;endArrow=none;endFill=0;labelBackgroundColor=none;fontColor=default;">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="CU19-ce2" edge="1" parent="1" source="CU19-C" target="CU19-PV" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.6;exitDx=0;exitDy=0;entryX=0;entryY=0.4;entryDx=0;entryDy=0;fontSize=12;endArrow=none;endFill=0;labelBackgroundColor=none;fontColor=default;">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+
+    <mxCell id="CU19-PD" parent="1" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;labelBackgroundColor=none;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;i&gt;&amp;lt;&amp;lt;Entity&amp;gt;&amp;gt;&lt;/i&gt;&lt;br&gt;&lt;b&gt;Product&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ id: UUID [PK]&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ name: String&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ description: Text [nullable]&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ provider_id: UUID [FK] [nullable]&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ category_id: UUID [FK]&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ collection_id: UUID [FK] [nullable]&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ discount_type: String [nullable]&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ discount_value: Numeric [nullable]&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ get_public_product(): ProductDetail&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ findById(): Product&lt;/p&gt;" vertex="1">
+      <mxGeometry height="250" width="250" x="800" y="60" as="geometry" />
+    </mxCell>
+
+    <mxCell id="CU19-PV" parent="1" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;labelBackgroundColor=none;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;i&gt;&amp;lt;&amp;lt;Entity&amp;gt;&amp;gt;&lt;/i&gt;&lt;br&gt;&lt;b&gt;ProductVariant&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ id: UUID [PK]&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ product_id: UUID [FK]&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ sku: String [unique]&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ price: Numeric&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ size_id: UUID [FK] [nullable]&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ color_id: UUID [FK] [nullable]&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ image_url: String [nullable]&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ image_public_id: String [nullable]&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ status: Enum [active|...]&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ activeVariants(): List&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ findById(): ProductVariant&lt;/p&gt;" vertex="1">
+      <mxGeometry height="260" width="260" x="800" y="350" as="geometry" />
+    </mxCell>
+
+    <mxCell id="CU19-SZ" parent="1" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;labelBackgroundColor=none;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;i&gt;&amp;lt;&amp;lt;Entity&amp;gt;&amp;gt;&lt;/i&gt;&lt;br&gt;&lt;b&gt;Size&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ id: UUID [PK]&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ name: String [unique]&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ findById(): Size&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ findAll(): List&lt;/p&gt;" vertex="1">
+      <mxGeometry height="150" width="200" x="1100" y="390" as="geometry" />
+    </mxCell>
+
+    <mxCell id="CU19-CL" parent="1" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;labelBackgroundColor=none;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;i&gt;&amp;lt;&amp;lt;Entity&amp;gt;&amp;gt;&lt;/i&gt;&lt;br&gt;&lt;b&gt;Color&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ id: UUID [PK]&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ name: String [unique]&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ hex_code: String [nullable]&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ findById(): Color&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ findAll(): List&lt;/p&gt;" vertex="1">
+      <mxGeometry height="170" width="200" x="1100" y="80" as="geometry" />
+    </mxCell>
+
+    <mxCell id="CU19-e_pd_pv" edge="1" parent="1" source="CU19-PD" target="CU19-PV" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;endArrow=none;endFill=0;labelBackgroundColor=none;fontColor=default;">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="CU19-e_pd_pv_c1" connectable="0" parent="CU19-e_pd_pv" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="+1" vertex="1">
+      <mxGeometry relative="1" x="-0.75" y="-2" as="geometry">
+        <mxPoint as="offset" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="CU19-e_pd_pv_c2" connectable="0" parent="CU19-e_pd_pv" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="+0..*" vertex="1">
+      <mxGeometry relative="1" x="0.75" y="-2" as="geometry">
+        <mxPoint as="offset" />
+      </mxGeometry>
+    </mxCell>
+
+    <mxCell id="CU19-e_pv_sz" edge="1" parent="1" source="CU19-PV" target="CU19-SZ" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.4;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;labelBackgroundColor=none;fontColor=default;">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="CU19-e_pv_sz_c1" connectable="0" parent="CU19-e_pv_sz" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="+0..1" vertex="1">
+      <mxGeometry relative="1" x="-0.75" y="-2" as="geometry">
+        <mxPoint as="offset" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="CU19-e_pv_sz_c2" connectable="0" parent="CU19-e_pv_sz" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="+0..*" vertex="1">
+      <mxGeometry relative="1" x="0.75" y="-2" as="geometry">
+        <mxPoint as="offset" />
+      </mxGeometry>
+    </mxCell>
+
+    <mxCell id="CU19-e_pv_cl" edge="1" parent="1" source="CU19-PV" target="CU19-CL" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.1;exitDx=0;exitDy=0;entryX=0.4;entryY=1;entryDx=0;entryDy=0;endArrow=none;endFill=0;labelBackgroundColor=none;fontColor=default;">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+    <mxCell id="CU19-e_pv_cl_c1" connectable="0" parent="CU19-e_pv_cl" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="+0..1" vertex="1">
+      <mxGeometry relative="1" x="-0.75" y="-2" as="geometry">
+        <mxPoint as="offset" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="CU19-e_pv_cl_c2" connectable="0" parent="CU19-e_pv_cl" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="+0..*" vertex="1">
+      <mxGeometry relative="1" x="0.75" y="-2" as="geometry">
+        <mxPoint as="offset" />
+      </mxGeometry>
+    </mxCell>
+
+  </root>
+</mxGraphModel>

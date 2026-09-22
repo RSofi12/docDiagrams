@@ -1,0 +1,65 @@
+@startuml CU18_Diagrama_de_Estados
+title Diagrama de Estados - CU18 Registrar venta presencial y procesar pago en caja
+
+skinparam backgroundColor #FFFFFF
+skinparam shadowing false
+skinparam defaultFontName Arial
+skinparam defaultFontSize 12
+skinparam state {
+    BackgroundColor #FFE6CC
+    BorderColor #D79B00
+    FontColor #212529
+    StartColor #28A745
+    EndColor #DC3545
+}
+
+[*] --> NuevaVenta : accede a la caja
+
+state NuevaVenta {
+    NuevaVenta
+}
+
+NuevaVenta --> OrigenVenta <<choice>>
+OrigenVenta --> VentaConReserva : [venta con reserva previa]
+OrigenVenta --> VentaManual : [venta sin reserva]
+
+state VentaConReserva {
+    [*] --> ReservaBuscada : localiza la reserva de la sucursal
+    ReservaBuscada --> ReservaSeleccionada : reserva válida
+}
+
+state VentaManual {
+    [*] --> ItemsAgregados : agrega productos con talla y color
+}
+
+VentaConReserva --> VentaValidada : reserva asociada a la venta
+VentaManual --> VentaValidada : ítems cargados
+
+state VentaValidada {
+    VentaValidada
+}
+
+VentaValidada --> ValidarStock <<choice>>
+ValidarStock --> StockInsuficiente : [stock insuficiente en la sucursal]
+ValidarStock --> PagoProcesado : [stock disponible]
+
+StockInsuficiente --> VentaValidada : ajusta cantidades o elimina ítems
+
+state PagoProcesado {
+    [*] --> CobroIniciado : procesa el cobro
+    CobroIniciado --> ResultadoPago <<choice>>
+    ResultadoPago --> PagoAprobado : [pago aceptado]
+    ResultadoPago --> PagoRechazado : [pago rechazado]
+    PagoRechazado --> CobroIniciado : reintenta el cobro
+}
+
+PagoAprobado --> VentaRegistrada : venta guardada y stock descontado
+
+state VentaRegistrada {
+    VentaRegistrada
+}
+
+VentaRegistrada --> ComprobanteEmitido : emite el comprobante de venta
+ComprobanteEmitido --> [*] : venta finalizada
+
+@enduml

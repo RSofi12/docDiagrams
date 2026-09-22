@@ -1,0 +1,182 @@
+<mxGraphModel dx="1628" dy="898" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+  <root>
+    <mxCell id="0" />
+    <mxCell id="1" parent="0" />
+
+    <mxCell id="CU25-Title" parent="1" style="text;whiteSpace=wrap;html=1;labelBackgroundColor=none;" value="&lt;p dir=&quot;ltr&quot; style=&quot;font-size:11pt;font-family:Arial,sans-serif;&quot;&gt;&lt;b&gt;CU25 – Gestionar Códigos Promocionales&lt;/b&gt;&lt;/p&gt;" vertex="1">
+      <mxGeometry height="50" width="290" x="20" y="70" as="geometry" />
+    </mxCell>
+
+    <mxCell id="CU25-Actor" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fontSize=10;labelBackgroundColor=none;rounded=1;fontStyle=1;" value=":Encargado Sucursal / Administrador" vertex="1">
+      <mxGeometry height="70" width="40" x="131.5" y="205" as="geometry" />
+    </mxCell>
+
+    <mxCell id="CU25-Boundary" parent="1" style="shape=umlBoundary;whiteSpace=wrap;html=1;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;fontSize=10;labelBackgroundColor=none;rounded=1;fontStyle=1;" value=":PromotionsPageComponent" vertex="1">
+      <mxGeometry height="70" width="80" x="329" y="205" as="geometry" />
+    </mxCell>
+
+    <mxCell id="CU25-Controller" parent="1" style="ellipse;shape=umlControl;whiteSpace=wrap;html=1;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;fontSize=10;labelBackgroundColor=none;rounded=1;fontStyle=1;" value=":PromotionController" vertex="1">
+      <mxGeometry height="80" width="70" x="539.5" y="200" as="geometry" />
+    </mxCell>
+
+    <mxCell id="CU25-EntCode" parent="1" style="ellipse;shape=umlEntity;whiteSpace=wrap;html=1;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;fontSize=10;labelBackgroundColor=none;rounded=1;fontStyle=1;" value=":PromotionCode" vertex="1">
+      <mxGeometry height="36" width="36" x="771.5" y="222" as="geometry" />
+    </mxCell>
+
+    <mxCell id="CU25-EntUser" parent="1" style="ellipse;shape=umlEntity;whiteSpace=wrap;html=1;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;fontSize=10;labelBackgroundColor=none;rounded=1;fontStyle=1;" value=":User" vertex="1">
+      <mxGeometry height="36" width="36" x="771.5" y="97" as="geometry" />
+    </mxCell>
+
+    <mxCell id="CU25-EntBranch" parent="1" style="ellipse;shape=umlEntity;whiteSpace=wrap;html=1;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;fontSize=10;labelBackgroundColor=none;rounded=1;fontStyle=1;" value=":Branch" vertex="1">
+      <mxGeometry height="36" width="36" x="771.5" y="300" as="geometry" />
+    </mxCell>
+
+    <mxCell id="CU25-Link-AB" edge="1" parent="1" source="CU25-Actor" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;fontSize=10;labelBackgroundColor=none;fontColor=default;" target="CU25-Boundary">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+
+    <mxCell id="CU25-Link-BC" edge="1" parent="1" source="CU25-Boundary" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;fontSize=10;labelBackgroundColor=none;fontColor=default;" target="CU25-Controller">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+
+    <mxCell id="CU25-Link-CE1" edge="1" parent="1" source="CU25-Controller" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;fontSize=10;labelBackgroundColor=none;fontColor=default;" target="CU25-EntCode">
+      <mxGeometry relative="1" as="geometry" />
+    </mxCell>
+
+    <mxCell id="CU25-Link-CE2" edge="1" parent="1" source="CU25-Controller" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.15;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;fontSize=10;labelBackgroundColor=none;fontColor=default;" target="CU25-EntUser">
+      <mxGeometry relative="1" as="geometry">
+        <Array as="points">
+          <mxPoint x="609.5" y="115" />
+        </Array>
+      </mxGeometry>
+    </mxCell>
+
+    <mxCell id="CU25-Link-CE3" edge="1" parent="1" source="CU25-Controller" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.9;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;fontSize=10;labelBackgroundColor=none;fontColor=default;" target="CU25-EntBranch">
+      <mxGeometry relative="1" as="geometry">
+        <Array as="points">
+          <mxPoint x="609.5" y="318" />
+        </Array>
+      </mxGeometry>
+    </mxCell>
+
+    <mxCell id="CU25-MSG-1" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=1;fontSize=10;labelBackgroundColor=none;" value="1: consultarCodigos()" vertex="1">
+      <mxGeometry height="22" width="130" x="175.5" y="207" as="geometry" />
+    </mxCell>
+    <mxCell id="CU25-MSG-1E" edge="1" parent="1" source="CU25-MSG-1" style="endArrow=classic;html=1;rounded=1;strokeWidth=2;fontSize=10;labelBackgroundColor=none;fontColor=default;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;" target="CU25-MSG-1">
+      <mxGeometry height="50" relative="1" width="50" as="geometry">
+        <mxPoint x="290" y="218" as="sourcePoint" />
+        <mxPoint x="330" y="218" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+
+    <mxCell id="CU25-MSG-11" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=1;fontSize=10;labelBackgroundColor=none;" value="1.1: get_promotion_codes()" vertex="1">
+      <mxGeometry height="22" width="150" x="414" y="207" as="geometry" />
+    </mxCell>
+    <mxCell id="CU25-MSG-11E" edge="1" parent="1" source="CU25-MSG-11" style="endArrow=classic;html=1;rounded=1;strokeWidth=2;fontSize=10;labelBackgroundColor=none;fontColor=default;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;" target="CU25-MSG-11">
+      <mxGeometry height="50" relative="1" width="50" as="geometry">
+        <mxPoint x="536" y="218" as="sourcePoint" />
+        <mxPoint x="560" y="218" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+
+    <mxCell id="CU25-MSG-12" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=1;fontSize=10;labelBackgroundColor=none;" value="1.2: list_codes()" vertex="1">
+      <mxGeometry height="22" width="130" x="615" y="207" as="geometry" />
+    </mxCell>
+    <mxCell id="CU25-MSG-12E" edge="1" parent="1" source="CU25-MSG-12" style="endArrow=classic;html=1;rounded=1;strokeWidth=2;fontSize=10;labelBackgroundColor=none;fontColor=default;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;" target="CU25-MSG-12">
+      <mxGeometry height="50" relative="1" width="50" as="geometry">
+        <mxPoint x="736" y="218" as="sourcePoint" />
+        <mxPoint x="772" y="218" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+
+    <mxCell id="CU25-MSG-13" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=1;fontSize=10;labelBackgroundColor=none;" value="1.3: devolverListado()" vertex="1">
+      <mxGeometry height="22" width="150" x="414" y="246" as="geometry" />
+    </mxCell>
+    <mxCell id="CU25-MSG-13E" edge="1" parent="1" source="CU25-MSG-13" style="rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;strokeWidth=1;fontSize=10;labelBackgroundColor=none;fontColor=default;dashed=1;" target="CU25-MSG-13">
+      <mxGeometry height="50" relative="1" width="50" as="geometry">
+        <mxPoint x="545" y="257" as="sourcePoint" />
+        <mxPoint x="500" y="257" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+
+    <mxCell id="CU25-MSG-14" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=1;fontSize=10;labelBackgroundColor=none;" value="1.4: renderizarListado()" vertex="1">
+      <mxGeometry height="22" width="160" x="171.5" y="256" as="geometry" />
+    </mxCell>
+    <mxCell id="CU25-MSG-14E" edge="1" parent="1" source="CU25-MSG-14" style="rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;strokeWidth=1;fontSize=10;labelBackgroundColor=none;fontColor=default;dashed=1;" target="CU25-MSG-14">
+      <mxGeometry height="50" relative="1" width="50" as="geometry">
+        <mxPoint x="290" y="267" as="sourcePoint" />
+        <mxPoint x="250" y="267" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+
+    <mxCell id="CU25-MSG-2" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=1;fontSize=10;labelBackgroundColor=none;" value="2: crearCodigo()" vertex="1">
+      <mxGeometry height="22" width="125" x="170" y="290" as="geometry" />
+    </mxCell>
+    <mxCell id="CU25-MSG-2E" edge="1" parent="1" source="CU25-MSG-2" style="endArrow=classic;html=1;rounded=1;strokeWidth=2;fontSize=10;labelBackgroundColor=none;fontColor=default;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;" target="CU25-MSG-2">
+      <mxGeometry height="50" relative="1" width="50" as="geometry">
+        <mxPoint x="285" y="301" as="sourcePoint" />
+        <mxPoint x="330" y="301" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+
+    <mxCell id="CU25-MSG-21" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=1;fontSize=10;labelBackgroundColor=none;" value="2.1: create_promotion_code()" vertex="1">
+      <mxGeometry height="22" width="165" x="414" y="290" as="geometry" />
+    </mxCell>
+    <mxCell id="CU25-MSG-21E" edge="1" parent="1" source="CU25-MSG-21" style="endArrow=classic;html=1;rounded=1;strokeWidth=2;fontSize=10;labelBackgroundColor=none;fontColor=default;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;" target="CU25-MSG-21">
+      <mxGeometry height="50" relative="1" width="50" as="geometry">
+        <mxPoint x="538" y="301" as="sourcePoint" />
+        <mxPoint x="560" y="301" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+
+    <mxCell id="CU25-MSG-22" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=1;fontSize=10;labelBackgroundColor=none;" value="2.2: resolverSucursalAsignada()" vertex="1">
+      <mxGeometry height="22" width="180" x="560" y="328" as="geometry" />
+    </mxCell>
+    <mxCell id="CU25-MSG-22E" edge="1" parent="1" source="CU25-MSG-22" style="endArrow=classic;html=1;rounded=1;strokeWidth=2;fontSize=10;labelBackgroundColor=none;fontColor=default;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;" target="CU25-MSG-22">
+      <mxGeometry height="50" relative="1" width="50" as="geometry">
+        <mxPoint x="720" y="339" as="sourcePoint" />
+        <mxPoint x="748" y="339" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+
+    <mxCell id="CU25-MSG-23" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=1;fontSize=10;labelBackgroundColor=none;" value="2.3: asignarCreador()" vertex="1">
+      <mxGeometry height="22" width="150" x="552" y="112" as="geometry" />
+    </mxCell>
+    <mxCell id="CU25-MSG-23E" edge="1" parent="1" source="CU25-MSG-23" style="endArrow=classic;html=1;rounded=1;strokeWidth=2;fontSize=10;labelBackgroundColor=none;fontColor=default;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;" target="CU25-MSG-23">
+      <mxGeometry height="50" relative="1" width="50" as="geometry">
+        <mxPoint x="600" y="123" as="sourcePoint" />
+        <mxPoint x="632" y="120" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+
+    <mxCell id="CU25-MSG-24" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=1;fontSize=10;labelBackgroundColor=none;" value="2.4: create_code()" vertex="1">
+      <mxGeometry height="22" width="130" x="615" y="236" as="geometry" />
+    </mxCell>
+    <mxCell id="CU25-MSG-24E" edge="1" parent="1" source="CU25-MSG-24" style="endArrow=classic;html=1;rounded=1;strokeWidth=2;fontSize=10;labelBackgroundColor=none;fontColor=default;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;" target="CU25-MSG-24">
+      <mxGeometry height="50" relative="1" width="50" as="geometry">
+        <mxPoint x="736" y="247" as="sourcePoint" />
+        <mxPoint x="772" y="247" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+
+    <mxCell id="CU25-MSG-25" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=1;fontSize=10;labelBackgroundColor=none;" value="2.5: devolverCreacion()" vertex="1">
+      <mxGeometry height="22" width="150" x="440" y="322" as="geometry" />
+    </mxCell>
+    <mxCell id="CU25-MSG-25E" edge="1" parent="1" source="CU25-MSG-25" style="rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;strokeWidth=1;fontSize=10;labelBackgroundColor=none;fontColor=default;dashed=1;" target="CU25-MSG-25">
+      <mxGeometry height="50" relative="1" width="50" as="geometry">
+        <mxPoint x="545" y="333" as="sourcePoint" />
+        <mxPoint x="505" y="333" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+
+    <mxCell id="CU25-MSG-26" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=1;fontSize=10;labelBackgroundColor=none;" value="2.6: confirmarCreación()" vertex="1">
+      <mxGeometry height="22" width="155" x="171.5" y="326" as="geometry" />
+    </mxCell>
+    <mxCell id="CU25-MSG-26E" edge="1" parent="1" source="CU25-MSG-26" style="rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;strokeWidth=1;fontSize=10;labelBackgroundColor=none;fontColor=default;dashed=1;" target="CU25-MSG-26">
+      <mxGeometry height="50" relative="1" width="50" as="geometry">
+        <mxPoint x="295" y="337" as="sourcePoint" />
+        <mxPoint x="255" y="337" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+  </root>
+</mxGraphModel>

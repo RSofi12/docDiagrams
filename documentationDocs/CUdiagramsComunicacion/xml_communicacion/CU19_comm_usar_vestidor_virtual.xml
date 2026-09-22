@@ -1,0 +1,239 @@
+<mxGraphModel dx="1628" dy="898" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="700" math="0" shadow="0">
+  <root>
+    <mxCell id="0" />
+    <mxCell id="1" parent="0" />
+
+    <mxCell id="CU19-title" parent="1" style="text;whiteSpace=wrap;html=1;labelBackgroundColor=none;" value="&lt;b style=&quot;font-weight:normal;&quot;&gt;&lt;p dir=&quot;ltr&quot; style=&quot;line-height:1.7999999999999998;margin-top:0pt;margin-bottom:10pt;&quot;&gt;&lt;span style=&quot;font-size:11pt;font-family:Arial,sans-serif;color:#000000;background-color:transparent;font-weight:700;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;white-space:pre;white-space:pre-wrap;&quot;&gt;CU19 – Usar vestidor virtual&lt;/span&gt;&lt;/p&gt;&lt;/b&gt;" vertex="1">
+      <mxGeometry height="60" width="420" x="20" y="20" as="geometry" />
+    </mxCell>
+
+    <mxCell id="CU19-A" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fontSize=10;labelBackgroundColor=none;rounded=1;fontStyle=1;" value=":Cliente" vertex="1">
+      <mxGeometry height="70" width="40" x="100" y="295" as="geometry" />
+    </mxCell>
+
+    <mxCell id="CU19-B1" parent="1" style="shape=umlBoundary;whiteSpace=wrap;html=1;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;fontSize=10;labelBackgroundColor=none;rounded=1;fontStyle=1;" value=":DetectorMediapipeComponent" vertex="1">
+      <mxGeometry height="70" width="100" x="280" y="295" as="geometry" />
+    </mxCell>
+
+    <mxCell id="CU19-B2" parent="1" style="shape=umlBoundary;whiteSpace=wrap;html=1;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;fontSize=10;labelBackgroundColor=none;rounded=1;fontStyle=1;" value=":GarmentTryOnEngine" vertex="1">
+      <mxGeometry height="70" width="100" x="490" y="295" as="geometry" />
+    </mxCell>
+
+    <mxCell id="CU19-CT" parent="1" style="ellipse;shape=umlControl;whiteSpace=wrap;html=1;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;fontSize=10;labelBackgroundColor=none;rounded=1;fontStyle=1;" value=":GarmentController" vertex="1">
+      <mxGeometry height="80" width="70" x="715" y="290" as="geometry" />
+    </mxCell>
+
+    <mxCell id="CU19-E1" parent="1" style="ellipse;shape=umlEntity;whiteSpace=wrap;html=1;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;fontSize=10;labelBackgroundColor=none;rounded=1;fontStyle=1;" value=":ImagenPrenda" vertex="1">
+      <mxGeometry height="36" width="36" x="932" y="312" as="geometry" />
+    </mxCell>
+
+    <mxCell id="CU19-L1" edge="1" parent="1" source="CU19-A" target="CU19-B1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;fontSize=10;labelBackgroundColor=none;fontColor=default;">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="140" y="330" as="sourcePoint" />
+        <mxPoint x="280" y="330" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+
+    <mxCell id="CU19-L2" edge="1" parent="1" source="CU19-B1" target="CU19-B2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;fontSize=10;labelBackgroundColor=none;fontColor=default;">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="380" y="330" as="sourcePoint" />
+        <mxPoint x="490" y="330" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+
+    <mxCell id="CU19-L3" edge="1" parent="1" source="CU19-B2" target="CU19-CT" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;fontSize=10;labelBackgroundColor=none;fontColor=default;">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="590" y="330" as="sourcePoint" />
+        <mxPoint x="715" y="330" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+
+    <mxCell id="CU19-L4" edge="1" parent="1" source="CU19-CT" target="CU19-E1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;fontSize=10;labelBackgroundColor=none;fontColor=default;">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="785" y="330" as="sourcePoint" />
+        <mxPoint x="932" y="330" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+
+    <mxCell id="CU19-m1" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=1;fontSize=10;labelBackgroundColor=none;" value="1: openDetector()" vertex="1">
+      <mxGeometry height="22" width="150" x="160" y="288" as="geometry" />
+    </mxCell>
+    <mxCell id="CU19-a1" edge="1" parent="1" source="CU19-m1" style="endArrow=classic;html=1;rounded=1;strokeWidth=2;fontSize=10;labelBackgroundColor=none;fontColor=default;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;" target="CU19-m1" value="">
+      <mxGeometry height="50" relative="1" width="50" as="geometry">
+        <mxPoint x="185" y="316" as="sourcePoint" />
+        <mxPoint x="255" y="316" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+
+    <mxCell id="CU19-m2" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=1;fontSize=10;labelBackgroundColor=none;" value="2: saveCalibration()" vertex="1">
+      <mxGeometry height="22" width="150" x="160" y="320" as="geometry" />
+    </mxCell>
+    <mxCell id="CU19-a2" edge="1" parent="1" source="CU19-m2" style="endArrow=classic;html=1;rounded=1;strokeWidth=2;fontSize=10;labelBackgroundColor=none;fontColor=default;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;" target="CU19-m2" value="">
+      <mxGeometry height="50" relative="1" width="50" as="geometry">
+        <mxPoint x="185" y="348" as="sourcePoint" />
+        <mxPoint x="255" y="348" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+
+    <mxCell id="CU19-m23" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=1;fontSize=10;labelBackgroundColor=none;" value="2.3: setFit()" vertex="1">
+      <mxGeometry height="22" width="150" x="160" y="352" as="geometry" />
+    </mxCell>
+    <mxCell id="CU19-a23" edge="1" parent="1" source="CU19-m23" style="endArrow=classic;html=1;rounded=1;strokeWidth=2;fontSize=10;labelBackgroundColor=none;fontColor=default;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;" target="CU19-m23" value="">
+      <mxGeometry height="50" relative="1" width="50" as="geometry">
+        <mxPoint x="185" y="380" as="sourcePoint" />
+        <mxPoint x="255" y="380" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+
+    <mxCell id="CU19-m26" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=1;fontSize=10;labelBackgroundColor=none;" value="2.6: closeDetector()" vertex="1">
+      <mxGeometry height="22" width="155" x="160" y="384" as="geometry" />
+    </mxCell>
+    <mxCell id="CU19-a26" edge="1" parent="1" source="CU19-m26" style="endArrow=classic;html=1;rounded=1;strokeWidth=2;fontSize=10;labelBackgroundColor=none;fontColor=default;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;" target="CU19-m26" value="">
+      <mxGeometry height="50" relative="1" width="50" as="geometry">
+        <mxPoint x="185" y="412" as="sourcePoint" />
+        <mxPoint x="255" y="412" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+
+    <mxCell id="CU19-m3" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=1;fontSize=10;labelBackgroundColor=none;" value="3: cambiarVariante()" vertex="1">
+      <mxGeometry height="22" width="160" x="160" y="416" as="geometry" />
+    </mxCell>
+    <mxCell id="CU19-a3" edge="1" parent="1" source="CU19-m3" style="endArrow=classic;html=1;rounded=1;strokeWidth=2;fontSize=10;labelBackgroundColor=none;fontColor=default;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;" target="CU19-m3" value="">
+      <mxGeometry height="50" relative="1" width="50" as="geometry">
+        <mxPoint x="185" y="444" as="sourcePoint" />
+        <mxPoint x="255" y="444" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+
+    <mxCell id="CU19-m15" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=1;fontSize=10;labelBackgroundColor=none;" value="1.5: mostrarCalibracion()" vertex="1">
+      <mxGeometry height="22" width="160" x="160" y="448" as="geometry" />
+    </mxCell>
+    <mxCell id="CU19-a15" edge="1" parent="1" source="CU19-m15" style="rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1;dashed=1;fontSize=10;labelBackgroundColor=none;fontColor=default;" target="CU19-m15" value="">
+      <mxGeometry height="50" relative="1" width="50" as="geometry">
+        <mxPoint x="255" y="476" as="sourcePoint" />
+        <mxPoint x="185" y="476" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+
+    <mxCell id="CU19-m32" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=1;fontSize=10;labelBackgroundColor=none;" value="3.2: mostrarNuevaCalibracion()" vertex="1">
+      <mxGeometry height="22" width="185" x="160" y="480" as="geometry" />
+    </mxCell>
+    <mxCell id="CU19-a32" edge="1" parent="1" source="CU19-m32" style="rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1;dashed=1;fontSize=10;labelBackgroundColor=none;fontColor=default;" target="CU19-m32" value="">
+      <mxGeometry height="50" relative="1" width="50" as="geometry">
+        <mxPoint x="255" y="508" as="sourcePoint" />
+        <mxPoint x="185" y="508" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+
+    <mxCell id="CU19-m11" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=1;fontSize=10;labelBackgroundColor=none;" value="1.1: prepare() (POST /catalog/garment)" vertex="1">
+      <mxGeometry height="22" width="270" x="400" y="202" as="geometry" />
+    </mxCell>
+    <mxCell id="CU19-a11" edge="1" parent="1" source="CU19-m11" style="endArrow=classic;html=1;rounded=1;strokeWidth=2;startSize=13;fontSize=10;labelBackgroundColor=none;fontColor=default;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;" target="CU19-m11" value="">
+      <mxGeometry height="50" relative="1" width="50" as="geometry">
+        <mxPoint x="385" y="228" as="sourcePoint" />
+        <mxPoint x="705" y="228" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+
+    <mxCell id="CU19-m31" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=1;fontSize=10;labelBackgroundColor=none;" value="3.1: prepareGarment() (se repite el flujo 1)" vertex="1">
+      <mxGeometry height="22" width="290" x="398" y="240" as="geometry" />
+    </mxCell>
+    <mxCell id="CU19-a31" edge="1" parent="1" source="CU19-m31" style="endArrow=classic;html=1;rounded=1;strokeWidth=2;startSize=13;fontSize=10;labelBackgroundColor=none;fontColor=default;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;" target="CU19-m31" value="">
+      <mxGeometry height="50" relative="1" width="50" as="geometry">
+        <mxPoint x="385" y="268" as="sourcePoint" />
+        <mxPoint x="705" y="268" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+
+    <mxCell id="CU19-m14" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=1;fontSize=10;labelBackgroundColor=none;" value="1.4: return 200 OK (image_data_url)" vertex="1">
+      <mxGeometry height="22" width="290" x="500" y="418" as="geometry" />
+    </mxCell>
+    <mxCell id="CU19-a14" edge="1" parent="1" source="CU19-m14" style="rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1;dashed=1;fontSize=10;labelBackgroundColor=none;fontColor=default;" target="CU19-m14" value="">
+      <mxGeometry height="50" relative="1" width="50" as="geometry">
+        <mxPoint x="705" y="410" as="sourcePoint" />
+        <mxPoint x="390" y="410" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+
+    <mxCell id="CU19-m21" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=1;fontSize=10;labelBackgroundColor=none;" value="2.1: start(video, canvas)" vertex="1">
+      <mxGeometry height="22" width="130" x="382" y="296" as="geometry" />
+    </mxCell>
+    <mxCell id="CU19-a21" edge="1" parent="1" source="CU19-m21" style="endArrow=classic;html=1;rounded=1;strokeWidth=2;startSize=13;fontSize=10;labelBackgroundColor=none;fontColor=default;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;" target="CU19-m21" value="">
+      <mxGeometry height="50" relative="1" width="50" as="geometry">
+        <mxPoint x="400" y="322" as="sourcePoint" />
+        <mxPoint x="470" y="322" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+
+    <mxCell id="CU19-m24" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=1;fontSize=10;labelBackgroundColor=none;" value="2.4: aplicarAjustes()" vertex="1">
+      <mxGeometry height="22" width="135" x="382" y="328" as="geometry" />
+    </mxCell>
+    <mxCell id="CU19-a24" edge="1" parent="1" source="CU19-m24" style="endArrow=classic;html=1;rounded=1;strokeWidth=2;startSize=13;fontSize=10;labelBackgroundColor=none;fontColor=default;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;" target="CU19-m24" value="">
+      <mxGeometry height="50" relative="1" width="50" as="geometry">
+        <mxPoint x="400" y="354" as="sourcePoint" />
+        <mxPoint x="470" y="354" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+
+    <mxCell id="CU19-m27" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=1;fontSize=10;labelBackgroundColor=none;" value="2.7: stop()" vertex="1">
+      <mxGeometry height="22" width="135" x="382" y="360" as="geometry" />
+    </mxCell>
+    <mxCell id="CU19-a27" edge="1" parent="1" source="CU19-m27" style="endArrow=classic;html=1;rounded=1;strokeWidth=2;startSize=13;fontSize=10;labelBackgroundColor=none;fontColor=default;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;" target="CU19-m27" value="">
+      <mxGeometry height="50" relative="1" width="50" as="geometry">
+        <mxPoint x="400" y="386" as="sourcePoint" />
+        <mxPoint x="470" y="386" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+
+    <mxCell id="CU19-m22" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=1;fontSize=10;labelBackgroundColor=none;" value="2.2: mostrarVistaPrevia()" vertex="1">
+      <mxGeometry height="22" width="140" x="388" y="446" as="geometry" />
+    </mxCell>
+    <mxCell id="CU19-a22" edge="1" parent="1" source="CU19-m22" style="rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1;dashed=1;fontSize=10;labelBackgroundColor=none;fontColor=default;" target="CU19-m22" value="">
+      <mxGeometry height="50" relative="1" width="50" as="geometry">
+        <mxPoint x="470" y="438" as="sourcePoint" />
+        <mxPoint x="405" y="438" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+
+    <mxCell id="CU19-m25" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=1;fontSize=10;labelBackgroundColor=none;" value="2.5: actualizarVistaPrevia()" vertex="1">
+      <mxGeometry height="22" width="150" x="388" y="482" as="geometry" />
+    </mxCell>
+    <mxCell id="CU19-a25" edge="1" parent="1" source="CU19-m25" style="rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1;dashed=1;fontSize=10;labelBackgroundColor=none;fontColor=default;" target="CU19-m25" value="">
+      <mxGeometry height="50" relative="1" width="50" as="geometry">
+        <mxPoint x="470" y="474" as="sourcePoint" />
+        <mxPoint x="405" y="474" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+
+    <mxCell id="CU19-m28" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=1;fontSize=10;labelBackgroundColor=none;" value="2.8: confirmarCierre()" vertex="1">
+      <mxGeometry height="22" width="140" x="388" y="518" as="geometry" />
+    </mxCell>
+    <mxCell id="CU19-a28" edge="1" parent="1" source="CU19-m28" style="rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1;dashed=1;fontSize=10;labelBackgroundColor=none;fontColor=default;" target="CU19-m28" value="">
+      <mxGeometry height="50" relative="1" width="50" as="geometry">
+        <mxPoint x="470" y="510" as="sourcePoint" />
+        <mxPoint x="405" y="510" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+
+    <mxCell id="CU19-m12" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=1;fontSize=10;labelBackgroundColor=none;" value="1.2: generateCatalogGarment()" vertex="1">
+      <mxGeometry height="22" width="145" x="770" y="296" as="geometry" />
+    </mxCell>
+    <mxCell id="CU19-a12" edge="1" parent="1" source="CU19-m12" style="endArrow=classic;html=1;rounded=1;strokeWidth=1;startSize=13;fontSize=10;labelBackgroundColor=none;fontColor=default;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;" target="CU19-m12" value="">
+      <mxGeometry height="50" relative="1" width="50" as="geometry">
+        <mxPoint x="790" y="322" as="sourcePoint" />
+        <mxPoint x="885" y="322" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+
+    <mxCell id="CU19-m13" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=1;fontSize=10;labelBackgroundColor=none;" value="1.3: return(image_data_url)" vertex="1">
+      <mxGeometry height="22" width="130" x="795" y="358" as="geometry" />
+    </mxCell>
+    <mxCell id="CU19-a13" edge="1" parent="1" source="CU19-m13" style="rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1;dashed=1;fontSize=10;labelBackgroundColor=none;fontColor=default;" target="CU19-m13" value="">
+      <mxGeometry height="50" relative="1" width="50" as="geometry">
+        <mxPoint x="885" y="352" as="sourcePoint" />
+        <mxPoint x="795" y="352" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+
+  </root>
+</mxGraphModel>
