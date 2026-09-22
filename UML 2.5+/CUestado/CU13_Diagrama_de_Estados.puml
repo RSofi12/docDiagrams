@@ -1,0 +1,45 @@
+@startuml CU13_Diagrama_de_Estados
+title Diagrama de Estados - CU13 Consultar inventario consolidado
+
+skinparam backgroundColor #FFFFFF
+skinparam shadowing false
+skinparam defaultFontName Arial
+skinparam defaultFontSize 12
+skinparam state {
+    BackgroundColor #FFE6CC
+    BorderColor #D79B00
+    FontColor #212529
+    StartColor #28A745
+    EndColor #DC3545
+}
+
+[*] --> ConsultaConsolidada : accede al inventario consolidado
+
+state ConsultaConsolidada {
+    ConsultaConsolidada
+}
+
+ConsultaConsolidada --> VistaGlobal : existencias de todas las sucursales obtenidas
+ConsultaConsolidada --> ErrorCarga : falla la consulta
+ErrorCarga --> ConsultaConsolidada : reintenta la consulta
+
+state VistaGlobal {
+    VistaGlobal
+}
+
+VistaGlobal --> FiltroSucursal : aplica filtro por sucursal
+
+state FiltroSucursal {
+    FiltroSucursal
+}
+
+FiltroSucursal --> ValidarResultado <<choice>>
+ValidarResultado --> DetalleProducto : [hay existencias para el filtro]
+ValidarResultado --> SinResultados : [sin existencias en la sucursal]
+
+DetalleProducto --> FiltroSucursal : regresa a la vista filtrada
+SinResultados --> FiltroSucursal : cambia o quita el filtro
+FiltroSucursal --> VistaGlobal : consolida de nuevo todas las sucursales
+VistaGlobal --> [*]
+
+@enduml

@@ -1,0 +1,47 @@
+@startuml CU12_Diagrama_de_Estados
+title Diagrama de Estados - CU12 Registrar movimiento de inventario
+
+skinparam backgroundColor #FFFFFF
+skinparam shadowing false
+skinparam defaultFontName Arial
+skinparam defaultFontSize 12
+skinparam state {
+    BackgroundColor #FFE6CC
+    BorderColor #D79B00
+    FontColor #212529
+    StartColor #28A745
+    EndColor #DC3545
+}
+
+[*] --> FormularioAbierto : accede a registrar un movimiento
+
+state FormularioAbierto {
+    FormularioAbierto
+}
+
+FormularioAbierto --> ValidarDatos : completa el detalle y el tipo de movimiento
+ValidarDatos --> ErrorValidacion : [datos inválidos o sin permisos]
+ValidarDatos --> TipoMovimiento <<choice>>
+TipoMovimiento --> Ingreso : [ingreso]
+TipoMovimiento --> Salida : [salida]
+TipoMovimiento --> Traspaso : [traspaso]
+
+ErrorValidacion --> FormularioAbierto : corrige el detalle
+
+Ingreso --> MovimientoRegistrado : stock incrementado
+
+Salida --> ValidarStock <<choice>>
+ValidarStock --> StockInsuficiente : [stock insuficiente en la sucursal]
+ValidarStock --> SalidaConfirmada : [stock suficiente]
+SalidaConfirmada --> MovimientoRegistrado : stock descontado
+
+StockInsuficiente --> FormularioAbierto : ajusta la cantidad
+
+Traspaso --> ValidarStockOrigen <<choice>>
+ValidarStockOrigen --> StockInsuficiente : [stock origen insuficiente]
+ValidarStockOrigen --> TraspasoConfirmado : [stock origen suficiente]
+TraspasoConfirmado --> MovimientoRegistrado : stock trasladado entre sucursales
+
+MovimientoRegistrado --> [*] : movimiento guardado
+
+@enduml
