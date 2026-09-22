@@ -1,0 +1,39 @@
+@startuml CU11_Diagrama_de_Estados
+title Diagrama de Estados - CU11 Consultar disponibilidad por sucursal
+
+skinparam backgroundColor #FFFFFF
+skinparam shadowing false
+skinparam defaultFontName Arial
+skinparam defaultFontSize 12
+skinparam state {
+    BackgroundColor #FFE6CC
+    BorderColor #D79B00
+    FontColor #212529
+    StartColor #28A745
+    EndColor #DC3545
+}
+
+[*] --> CatalogoCargado : ingresa al catálogo
+CatalogoCargado --> SucursalSeleccionada : elige una sucursal
+
+state SucursalSeleccionada {
+    SucursalSeleccionada
+}
+
+SucursalSeleccionada --> ProductoSeleccionado : abre un producto y elige una variante
+ProductoSeleccionado --> DisponibilidadConsultada : consulta disponibilidad en la sucursal
+
+state DisponibilidadConsultada {
+    DisponibilidadConsultada
+}
+
+DisponibilidadConsultada --> ValidarStock <<choice>>
+ValidarStock --> StockDisponible : [hay stock en la sucursal]
+ValidarStock --> StockAgotado : [sin stock en la sucursal]
+
+StockDisponible --> ProductoSeleccionado : agrega al carrito
+StockDisponible --> SucursalSeleccionada : cambia de variante o sucursal
+StockAgotado --> SucursalSeleccionada : cambia de variante o sucursal
+SucursalSeleccionada --> [*]
+
+@enduml
