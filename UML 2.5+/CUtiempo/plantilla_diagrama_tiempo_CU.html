@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plantilla Diagrama de Tiempo UML 2.5 - Estilo Enterprise Architect</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 20px;
+      background-color: #f1f5f9;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .diagram-container {
+      background-color: #ffffff;
+      padding: 16px;
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 1020px;
+    }
+    .ea-font {
+      font-family: 'Segoe UI', Arial, sans-serif;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="diagram-container">
+    <svg viewBox="0 0 980 660" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg">
+      
+      <!-- ========================================================================= -->
+      <!-- 1. MARCO EXTERIOR DEL DIAGRAMA (Diagram Frame)                            -->
+      <!-- ========================================================================= -->
+      <rect x="5" y="5" width="970" height="645" fill="#ffffff" stroke="#1e293b" stroke-width="1.8"/>
+      
+      <!-- Pestaña Header Frame (Título del Diagrama) -->
+      <path d="M 5 5 L 380 5 L 395 24 L 395 32 L 5 32 Z" fill="#ffffff" stroke="#1e293b" stroke-width="1.8"/>
+      <text x="12" y="22" class="ea-font" font-size="13px" font-weight="bold" fill="#0f172a">
+        sd DT - CU-011: Aprobacion y Ciclo de Vida de Orden
+      </text>
+
+      <!-- ========================================================================= -->
+      <!-- 2. LÍNEA DE VIDA 1 (TimeLine1)                                            -->
+      <!-- ========================================================================= -->
+      <g transform="translate(40, 50)">
+        
+        <!-- Caja Principal TimeLine1 (Fondo celeste EA: #f0f9fa) -->
+        <rect x="0" y="0" width="900" height="260" fill="#f0f9fa" stroke="#475569" stroke-width="2" rx="3"/>
+
+        <!-- Etiqueta Vertical izquierda -->
+        <g transform="translate(28, 130) rotate(-90)">
+          <text x="0" y="0" text-anchor="middle" class="ea-font" font-size="13px" font-weight="bold" fill="#1e293b">
+            TimeLine1
+          </text>
+        </g>
+
+        <!-- NIVELES DE ESTADO TIMELINE 1 -->
+        <!-- Estado Nivel 5: <state_n> -->
+        <text x="195" y="45" text-anchor="end" class="ea-font" font-size="12px" font-weight="600" fill="#64748b">&lt;state_n&gt;</text>
+        <line x1="205" y1="40" x2="880" y2="40" stroke="#e2e8f0" stroke-width="1"/>
+
+        <!-- Estado Nivel 4: Aprobada (Verde) -->
+        <text x="195" y="95" text-anchor="end" class="ea-font" font-size="12px" font-weight="bold" fill="#16a34a">Aprobada</text>
+        <line x1="205" y1="90" x2="880" y2="90" stroke="#e2e8f0" stroke-width="1"/>
+
+        <!-- Estado Nivel 3: Rechazada (Rojo) -->
+        <text x="195" y="145" text-anchor="end" class="ea-font" font-size="12px" font-weight="bold" fill="#dc2626">Rechazada</text>
+        <line x1="205" y1="140" x2="880" y2="140" stroke="#e2e8f0" stroke-width="1"/>
+
+        <!-- Estado Nivel 2: PendienteAprobacion (Azul) -->
+        <text x="195" y="195" text-anchor="end" class="ea-font" font-size="12px" font-weight="bold" fill="#0284c7">PendienteAprobacion</text>
+        <line x1="205" y1="190" x2="880" y2="190" stroke="#e2e8f0" stroke-width="1"/>
+
+        <!-- Estado Nivel 1: Inicio (Gris) -->
+        <text x="195" y="240" text-anchor="end" class="ea-font" font-size="12px" font-weight="600" fill="#64748b">Inicio</text>
+        <line x1="205" y1="235" x2="880" y2="235" stroke="#e2e8f0" stroke-width="1"/>
+
+        <!-- COMPONENTE: {duration constraint #} con delimitadores |<--  -->| -->
+        <!-- Inicio en t=8 (x=258), Fin en t=60 (x=604) -->
+        <!-- quitar los nombres de todos los componentes al hacer los diagramas de un CU especifico -->
+        <g transform="translate(0, 0)">
+          <!-- Delimitador izquierdo |<-- -->
+          <line x1="258" y1="22" x2="258" y2="42" stroke="#1e293b" stroke-width="1.5"/>
+          <line x1="258" y1="32" x2="276" y2="32" stroke="#1e293b" stroke-width="1.2"/>
+          <polyline points="266,28 259,32 266,36" fill="none" stroke="#1e293b" stroke-width="1.2"/>
+
+          <!-- Texto central del Componente Duration Constraint -->
+          <text x="431" y="36" text-anchor="middle" class="ea-font" font-size="12px" font-weight="bold" fill="#0f172a">
+            {duration constraint #}
+          </text>
+
+          <!-- Delimitador derecho -->| -->
+          <line x1="604" y1="22" x2="604" y2="42" stroke="#1e293b" stroke-width="1.5"/>
+          <line x1="604" y1="32" x2="586" y2="32" stroke="#1e293b" stroke-width="1.2"/>
+          <polyline points="596,28 603,32 596,36" fill="none" stroke="#1e293b" stroke-width="1.2"/>
+        </g>
+
+        <!-- COMPONENTE: Event con Time Constraint -->
+        <text x="253" y="175" class="ea-font" font-size="11px" font-weight="600" fill="#0f172a">
+          event: enviar a aprobacion{time constraint}
+        </text>
+
+        <!-- ONDA DE TRANSICIÓN TIMELINE 1 (Línea continua 100% negra) -->
+        <!-- t=0 a t=8: Inicio(235) -> t=8: Sube a Pendiente(190) -> t=60: Sube a Aprobada(90) -> t=91: Baja a Inicio(235) -->
+        <path d="M 205 235 
+                 L 258 235 
+                 L 258 190 
+                 L 604 190 
+                 L 604 90 
+                 L 810 90 
+                 L 810 235 
+                 L 870 235" 
+              fill="none" stroke="#000000" stroke-width="1.8" stroke-linejoin="miter"/>
+
+        <!-- Ticks inferiores de TimeLine1 (Marcadores de guía) -->
+        <g stroke="#475569" stroke-width="1.2">
+          <line x1="205" y1="254" x2="205" y2="260"/>
+          <line x1="238.25" y1="254" x2="238.25" y2="260"/>
+          <line x1="271.5" y1="254" x2="271.5" y2="260"/>
+          <line x1="304.75" y1="254" x2="304.75" y2="260"/>
+          <line x1="338" y1="254" x2="338" y2="260"/>
+          <line x1="371.25" y1="254" x2="371.25" y2="260"/>
+          <line x1="404.5" y1="254" x2="404.5" y2="260"/>
+          <line x1="437.75" y1="254" x2="437.75" y2="260"/>
+          <line x1="471" y1="254" x2="471" y2="260"/>
+          <line x1="504.25" y1="254" x2="504.25" y2="260"/>
+          <line x1="537.5" y1="254" x2="537.5" y2="260"/>
+          <line x1="570.75" y1="254" x2="570.75" y2="260"/>
+          <line x1="604" y1="254" x2="604" y2="260"/>
+          <line x1="637.25" y1="254" x2="637.25" y2="260"/>
+          <line x1="670.5" y1="254" x2="670.5" y2="260"/>
+          <line x1="703.75" y1="254" x2="703.75" y2="260"/>
+          <line x1="737" y1="254" x2="737" y2="260"/>
+          <line x1="770.25" y1="254" x2="770.25" y2="260"/>
+          <line x1="803.5" y1="254" x2="803.5" y2="260"/>
+          <line x1="836.75" y1="254" x2="836.75" y2="260"/>
+          <line x1="870" y1="254" x2="870" y2="260"/>
+        </g>
+      </g>
+
+      <!-- ========================================================================= -->
+      <!-- 3. LÍNEA DE VIDA 2 / APILADA (TimeLine3)                                  -->
+      <!-- ========================================================================= -->
+      <g transform="translate(40, 310)">
+        
+        <!-- Caja Principal TimeLine3 -->
+        <rect x="0" y="0" width="900" height="240" fill="#f0f9fa" stroke="#475569" stroke-width="2" rx="3"/>
+
+        <!-- Etiqueta Vertical izquierda -->
+        <g transform="translate(28, 120) rotate(-90)">
+          <text x="0" y="0" text-anchor="middle" class="ea-font" font-size="13px" font-weight="bold" fill="#1e293b">
+            TimeLine3
+          </text>
+        </g>
+
+        <!-- NIVELES DE ESTADO TIMELINE 3 -->
+        <!-- Estado Nivel 5: state n -->
+        <text x="195" y="45" text-anchor="end" class="ea-font" font-size="12px" font-weight="600" fill="#64748b">state n</text>
+        <line x1="205" y1="40" x2="880" y2="40" stroke="#e2e8f0" stroke-width="1"/>
+
+        <!-- Estado Nivel 4: state 3 -->
+        <text x="195" y="90" text-anchor="end" class="ea-font" font-size="12px" font-weight="600" fill="#64748b">state 3</text>
+        <line x1="205" y1="85" x2="880" y2="85" stroke="#e2e8f0" stroke-width="1"/>
+
+        <!-- Estado Nivel 3: state 2 -->
+        <text x="195" y="135" text-anchor="end" class="ea-font" font-size="12px" font-weight="600" fill="#64748b">state 2</text>
+        <line x1="205" y1="130" x2="880" y2="130" stroke="#e2e8f0" stroke-width="1"/>
+
+        <!-- Estado Nivel 2: state 1 (Azul) -->
+        <text x="195" y="180" text-anchor="end" class="ea-font" font-size="12px" font-weight="bold" fill="#0284c7">state 1</text>
+        <line x1="205" y1="175" x2="880" y2="175" stroke="#e2e8f0" stroke-width="1"/>
+
+        <!-- Estado Nivel 1: Default (Gris) -->
+        <text x="195" y="225" text-anchor="end" class="ea-font" font-size="12px" font-weight="600" fill="#64748b">Default</text>
+        <line x1="205" y1="220" x2="880" y2="220" stroke="#e2e8f0" stroke-width="1"/>
+
+        <!-- ONDA DE TRANSICIÓN TIMELINE 3 (100% Negra) -->
+        <!-- t=0 a t=36 (x=444): Default(220) -> t=36: Sube a state 1(175) -> t=100(870) -->
+        <path d="M 205 220 
+                 L 444 220 
+                 L 444 175 
+                 L 870 175" 
+              fill="none" stroke="#000000" stroke-width="1.8" stroke-linejoin="miter"/>
+      </g>
+
+      <!-- ========================================================================= -->
+      <!-- 4. REGLA TEMPORAL INFERIOR (0 .. 100)                                     -->
+      <!-- ========================================================================= -->
+      <g transform="translate(40, 550)">
+        <!-- Fondo de la regla -->
+        <rect x="0" y="0" width="900" height="35" fill="#f8fafc" stroke="#475569" stroke-width="2" rx="1"/>
+        
+        <!-- Marcadores y Ticks (Inicio x=205 es 0, Fin x=870 es 100. Paso = 33.25 px cada 5 unidades) -->
+        <!-- 0 -->
+        <line x1="205" y1="0" x2="205" y2="10" stroke="#1e293b" stroke-width="1.2"/>
+        <text x="205" y="24" text-anchor="middle" class="ea-font" font-size="11px" fill="#1e293b">0</text>
+        
+        <!-- 5 -->
+        <line x1="238.25" y1="0" x2="238.25" y2="10" stroke="#1e293b" stroke-width="1.2"/>
+        <text x="238.25" y="24" text-anchor="middle" class="ea-font" font-size="11px" fill="#1e293b">5</text>
+
+        <!-- 10 -->
+        <line x1="271.5" y1="0" x2="271.5" y2="10" stroke="#1e293b" stroke-width="1.2"/>
+        <text x="271.5" y="24" text-anchor="middle" class="ea-font" font-size="11px" fill="#1e293b">10</text>
+
+        <!-- 15 -->
+        <line x1="304.75" y1="0" x2="304.75" y2="10" stroke="#1e293b" stroke-width="1.2"/>
+        <text x="304.75" y="24" text-anchor="middle" class="ea-font" font-size="11px" fill="#1e293b">15</text>
+
+        <!-- 20 -->
+        <line x1="338" y1="0" x2="338" y2="10" stroke="#1e293b" stroke-width="1.2"/>
+        <text x="338" y="24" text-anchor="middle" class="ea-font" font-size="11px" fill="#1e293b">20</text>
+
+        <!-- 25 -->
+        <line x1="371.25" y1="0" x2="371.25" y2="10" stroke="#1e293b" stroke-width="1.2"/>
+        <text x="371.25" y="24" text-anchor="middle" class="ea-font" font-size="11px" fill="#1e293b">25</text>
+
+        <!-- 30 -->
+        <line x1="404.5" y1="0" x2="404.5" y2="10" stroke="#1e293b" stroke-width="1.2"/>
+        <text x="404.5" y="24" text-anchor="middle" class="ea-font" font-size="11px" fill="#1e293b">30</text>
+
+        <!-- 35 -->
+        <line x1="437.75" y1="0" x2="437.75" y2="10" stroke="#1e293b" stroke-width="1.2"/>
+        <text x="437.75" y="24" text-anchor="middle" class="ea-font" font-size="11px" fill="#1e293b">35</text>
+
+        <!-- 40 -->
+        <line x1="471" y1="0" x2="471" y2="10" stroke="#1e293b" stroke-width="1.2"/>
+        <text x="471" y="24" text-anchor="middle" class="ea-font" font-size="11px" fill="#1e293b">40</text>
+
+        <!-- 45 -->
+        <line x1="504.25" y1="0" x2="504.25" y2="10" stroke="#1e293b" stroke-width="1.2"/>
+        <text x="504.25" y="24" text-anchor="middle" class="ea-font" font-size="11px" fill="#1e293b">45</text>
+
+        <!-- 50 -->
+        <line x1="537.5" y1="0" x2="537.5" y2="10" stroke="#1e293b" stroke-width="1.2"/>
+        <text x="537.5" y="24" text-anchor="middle" class="ea-font" font-size="11px" fill="#1e293b">50</text>
+
+        <!-- 55 -->
+        <line x1="570.75" y1="0" x2="570.75" y2="10" stroke="#1e293b" stroke-width="1.2"/>
+        <text x="570.75" y="24" text-anchor="middle" class="ea-font" font-size="11px" fill="#1e293b">55</text>
+
+        <!-- 60 -->
+        <line x1="604" y1="0" x2="604" y2="10" stroke="#1e293b" stroke-width="1.2"/>
+        <text x="604" y="24" text-anchor="middle" class="ea-font" font-size="11px" fill="#1e293b">60</text>
+
+        <!-- 65 -->
+        <line x1="637.25" y1="0" x2="637.25" y2="10" stroke="#1e293b" stroke-width="1.2"/>
+        <text x="637.25" y="24" text-anchor="middle" class="ea-font" font-size="11px" fill="#1e293b">65</text>
+
+        <!-- 70 -->
+        <line x1="670.5" y1="0" x2="670.5" y2="10" stroke="#1e293b" stroke-width="1.2"/>
+        <text x="670.5" y="24" text-anchor="middle" class="ea-font" font-size="11px" fill="#1e293b">70</text>
+
+        <!-- 75 -->
+        <line x1="703.75" y1="0" x2="703.75" y2="10" stroke="#1e293b" stroke-width="1.2"/>
+        <text x="703.75" y="24" text-anchor="middle" class="ea-font" font-size="11px" fill="#1e293b">75</text>
+
+        <!-- 80 -->
+        <line x1="737" y1="0" x2="737" y2="10" stroke="#1e293b" stroke-width="1.2"/>
+        <text x="737" y="24" text-anchor="middle" class="ea-font" font-size="11px" fill="#1e293b">80</text>
+
+        <!-- 85 -->
+        <line x1="770.25" y1="0" x2="770.25" y2="10" stroke="#1e293b" stroke-width="1.2"/>
+        <text x="770.25" y="24" text-anchor="middle" class="ea-font" font-size="11px" fill="#1e293b">85</text>
+
+        <!-- 90 -->
+        <line x1="803.5" y1="0" x2="803.5" y2="10" stroke="#1e293b" stroke-width="1.2"/>
+        <text x="803.5" y="24" text-anchor="middle" class="ea-font" font-size="11px" fill="#1e293b">90</text>
+
+        <!-- 95 -->
+        <line x1="836.75" y1="0" x2="836.75" y2="10" stroke="#1e293b" stroke-width="1.2"/>
+        <text x="836.75" y="24" text-anchor="middle" class="ea-font" font-size="11px" fill="#1e293b">95</text>
+
+        <!-- 100 -->
+        <line x1="870" y1="0" x2="870" y2="10" stroke="#1e293b" stroke-width="1.2"/>
+        <text x="870" y="24" text-anchor="middle" class="ea-font" font-size="11px" fill="#1e293b">100</text>
+      </g>
+
+    </svg>
+  </div>
+
+</body>
+</html>
